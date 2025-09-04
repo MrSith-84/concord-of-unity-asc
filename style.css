@@ -19,16 +19,114 @@ h3 {
   color: #f1faee;
 }
 
-/* Navigation & link hover */
-nav ul li a,
-a {
+/* Main Navigation */
+.main-navigation {
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 2px solid #e63946;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.nav-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  color: #f1faee;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #e63946 !important;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff4c4c !important;
+  border-color: #e63946;
+  background: rgba(230, 57, 70, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(10, 10, 10, 0.98);
+  border: 1px solid #e63946;
+  border-radius: 4px;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #e63946 !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(230, 57, 70, 0.1);
+  color: #ff4c4c !important;
+  padding-left: 1.5rem;
+}
+
+/* Legacy link styling for content links */
+a:not(.nav-link):not(.dropdown-menu a) {
   color: #e63946;
   position: relative;
   transition: color 0.3s ease;
 }
 
-nav ul li a::after,
-a::after {
+a:not(.nav-link):not(.dropdown-menu a)::after {
   content: "";
   position: absolute;
   width: 0;
@@ -39,13 +137,11 @@ a::after {
   transition: width 0.3s ease;
 }
 
-nav ul li a:hover,
-a:hover {
+a:not(.nav-link):not(.dropdown-menu a):hover {
   color: #ff4c4c;
 }
 
-nav ul li a:hover::after,
-a:hover::after {
+a:not(.nav-link):not(.dropdown-menu a):hover::after {
   width: 100%;
 }
 
