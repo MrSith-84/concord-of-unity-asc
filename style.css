@@ -285,3 +285,130 @@ footer {
   background: linear-gradient(90deg, #7a1f1f, #ff3a3a, #3a0d0d);
   color: #fff0f0;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Navigation optimizations */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .nav-logo-img {
+    height: 35px;
+    width: 35px;
+  }
+  
+  /* Dropdown menu optimizations */
+  .dropdown-menu {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 90%;
+    max-width: 280px;
+  }
+  
+  .nav-dropdown:hover .dropdown-menu {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  /* Content optimizations */
+  main.container {
+    padding: 1rem 0;
+  }
+  
+  .faction-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .faction-card {
+    width: 90%;
+    max-width: 350px;
+    min-width: unset;
+  }
+  
+  /* Typography optimizations */
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Image optimizations */
+  figure {
+    margin: 1rem 0;
+  }
+  
+  figure img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Button optimizations */
+  .faction-card a,
+  .back-faction-link {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .nav-container {
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  .faction-card {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .dropdown-menu {
+    width: 95%;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-container {
+    gap: 2rem;
+  }
+  
+  .faction-grid {
+    gap: 1.5rem;
+  }
+  
+  .faction-card {
+    flex: 1 1 280px;
+  }
+}
