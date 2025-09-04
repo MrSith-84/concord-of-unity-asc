@@ -6,42 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Apex Separatist Consortium</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #0a0a0a, #1c1c1c);
-      color: #e63946;
-      font-family: 'Orbitron', 'Segoe UI', sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-      color: #f1faee;
-    }
-
-    nav ul li a {
-      color: #e63946 !important;
-    }
-
-    figure img {
-      max-width: 100%;
-      height: auto;
-      border: 2px solid #e63946;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(230, 57, 70, 0.6);
-    }
-
-    main.container {
-      padding: 2rem 0;
-    }
-
-    footer {
-      margin-top: 3rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="fade-in">
   <nav class="container-fluid">
     <ul>
       <li><strong>Apex Consortium</strong></li>
@@ -54,47 +22,55 @@
   </nav>
 
   <main class="container">
-    <div class="grid">
-      <section>
-        <hgroup>
-          <h2>The Apex Separatist Consortium</h2>
-          <h3>Order Through Sovereignty</h3>
-        </hgroup>
-        <p>The Apex Separatist Consortium is a sovereign syndicate built upon the principles of strategic autonomy,
-          galactic reclamation, and the pursuit of forbidden knowledge. Our presence is known. Our reach is absolute.
-        </p>
-        <figure>
-          <img src="logo.png" alt="Apex Consortium Emblem">
-          <figcaption><a href="#" target="_blank">Emblem of the Consortium</a></figcaption>
-        </figure>
+    <section style="text-align:center;">
+      <h2>The Apex Separatist Consortium</h2>
+      <h3>Order Through Sovereignty</h3>
+      <p>The Apex Separatist Consortium is a sovereign syndicate built upon the principles of strategic autonomy,
+        galactic reclamation, and the pursuit of forbidden knowledge. Our presence is known. Our reach is absolute.</p>
+      <figure>
+        <img src="factions/images/master_crest.png" alt="Master Crest of the Apex Consortium" style="max-width:300px;">
+        <figcaption>The Master Crest of the Consortium</figcaption>
+      </figure>
+    </section>
 
-        <h3>Founding Doctrine</h3>
-        <p>Born from the ashes of collapse, the Consortium is built on doctrine that prioritizes control over chaos.
-          Every member is bound by our Prime Edict: <em>Strength Above All, Unity Without Chains.</em></p>
-
-        <h3>Operational Structure</h3>
-        <p>Our organization flows through a vertical hierarchy — the Apex Council at the top, the Vassal Lords beneath,
-          and the Field Executors across sectors. No decision escapes the eye of the Core Command Node.</p>
-      </section>
-    </div>
+    <!-- Factions Grid -->
+    <section class="faction-summary">
+      <h2>Factions of the Consortium</h2>
+      <div class="faction-grid">
+        <div class="faction-card">
+          <img src="factions/images/ghost_legion.png" alt="Ghost Legion Emblem" style="max-width:120px;">
+          <h3>Ghost Legion</h3>
+          <p>Elite operatives skilled in infiltration, sabotage, and intelligence gathering.</p>
+          <a href="factions/ghost_legion.html">Enter</a>
+        </div>
+        <div class="faction-card">
+          <img src="factions/images/voidborn_syndicate.png" alt="Voidborn Syndicate Emblem" style="max-width:120px;">
+          <h3>Voidborn Syndicate</h3>
+          <p>Shadowy brokers and smugglers who thrive in the lawless reaches of space.</p>
+          <a href="factions/voidborn_syndicate.html">Enter</a>
+        </div>
+        <div class="faction-card">
+          <img src="factions/images/titan_order.png" alt="Titan Order Emblem" style="max-width:120px;">
+          <h3>Titan Order</h3>
+          <p>Disciplined warriors and tacticians, enforcing order through strength.</p>
+          <a href="factions/titan_order.html">Enter</a>
+        </div>
+        <div class="faction-card">
+          <img src="factions/images/specter_network.png" alt="Specter Network Emblem" style="max-width:120px;">
+          <h3>Specter Network</h3>
+          <p>Masters of espionage and digital warfare, controlling secrets across the Consortium.</p>
+          <a href="factions/specter_network.html">Enter</a>
+        </div>
+        <div class="faction-card">
+          <img src="factions/images/shadowblade_mercenary.png" alt="Shadowblade Mercenary Guild Emblem"
+            style="max-width:120px;">
+          <h3>Shadowblade Mercenary Guild</h3>
+          <p>Mercenaries feared for their ruthlessness and loyalty to the highest bidder.</p>
+          <a href="factions/shadowblade_mercenary.html">Enter</a>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <section aria-label="Subscribe example">
-    <div class="container">
-      <article>
-        <hgroup>
-          <h2>Stay Informed</h2>
-          <h3>Receive encrypted communiqués from the High Command</h3>
-        </hgroup>
-        <form class="grid">
-          <input type="text" id="firstname" name="firstname" placeholder="Codename" aria-label="Codename" required />
-          <input type="email" id="email" name="email" placeholder="Comms Channel (Email)" aria-label="Comms Channel"
-            required />
-          <button type="submit" onclick="event.preventDefault()">Subscribe</button>
-        </form>
-      </article>
-    </div>
-  </section>
 
   <footer class="container">
     <small>
