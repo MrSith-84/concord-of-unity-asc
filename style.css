@@ -1,4 +1,179 @@
-html {
-  height: 100%;
+/* Global styling */
+body {
+  background: linear-gradient(to bottom right, #0a0a0a, #1c1c1c);
+  color: #e63946;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  opacity: 0;
+  animation: fadeInPage 1s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: #f1faee;
+}
+
+/* Navigation & link hover */
+nav ul li a,
+a {
+  color: #e63946;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after,
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #e63946;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover,
+a:hover {
+  color: #ff4c4c;
+}
+
+nav ul li a:hover::after,
+a:hover::after {
   width: 100%;
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.breadcrumb a {
+  color: #e63946;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: #ff4c4c;
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #f1faee;
+}
+
+/* Images */
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #e63946;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(230, 57, 70, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.9);
+}
+
+/* Buttons */
+button {
+  background: #e63946;
+  border: none;
+  color: #f1faee;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #ff4c4c;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Layout */
+main.container {
+  padding: 2rem 0;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #888;
+}
+
+/* Factions overview */
+.faction-summary {
+  padding: 2rem;
+  text-align: center;
+}
+
+.faction-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.faction-card {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 300px;
+  background: #23161c;
+  padding: 1.5rem;
+  border: 1px solid #3a0d0d;
+  color: #ffe0e0;
+  box-shadow: 0 2px 12px rgba(60, 20, 20, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.faction-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(120, 30, 30, 0.35);
+}
+
+.faction-card h3 {
+  margin-top: 0;
+}
+
+.faction-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, #3a0d0d, #7a1f1f, #2d0d0d);
+  color: #ffe0e0;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.faction-card a:hover {
+  background: linear-gradient(90deg, #7a1f1f, #ff3a3a, #3a0d0d);
+  color: #fff0f0;
+}
+
+/* Back to overview link */
+.back-faction-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #3a0d0d, #7a1f1f, #2d0d0d);
+  color: #ffe0e0;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.back-faction-link:hover {
+  background: linear-gradient(90deg, #7a1f1f, #ff3a3a, #3a0d0d);
+  color: #fff0f0;
 }
