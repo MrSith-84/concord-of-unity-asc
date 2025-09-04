@@ -41,9 +41,21 @@ h3 {
 }
 
 .nav-logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.2rem;
-  color: #f1faee;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(230, 57, 70, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(230, 57, 70, 0.8));
 }
 
 .nav-links {
