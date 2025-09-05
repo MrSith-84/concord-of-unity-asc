@@ -13,37 +13,30 @@
   <nav class="main-navigation">
     <div class="nav-container">
       <div class="nav-logo">
-        <img src="factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
+        <img src="../factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
       </div>
       <div class="nav-links">
-        <a href="index.html" class="nav-link">Command Center</a>
-        <a href="codex.html" class="nav-link active">Codex</a>
+        <a href="../index.html" class="nav-link">Command Center</a>
         <div class="nav-dropdown">
           <span class="nav-link dropdown-toggle">Factions</span>
           <div class="dropdown-menu">
-            <a href="factions/ghost_legion.html">Ghost Legion</a>
-            <a href="factions/voidborn_syndicate.html">Voidborn Syndicate</a>
-            <a href="factions/titan_order.html">Titan Order</a>
-            <a href="factions/specter_network.html">Specter Network</a>
-            <a href="factions/shadowblade_mercenary.html">Shadowblade Mercenary</a>
+            <a href="ghost_legion.html">Ghost Legion</a>
+            <a href="voidborn_syndicate.html">Voidborn Syndicate</a>
+            <a href="titan_order.html">Titan Order</a>
+            <a href="specter_network.html">Specter Network</a>
+            <a href="shadowblade_mercenary.html">Shadowblade Mercenary</a>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Breadcrumb -->
-  <!-- <nav class="breadcrumb">
-    <a href="index.html">Home</a> ›
-    <span>Codex</span>
-  </nav> -->
-
   <main class="container">
     <section style="text-align:center;">
       <h2>Consortium Codex</h2>
       <h3>The Wall of Crests</h3>
-      <p>Each emblem represents a pillar of the Consortium’s power. Together, they form the unbreakable will of the
-        Apex.</p>
+      <p>Each emblem represents a pillar of the Consortium’s power.</p>
+      <input type="text" id="codexSearch" placeholder="Search factions..." aria-label="Search factions">
     </section>
 
     <div class="faction-grid">
@@ -92,12 +85,17 @@
       </div>
     </div>
   </main>
-
   <footer class="container">
     <small>
       <a href="index.html">Return to Main Page</a>
     </small>
+    <nav class="breadcrumb"></nav>
   </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
