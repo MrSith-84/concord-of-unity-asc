@@ -213,6 +213,14 @@ main.container {
   padding: 2rem 0;
 }
 
+/* Faction page content centering */
+main.container section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 footer {
   margin-top: 3rem;
   text-align: center;
