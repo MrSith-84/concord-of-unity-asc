@@ -1,1 +1,0 @@
-User created a dark-themed faction website for 'The Apex Separatist Consortium' with custom emblem, doctrine, and structure. Requested export to Replit without image due to file-type restrictions.
