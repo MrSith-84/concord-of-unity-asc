@@ -115,7 +115,7 @@ h3 {
   background: rgba(11, 12, 16, 0.98);
   border: 1px solid rgba(102, 252, 241, 0.5);
   border-radius: 4px;
-  min-width: 200px;
+  min-width: 160px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -132,12 +132,13 @@ h3 {
 
 .dropdown-menu a {
   display: block;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.8rem;
   color: #66fcf1 !important;
   text-decoration: none;
   border-bottom: 1px solid rgba(102, 252, 241, 0.2);
   transition: all 0.3s ease;
   font-family: 'Inter', 'Roboto', sans-serif;
+  font-size: 0.85rem;
 }
 
 .dropdown-menu a:last-child {
