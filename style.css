@@ -219,16 +219,27 @@ figure img:hover {
 
 /* Buttons */
 button {
-  background: #e63946;
-  border: none;
-  color: #f1faee;
-  transition: background 0.3s ease, transform 0.2s ease;
+  background: linear-gradient(135deg, rgba(102, 252, 241, 0.1), rgba(69, 162, 158, 0.2));
+  border: 2px solid rgba(102, 252, 241, 0.3);
+  border-radius: 8px;
+  color: #66fcf1;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-  background: #ff4c4c;
-  transform: scale(1.05);
-  cursor: pointer;
+  background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(69, 162, 158, 0.3));
+  color: #ffffff;
+  border-color: #66fcf1;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 
+              0 0 15px rgba(102, 252, 241, 0.3);
 }
 
 /* Layout */
@@ -383,17 +394,45 @@ footer {
 .faction-card a {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.5rem 1.5rem;
-  background: linear-gradient(90deg, #3a0d0d, #7a1f1f, #2d0d0d);
-  color: #ffe0e0;
+  padding: 0.6rem 1.8rem;
+  background: linear-gradient(135deg, rgba(102, 252, 241, 0.1), rgba(69, 162, 158, 0.2));
+  color: #66fcf1;
   text-decoration: none;
-  font-family: 'Orbitron', sans-serif;
-  transition: background 0.3s ease;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 2px solid rgba(102, 252, 241, 0.3);
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.faction-card a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 252, 241, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .faction-card a:hover {
-  background: linear-gradient(90deg, #7a1f1f, #ff3a3a, #3a0d0d);
-  color: #fff0f0;
+  background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(69, 162, 158, 0.3));
+  color: #ffffff;
+  border-color: #66fcf1;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 
+              0 0 15px rgba(102, 252, 241, 0.3);
+}
+
+.faction-card a:hover::before {
+  left: 100%;
 }
 
 /* Back to overview link */
