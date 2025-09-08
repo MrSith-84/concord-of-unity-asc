@@ -215,10 +215,21 @@ main.container {
 
 /* Faction page content centering */
 main.container section {
-  text-align: center;
+  text-align: center !important;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+main.container section h2,
+main.container section h3,
+main.container section p,
+main.container section figure {
+  text-align: center !important;
+}
+
+main.container section figure {
+  margin: 2rem auto !important;
 }
 
 footer {

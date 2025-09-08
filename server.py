@@ -5,6 +5,13 @@ import os
 from urllib.parse import urlparse
 
 class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        # Add cache control headers to prevent caching
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
+        super().end_headers()
+    
     def do_GET(self):
         # Parse the URL
         parsed_path = urlparse(self.path)
