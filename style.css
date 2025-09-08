@@ -1,10 +1,17 @@
 /* Global styling */
 body {
-  background: linear-gradient(to bottom right, #0a0a0a, #1c1c1c);
-  color: #e63946;
+  background: linear-gradient(135deg, #0b0c10 0%, #1f2833 25%, #0b0c10 50%, #1f2833 75%, #0b0c10 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite, fadeInPage 1s ease-out forwards;
+  color: #66fcf1;
   font-family: 'Orbitron', 'Segoe UI', sans-serif;
   opacity: 0;
-  animation: fadeInPage 1s ease-out forwards;
+  min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 @keyframes fadeInPage {
@@ -13,10 +20,14 @@ body {
   }
 }
 
-h1,
+h1 {
+  color: #66fcf1;
+  text-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+}
+
 h2,
 h3 {
-  color: #f1faee;
+  color: #c5c6c7;
 }
 
 /* Main Navigation */
@@ -213,23 +224,106 @@ main.container {
   padding: 2rem 0;
 }
 
-/* Faction page content centering */
+/* Modern Faction Page Styling */
 main.container section {
   text-align: center !important;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.95), rgba(25, 15, 30, 0.9));
+  border-radius: 20px;
+  border: 1px solid rgba(102, 252, 241, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 0 rgba(102, 252, 241, 0.1);
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
 }
 
-main.container section h2,
-main.container section h3,
-main.container section p,
-main.container section figure {
-  text-align: center !important;
+main.container section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 252, 241, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+main.container section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #66fcf1, #45a29e, #c5c6c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 30px rgba(102, 252, 241, 0.5);
+  letter-spacing: 2px;
+}
+
+main.container section h3 {
+  font-size: 1.8rem;
+  color: #66fcf1;
+  margin: 2.5rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+main.container section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #66fcf1, transparent);
+}
+
+main.container section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #c5c6c7;
+  margin: 1.5rem 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 main.container section figure {
-  margin: 2rem auto !important;
+  margin: 3rem auto !important;
+  position: relative;
+}
+
+main.container section figure img {
+  border-radius: 15px;
+  border: 2px solid rgba(102, 252, 241, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(102, 252, 241, 0.2);
+  transition: all 0.4s ease;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+main.container section figure img:hover {
+  transform: scale(1.05) rotateY(5deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8),
+              0 0 40px rgba(102, 252, 241, 0.4);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+main.container section figcaption {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #45a29e;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 footer {
