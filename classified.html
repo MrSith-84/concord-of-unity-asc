@@ -10,7 +10,7 @@
     <style>
         /* Classified page specific styles */
         .classified-header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b2e 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #1a0e0e 0%, #2d1515 50%, #1a0e0e 100%);
             border: 2px solid #e63946;
             border-radius: 8px;
             padding: 2rem;
@@ -76,8 +76,8 @@
         }
         
         .classified-file {
-            background: linear-gradient(145deg, #2d1b2e, #1a1a1a);
-            border: 1px solid #457b9d;
+            background: linear-gradient(145deg, #1a0e0e, #0a0a0a);
+            border: 1px solid #e63946;
             border-radius: 8px;
             padding: 1.5rem;
             transition: all 0.3s ease;
@@ -96,7 +96,7 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #457b9d;
+            border-bottom: 1px solid #c0c0c0;
             padding-bottom: 0.5rem;
         }
         
@@ -115,12 +115,12 @@
         
         .terminal-window {
             background: #000;
-            border: 1px solid #457b9d;
+            border: 1px solid #e63946;
             border-radius: 4px;
             padding: 1rem;
             margin: 2rem 0;
             font-family: 'Courier New', monospace;
-            color: #00ff00;
+            color: #c0c0c0;
             position: relative;
         }
         
@@ -155,7 +155,7 @@
         
         .typing-animation {
             overflow: hidden;
-            border-right: 2px solid #00ff00;
+            border-right: 2px solid #e63946;
             white-space: nowrap;
             animation: typing 3s steps(40) infinite alternate;
         }
@@ -182,8 +182,8 @@
         }
         
         .faction-badge {
-            background: linear-gradient(145deg, #2d1b2e, #1a1a1a);
-            border: 1px solid #457b9d;
+            background: linear-gradient(145deg, #1a0e0e, #0a0a0a);
+            border: 1px solid #e63946;
             border-radius: 6px;
             padding: 1rem;
             text-align: center;
@@ -191,8 +191,10 @@
         }
         
         .faction-badge:hover {
-            border-color: #e63946;
-            background: linear-gradient(145deg, #3d2b3e, #2a1a2a);
+            border-color: #ff4c4c;
+            background: linear-gradient(145deg, #2d1515, #1a0e0e);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
         }
         
         .faction-badge img {
@@ -203,6 +205,12 @@
     </style>
 </head>
 <body>
+    <!-- Floating Master Crest -->
+    <div class="floating-crest" onclick="window.location.href='/'">
+        <img src="factions/images/master_crest.png" alt="Master Crest">
+        <div class="floating-crest-label">Master Crest</div>
+    </div>
+
     <!-- Navigation -->
     <nav class="container-fluid">
         <ul>
@@ -267,7 +275,7 @@
                 <p>Establishing secure connection...</p>
                 <p>Loading faction databases...</p>
                 <p>Decrypting classified files...</p>
-                <p style="color: #00ff00;">ACCESS GRANTED ✓</p>
+                <p style="color: #e63946;">ACCESS GRANTED ✓</p>
             </div>
         </div>
 
