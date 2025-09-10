@@ -112,11 +112,11 @@ def callback():
 
     login_user(user)
 
-    return redirect(url_for("index"))
+    return redirect("/classified.html")
 
 
 @google_auth.route("/logout")
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("index"))
+    return redirect("/")
