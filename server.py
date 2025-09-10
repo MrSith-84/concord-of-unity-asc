@@ -72,6 +72,13 @@ def api_user():
 def signin():
     return redirect(url_for('google_auth.login'))
 
+# Protected classified page - requires authentication
+@app.route('/classified.html')
+def classified():
+    if not current_user.is_authenticated:
+        return redirect(url_for('google_auth.login'))
+    return send_from_directory('.', 'classified.html')
+
 
 # Serve static files with proper routing
 @app.route('/')
@@ -81,6 +88,11 @@ def index():
 
 @app.route('/<path:filename>')
 def serve_static(filename):
+    # Security: Block access to sensitive paths
+    blocked_paths = ['instance/', '.git/', '__pycache__/', '.env', 'server.py', 'models.py', 'google_auth.py']
+    if any(filename.startswith(path) or filename.endswith('.py') or filename.endswith('.db') for path in blocked_paths):
+        return 'Access denied', 403
+    
     # Handle faction pages
     if filename.startswith('factions/') and filename.endswith('.html'):
         try:
@@ -88,15 +100,20 @@ def serve_static(filename):
         except:
             return send_from_directory('.', '404.html'), 404
 
-    # Handle other files
-    try:
-        return send_from_directory('.', filename)
-    except:
-        # File doesn't exist, serve 404
+    # Handle other safe static files
+    allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp']
+    if any(filename.endswith(ext) for ext in allowed_extensions):
         try:
-            return send_from_directory('.', '404.html'), 404
+            return send_from_directory('.', filename)
         except:
-            return 'File not found', 404
+            # File doesn't exist, serve 404
+            try:
+                return send_from_directory('.', '404.html'), 404
+            except:
+                return 'File not found', 404
+    
+    # Block everything else
+    return 'Access denied', 403
 
 
 if __name__ == '__main__':
