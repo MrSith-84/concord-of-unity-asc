@@ -52,12 +52,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // If in factions or codex
     if (path.includes("codex.html")) {
-      breadcrumbNav.innerHTML += " › <span>Codex</span>";
+      const separator1 = document.createTextNode(" › ");
+      const codexSpan = document.createElement("span");
+      codexSpan.textContent = "Codex";
+      breadcrumbNav.appendChild(separator1);
+      breadcrumbNav.appendChild(codexSpan);
     } else if (path.includes("factions")) {
-      breadcrumbNav.innerHTML += " › <a href=\"/codex.html\">Codex</a>";
+      const separator1 = document.createTextNode(" › ");
+      const codexLink = document.createElement("a");
+      codexLink.href = "/codex.html";
+      codexLink.textContent = "Codex";
+      breadcrumbNav.appendChild(separator1);
+      breadcrumbNav.appendChild(codexLink);
 
       const pageName = path[path.length - 1].replace(".html", "").replace("_", " ");
-      breadcrumbNav.innerHTML += " › <span>" + pageName.replace(/\b\w/g, c => c.toUpperCase()) + "</span>";
+      const separator2 = document.createTextNode(" › ");
+      const pageSpan = document.createElement("span");
+      pageSpan.textContent = pageName.replace(/\b\w/g, c => c.toUpperCase());
+      breadcrumbNav.appendChild(separator2);
+      breadcrumbNav.appendChild(pageSpan);
     }
   }
 
