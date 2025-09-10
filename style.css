@@ -14,7 +14,7 @@ body {
 /* Floating Master Crest */
 .floating-crest {
   position: fixed;
-  top: 20px;
+  top: 100px;
   right: 20px;
   z-index: 1001;
   background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 14, 14, 0.8));
