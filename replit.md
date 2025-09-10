@@ -1,6 +1,15 @@
 # Overview
 
-The Apex Separatist Consortium is a dark-themed fictional faction website built as a static site. It presents a sci-fi universe featuring a galactic syndicate with multiple sub-factions, each with their own lore, emblems, and specialized roles. The website serves as an immersive portal into this fictional organization, complete with detailed faction pages and thematic design elements.
+The Apex Separatist Consortium is a dark-themed fictional faction website featuring a sci-fi universe with a galactic syndicate and multiple sub-factions. The website serves as an immersive portal into this fictional organization, complete with detailed faction pages, secure authentication, and a classified files section. The site now features a striking red and metallic silver cyberpunk aesthetic with advanced visual effects.
+
+# Recent Changes
+
+## September 2025 Redesign
+- **Color Scheme Overhaul**: Transitioned from cyan/blue accents to striking red (#e63946) and metallic silver (#c0c0c0) theme
+- **Cyberpunk Background**: Added custom-generated cyberpunk background image with red and metallic elements
+- **Floating Master Crest**: Implemented floating Master Crest component in top-right corner with hover effects and mobile responsiveness
+- **Visual Consistency**: Unified color palette across all pages including classified section, removing blue/purple accent inconsistencies
+- **Enhanced Authentication**: Secure Google OAuth integration with classified files access for verified users
 
 # User Preferences
 
