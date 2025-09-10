@@ -70,9 +70,22 @@ def login():
 def callback():
     if not AUTH_CONFIGURED:
         return "OAuth not configured", 503
+    
+    # Debug: Check what we received from Google
     code = request.args.get("code")
-    google_provider_cfg = requests.get(GOOGLE_DISCOVERY_URL).json()
-    token_endpoint = google_provider_cfg["token_endpoint"]
+    error = request.args.get("error")
+    
+    if error:
+        return f"OAuth error: {error}. Please try again. <a href='/'>Return home</a>", 400
+    
+    if not code:
+        return "No authorization code received from Google. Please try again. <a href='/'>Return home</a>", 400
+    
+    try:
+        google_provider_cfg = requests.get(GOOGLE_DISCOVERY_URL).json()
+        token_endpoint = google_provider_cfg["token_endpoint"]
+    except Exception as e:
+        return f"Failed to get Google configuration: {str(e)}. <a href='/'>Return home</a>", 500
 
     token_url, headers, body = client.prepare_token_request(
         token_endpoint,
