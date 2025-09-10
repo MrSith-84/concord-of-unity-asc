@@ -124,10 +124,7 @@ def callback():
         db.session.commit()
 
     login_user(user)
-    
-    # Debug: Log successful login
-    print(f"User {user.username} logged in successfully, redirecting to classified page")
-    
+
     return redirect("/classified.html")
 
 
