@@ -720,6 +720,77 @@ h3 {
   margin-bottom: 0.8rem;
 }
 
+/* Tactics Grid Styling */
+.tactics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tactic-card {
+  background: rgba(230, 57, 70, 0.05);
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tactic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e63946, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tactic-card:hover {
+  background: rgba(230, 57, 70, 0.08);
+  border-color: #e63946;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.15);
+}
+
+.tactic-card:hover::before {
+  opacity: 1;
+}
+
+.tactic-icon {
+  font-size: 1.8rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(230, 57, 70, 0.1);
+  border-radius: 50%;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+.tactic-content h4 {
+  color: #e63946;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(230, 57, 70, 0.3);
+}
+
+.tactic-content p {
+  color: #c0c0c0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 /* Legacy link styling for content links */
 a:not(.nav-link):not(.dropdown-menu a) {
   color: #e63946;
