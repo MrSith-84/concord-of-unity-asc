@@ -102,6 +102,62 @@ body {
   51%, 100% { opacity: 0.6; }
 }
 
+/* Offline Indicator */
+.offline-indicator {
+  position: fixed;
+  top: 180px;
+  left: 20px;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(180, 40, 40, 0.8));
+  border: 2px solid #e63946;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(230, 57, 70, 0.4);
+  backdrop-filter: blur(10px);
+  animation: offlinePulse 1.5s ease-in-out infinite;
+  cursor: default;
+  user-select: none;
+}
+
+.offline-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: #e63946;
+  animation: offlineBlink 1s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(230, 57, 70, 0.8);
+}
+
+.offline-text {
+  color: #f1faee;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes offlinePulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(230, 57, 70, 0.4);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 25px rgba(230, 57, 70, 0.6);
+  }
+}
+
+@keyframes offlineBlink {
+  0%, 50% { 
+    opacity: 1; 
+    text-shadow: 0 0 8px rgba(230, 57, 70, 0.8);
+  }
+  51%, 100% { 
+    opacity: 0.4; 
+    text-shadow: 0 0 4px rgba(230, 57, 70, 0.4);
+  }
+}
+
 /* Hazard button styling */
 .hazard-button {
   position: relative;
