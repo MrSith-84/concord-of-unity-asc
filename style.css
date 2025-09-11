@@ -700,11 +700,30 @@ h3 {
 
 /* Tier Section Styling */
 .tier-section {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: rgba(230, 57, 70, 0.05);
-  border-left: 3px solid #e63946;
-  border-radius: 4px;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.08) 0%, rgba(10, 10, 10, 0.4) 100%);
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tier-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #e63946, transparent);
+  opacity: 0.6;
+}
+
+.tier-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.15);
+  border-color: rgba(230, 57, 70, 0.4);
 }
 
 .tier-section h4 {
@@ -723,19 +742,30 @@ h3 {
 /* Tier Header with Emblem */
 .tier-header {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  background: rgba(230, 57, 70, 0.05);
+  border-bottom: 1px solid rgba(230, 57, 70, 0.1);
+  position: relative;
 }
 
 .tier-emblem {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 2px solid rgba(230, 57, 70, 0.3);
-  background: rgba(10, 10, 10, 0.5);
-  padding: 4px;
+  border: 3px solid rgba(230, 57, 70, 0.4);
+  background: radial-gradient(circle at center, rgba(10, 10, 10, 0.8) 0%, rgba(230, 57, 70, 0.1) 100%);
+  padding: 6px;
   flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tier-section:hover .tier-emblem {
+  border-color: #e63946;
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+  transform: scale(1.05);
 }
 
 .tier-info {
@@ -743,11 +773,28 @@ h3 {
 }
 
 .tier-info h4 {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .tier-info p {
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Tier Content */
+.tier-content {
+  padding: 1.5rem;
+  background: rgba(10, 10, 10, 0.2);
+}
+
+.tier-content p {
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 /* Tactics Grid Styling */
