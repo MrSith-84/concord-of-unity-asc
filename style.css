@@ -224,7 +224,7 @@ h3 {
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6),
               0 0 20px rgba(230, 57, 70, 0.2);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .main-navigation::before {
@@ -324,6 +324,7 @@ h3 {
   align-items: center;
   padding: 0 2rem;
   position: relative;
+  overflow: visible;
 }
 
 .nav-left {
@@ -336,6 +337,8 @@ h3 {
   display: flex;
   align-items: center;
   gap: 2rem;
+  overflow: visible;
+  position: relative;
 }
 
 .nav-right {
