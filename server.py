@@ -85,6 +85,10 @@ def classified():
 def index():
     return send_from_directory('.', 'index.html')
 
+@app.route('/access.html')
+def access_page():
+    return send_from_directory('.', 'access.html')
+
 
 @app.route('/<path:filename>')
 def serve_static(filename):
