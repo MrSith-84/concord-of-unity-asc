@@ -115,14 +115,29 @@ body {
                0 0 15px rgba(255, 107, 53, 0.6) !important;
 }
 
+.hazard-button {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
 .hazard-button::before {
   content: "⚠️";
   position: absolute;
-  left: 8px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.9rem;
+  font-size: 1rem;
   animation: warningBlink 1.5s ease-in-out infinite;
+}
+
+.hazard-button::after {
+  content: "⚠️";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  animation: warningBlink 1.5s ease-in-out infinite 0.75s;
 }
 
 .hazard-button:hover {
