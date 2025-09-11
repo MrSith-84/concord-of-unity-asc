@@ -720,6 +720,36 @@ h3 {
   margin-bottom: 0.8rem;
 }
 
+/* Tier Header with Emblem */
+.tier-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tier-emblem {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(230, 57, 70, 0.3);
+  background: rgba(10, 10, 10, 0.5);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.tier-info {
+  flex: 1;
+}
+
+.tier-info h4 {
+  margin: 0 0 0.3rem 0;
+}
+
+.tier-info p {
+  margin: 0;
+}
+
 /* Tactics Grid Styling */
 .tactics-grid {
   display: grid;
