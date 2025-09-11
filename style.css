@@ -51,6 +51,54 @@ body {
 }
 
 
+/* Under Construction floating notice */
+.under-construction {
+  position: fixed;
+  top: 180px;
+  left: 20px;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.95), rgba(204, 51, 51, 0.9));
+  border: 2px solid #e63946;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(230, 57, 70, 0.3);
+  backdrop-filter: blur(10px);
+  animation: constructionPulse 2s ease-in-out infinite alternate;
+  cursor: default;
+  user-select: none;
+}
+
+.construction-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  animation: constructionBlink 1.5s ease-in-out infinite;
+}
+
+.construction-text {
+  color: #f1faee;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes constructionPulse {
+  0% { 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(230, 57, 70, 0.3);
+  }
+  100% { 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(230, 57, 70, 0.5);
+  }
+}
+
+@keyframes constructionBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.6; }
+}
+
 /* Mobile responsive adjustments for floating crest */
 @media (max-width: 768px) {
   .floating-crest {
@@ -68,6 +116,16 @@ body {
     right: 10px;
     width: 50px;
     height: 50px;
+  }
+  
+  .under-construction {
+    top: 160px;
+    left: 10px;
+    padding: 0.6rem 1rem;
+  }
+  
+  .construction-text {
+    font-size: 0.75rem;
   }
 }
 
