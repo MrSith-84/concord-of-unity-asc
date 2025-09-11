@@ -2,8 +2,8 @@
 body {
   background: url('attached_assets/sithbackground.svg') center center/cover no-repeat fixed,
               linear-gradient(135deg, #0a0a0a 0%, #1a0e0e 25%, #0a0a0a 50%, #1a0e0e 75%, #0a0a0a 100%);
-  background-size: cover, 400% 400%;
-  animation: gradientShift 15s ease infinite, fadeInPage 1s ease-out forwards;
+  background-size: cover, 100% 100%;
+  animation: fadeInPage 1s ease-out forwards;
   color: #c0c0c0;
   font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
   font-size: 16px;
@@ -71,10 +71,6 @@ body {
   }
 }
 
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
 
 @keyframes fadeInPage {
   to {
