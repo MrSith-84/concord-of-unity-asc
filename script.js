@@ -1,5 +1,76 @@
 // script.js
 
+// Page Transition System
+class TransitionManager {
+  constructor() {
+    this.overlay = document.getElementById('transitionOverlay');
+    this.message = document.getElementById('transitionMessage');
+    this.status = document.getElementById('transitionStatus');
+    this.isTransitioning = false;
+    
+    this.messages = [
+      'Establishing link to data stream...',
+      'Accessing faction networks...',
+      'Decrypting classified data...',
+      'Initializing secure connection...',
+      'Synchronizing with command center...',
+      'Loading faction intelligence...',
+      'Authenticating access protocols...'
+    ];
+    
+    this.statusMessages = [
+      '// SECURE CONNECTION ESTABLISHED',
+      '// DATA STREAM ACTIVE',
+      '// NETWORK ACCESS GRANTED',
+      '// ENCRYPTION PROTOCOL VERIFIED',
+      '// FACTION DATABASE ONLINE'
+    ];
+  }
+  
+  show() {
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+    
+    // Randomize messages for variety
+    this.message.textContent = this.messages[Math.floor(Math.random() * this.messages.length)];
+    this.status.textContent = this.statusMessages[Math.floor(Math.random() * this.statusMessages.length)];
+    
+    this.overlay.classList.add('active');
+  }
+  
+  hide() {
+    setTimeout(() => {
+      this.overlay.classList.remove('active');
+      this.isTransitioning = false;
+    }, 2200); // Match animation duration
+  }
+  
+  transition(url) {
+    this.show();
+    setTimeout(() => {
+      window.location.href = url;
+    }, 2000);
+  }
+}
+
+// Initialize transition manager
+const transitionManager = new TransitionManager();
+
+// Add transition to all internal links
+function addTransitionToLinks() {
+  const links = document.querySelectorAll('a[href]');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    // Only add transitions to internal links (not external or auth links)
+    if (href && !href.startsWith('http') && !href.startsWith('/access') && !href.startsWith('/logout') && !href.includes('google')) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        transitionManager.transition(href);
+      });
+    }
+  });
+}
+
 // Authentication functionality
 async function checkAuthStatus() {
   try {
@@ -39,6 +110,9 @@ async function checkAuthStatus() {
 document.addEventListener("DOMContentLoaded", () => {
   // Check authentication status
   checkAuthStatus();
+  
+  // Initialize page transitions
+  addTransitionToLinks();
   const breadcrumbNav = document.querySelector(".breadcrumb");
   if (breadcrumbNav) {
     breadcrumbNav.innerHTML = ""; // Clear existing content
