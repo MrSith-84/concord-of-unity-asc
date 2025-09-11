@@ -113,9 +113,6 @@ body {
   animation: hazardPulse 2s ease-in-out infinite alternate;
   text-shadow: 0 0 8px rgba(255, 204, 2, 0.8),
                0 0 15px rgba(255, 107, 53, 0.6) !important;
-}
-
-.hazard-button {
   padding-left: 3rem !important;
   padding-right: 3rem !important;
 }
@@ -128,6 +125,7 @@ body {
   transform: translateY(-50%);
   font-size: 1rem;
   animation: warningBlink 1.5s ease-in-out infinite;
+  z-index: 1;
 }
 
 .hazard-button::after {
@@ -138,6 +136,7 @@ body {
   transform: translateY(-50%);
   font-size: 1rem;
   animation: warningBlink 1.5s ease-in-out infinite 0.75s;
+  z-index: 1;
 }
 
 .hazard-button:hover {
