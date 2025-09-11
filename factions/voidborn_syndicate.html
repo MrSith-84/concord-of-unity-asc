@@ -10,29 +10,48 @@
 </head>
 
 <body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">APEX CONSORTIUM</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
   <!-- Under Construction Notice -->
   <div class="under-construction">
     <span class="construction-icon">⚠️</span>
     <span class="construction-text">UNDER CONSTRUCTION</span>
   </div>
+  
   <nav class="main-navigation">
     <div class="nav-container">
-      <div class="nav-logo">
-        <img src="../factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="../factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
+        </div>
+        <a href="../index.html" class="nav-link nav-brand">Command Center</a>
       </div>
-      <div class="nav-links">
-        <a href="../index.html" class="nav-link">Command Center</a>
+      
+      <div class="nav-center">
         <div class="nav-dropdown">
           <span class="nav-link dropdown-toggle">Factions</span>
           <div class="dropdown-menu">
-            <a href="ghost_legion.html">Ghost Legion</a>
-            <a href="voidborn_syndicate.html">Voidborn Syndicate</a>
-            <a href="titan_order.html">Titan Order</a>
-            <a href="specter_network.html">Specter Network</a>
-            <a href="shadowblade_mercenary.html">Shadowblade Mercenary</a>
+            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="voidborn_syndicate.html"><span class="online-dot"></span>Voidborn Syndicate</a>
+            <a href="titan_order.html"><span class="online-dot"></span>Titan Order</a>
+            <a href="specter_network.html"><span class="online-dot"></span>Specter Network</a>
+            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
           </div>
         </div>
-        <span class="nav-link" title="In Development">The Shadow Grid</span>
+        <span class="nav-link nav-disabled" title="In Development">The Shadow Grid</span>
+      </div>
+      
+      <div class="nav-right">
         <div class="auth-section" id="authSection">
           <div class="auth-loading" id="authLoading">
             <span class="auth-spinner"></span>
@@ -65,7 +84,7 @@
       <h2>Voidborn Syndicate</h2>
       <p>Shadowy brokers and smugglers who thrive in the lawless reaches of space, manipulating trade and power.</p>
       <figure style="text-align: center;">
-        <img src="images/voidborn_syndicate.png" alt="Voidborn Syndicate Emblem">
+        <img src="images/voidborn_syndicate.png" alt="Voidborn Syndicate Emblem" style="max-width:300px;">
         <figcaption>Emblem of the Voidborn Syndicate</figcaption>
       </figure>
       <h3>Lore</h3>
