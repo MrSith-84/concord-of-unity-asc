@@ -630,6 +630,28 @@ h3 {
   }
 }
 
+/* Tier Section Styling */
+.tier-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(230, 57, 70, 0.05);
+  border-left: 3px solid #e63946;
+  border-radius: 4px;
+}
+
+.tier-section h4 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px rgba(230, 57, 70, 0.3);
+}
+
+.tier-section p:first-of-type {
+  font-style: italic;
+  color: #c0c0c0;
+  margin-bottom: 0.8rem;
+}
+
 /* Legacy link styling for content links */
 a:not(.nav-link):not(.dropdown-menu a) {
   color: #e63946;
