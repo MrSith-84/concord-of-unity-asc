@@ -102,6 +102,54 @@ body {
   51%, 100% { opacity: 0.6; }
 }
 
+/* Hazard button styling */
+.hazard-button {
+  position: relative;
+  background: linear-gradient(45deg, #ff6b35 0%, #e63946 25%, #ff6b35 50%, #e63946 75%, #ff6b35 100%) !important;
+  background-size: 40px 40px;
+  border: 2px solid #ffcc02 !important;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4),
+              inset 0 0 10px rgba(255, 204, 2, 0.2) !important;
+  animation: hazardPulse 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 8px rgba(255, 204, 2, 0.8),
+               0 0 15px rgba(255, 107, 53, 0.6) !important;
+}
+
+.hazard-button::before {
+  content: "⚠️";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  animation: warningBlink 1.5s ease-in-out infinite;
+}
+
+.hazard-button:hover {
+  background: linear-gradient(45deg, #ff8c42 0%, #ff4757 25%, #ff8c42 50%, #ff4757 75%, #ff8c42 100%) !important;
+  border-color: #ffdd33 !important;
+  box-shadow: 0 0 25px rgba(255, 107, 53, 0.6),
+              inset 0 0 15px rgba(255, 204, 2, 0.3),
+              0 0 40px rgba(255, 204, 2, 0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+@keyframes hazardPulse {
+  0% { 
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.4),
+                inset 0 0 10px rgba(255, 204, 2, 0.2);
+  }
+  100% { 
+    box-shadow: 0 0 25px rgba(255, 107, 53, 0.6),
+                inset 0 0 15px rgba(255, 204, 2, 0.3);
+  }
+}
+
+@keyframes warningBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.5; }
+}
+
 /* Mobile responsive adjustments for floating crest */
 @media (max-width: 768px) {
   .floating-crest {
