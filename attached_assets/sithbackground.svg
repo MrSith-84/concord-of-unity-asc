@@ -1,0 +1,132 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark background gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Red glow gradient -->
+    <radialGradient id="red-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff4444;stop-opacity:0.3" />
+      <stop offset="70%" style="stop-color:#cc3333;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ff4444;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Circuit pattern -->
+    <pattern id="circuit-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none"/>
+      <!-- Horizontal lines -->
+      <line x1="0" y1="25" x2="100" y2="25" stroke="#ff4444" stroke-width="0.5" opacity="0.2"/>
+      <line x1="0" y1="50" x2="100" y2="50" stroke="#cc3333" stroke-width="0.5" opacity="0.2"/>
+      <line x1="0" y1="75" x2="100" y2="75" stroke="#ff4444" stroke-width="0.5" opacity="0.2"/>
+      <!-- Vertical lines -->
+      <line x1="25" y1="0" x2="25" y2="100" stroke="#ff4444" stroke-width="0.5" opacity="0.2"/>
+      <line x1="50" y1="0" x2="50" y2="100" stroke="#cc3333" stroke-width="0.5" opacity="0.2"/>
+      <line x1="75" y1="0" x2="75" y2="100" stroke="#ff4444" stroke-width="0.5" opacity="0.2"/>
+      <!-- Connection nodes -->
+      <circle cx="25" cy="25" r="1" fill="#ff4444" opacity="0.4"/>
+      <circle cx="50" cy="50" r="1" fill="#cc3333" opacity="0.4"/>
+      <circle cx="75" cy="75" r="1" fill="#ff4444" opacity="0.4"/>
+    </pattern>
+
+    <!-- Sith rune symbols -->
+    <symbol id="sith-rune-1" viewBox="0 0 20 20">
+      <path d="M10 2 L18 6 L18 14 L10 18 L2 14 L2 6 Z" fill="none" stroke="#ff4444" stroke-width="1" opacity="0.6"/>
+      <circle cx="10" cy="10" r="3" fill="#cc3333" opacity="0.4"/>
+    </symbol>
+
+    <symbol id="sith-rune-2" viewBox="0 0 20 20">
+      <polygon points="10,2 18,8 14,18 6,18 2,8" fill="none" stroke="#ff4444" stroke-width="1" opacity="0.6"/>
+      <circle cx="10" cy="10" r="2" fill="#cc3333" opacity="0.4"/>
+    </symbol>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)"/>
+
+  <!-- Circuit pattern overlay -->
+  <rect width="1920" height="1080" fill="url(#circuit-pattern)"/>
+
+  <!-- Red glow orbs -->
+  <circle cx="300" cy="200" r="150" fill="url(#red-glow)" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1600" cy="300" r="120" fill="url(#red-glow)" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="800" r="100" fill="url(#red-glow)" opacity="0.4">
+    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1500" cy="700" r="130" fill="url(#red-glow)" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Sith runes scattered around -->
+  <use href="#sith-rune-1" x="200" y="150" width="30" height="30">
+    <animateTransform attributeName="transform" type="rotate" values="0 215 165;360 215 165" dur="20s" repeatCount="indefinite"/>
+  </use>
+  <use href="#sith-rune-2" x="1700" y="200" width="25" height="25">
+    <animateTransform attributeName="transform" type="rotate" values="0 1712.5 212.5;360 1712.5 212.5" dur="25s" repeatCount="indefinite"/>
+  </use>
+  <use href="#sith-rune-1" x="300" y="700" width="35" height="35">
+    <animateTransform attributeName="transform" type="rotate" values="0 317.5 717.5;360 317.5 717.5" dur="18s" repeatCount="indefinite"/>
+  </use>
+  <use href="#sith-rune-2" x="1400" y="650" width="28" height="28">
+    <animateTransform attributeName="transform" type="rotate" values="0 1414 664;360 1414 664" dur="22s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- Data streams -->
+  <path d="M 100 100 Q 500 200 900 150" stroke="#ff4444" stroke-width="2" fill="none" opacity="0.3">
+    <animate attributeName="stroke-dasharray" values="0,800;800,0" dur="8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 1820 100 Q 1420 200 1020 150" stroke="#cc3333" stroke-width="2" fill="none" opacity="0.3">
+    <animate attributeName="stroke-dasharray" values="0,800;800,0" dur="9s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 100 980 Q 500 880 900 930" stroke="#ff4444" stroke-width="2" fill="none" opacity="0.3">
+    <animate attributeName="stroke-dasharray" values="0,800;800,0" dur="7s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 1820 980 Q 1420 880 1020 930" stroke="#cc3333" stroke-width="2" fill="none" opacity="0.3">
+    <animate attributeName="stroke-dasharray" values="0,800;800,0" dur="8.5s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Floating particles -->
+  <circle cx="150" cy="150" r="2" fill="#ff4444" opacity="0.8">
+    <animateMotion dur="30s" repeatCount="indefinite">
+      <path d="M 0 0 Q 200 100 400 0 Q 600 -100 800 0"/>
+    </animateMotion>
+  </circle>
+  <circle cx="1770" cy="200" r="2" fill="#cc3333" opacity="0.8">
+    <animateMotion dur="35s" repeatCount="indefinite">
+      <path d="M 0 0 Q -200 100 -400 0 Q -600 -100 -800 0"/>
+    </animateMotion>
+  </circle>
+  <circle cx="250" cy="750" r="2" fill="#ff4444" opacity="0.8">
+    <animateMotion dur="28s" repeatCount="indefinite">
+      <path d="M 0 0 Q 200 -100 400 0 Q 600 100 800 0"/>
+    </animateMotion>
+  </circle>
+  <circle cx="1670" cy="650" r="2" fill="#cc3333" opacity="0.8">
+    <animateMotion dur="32s" repeatCount="indefinite">
+      <path d="M 0 0 Q -200 -100 -400 0 Q -600 100 -800 0"/>
+    </animateMotion>
+  </circle>
+
+  <!-- Central Sith insignia -->
+  <g transform="translate(960,540)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#ff4444" stroke-width="3" opacity="0.4">
+      <animate attributeName="stroke-dasharray" values="0,502;251,251;0,502" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Inner Sith symbol -->
+    <path d="M -30 -30 L 30 -30 L 30 30 L -30 30 Z M -15 -15 L 15 -15 M -15 0 L 15 0 M -15 15 L 15 15"
+          stroke="#ff4444" stroke-width="4" fill="none" opacity="0.7">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Center crystal -->
+    <circle cx="0" cy="0" r="8" fill="#cc3333" opacity="0.8">
+      <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
