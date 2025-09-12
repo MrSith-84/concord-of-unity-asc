@@ -106,6 +106,31 @@ async function checkAuthStatus() {
   }
 }
 
+// Tab functionality for faction pages
+function initializeTabs() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  
+  if (tabButtons.length === 0) return; // No tabs on this page
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetTab = button.getAttribute('data-tab');
+      
+      // Remove active class from all buttons and panels
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+      
+      // Add active class to clicked button and corresponding panel
+      button.classList.add('active');
+      const targetPanel = document.getElementById(targetTab);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+}
+
 // Dynamic Breadcrumbs
 document.addEventListener("DOMContentLoaded", () => {
   // Check authentication status
@@ -113,6 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Initialize page transitions
   addTransitionToLinks();
+  
+  // Initialize tabs if they exist on this page
+  initializeTabs();
   const breadcrumbNav = document.querySelector(".breadcrumb");
   if (breadcrumbNav) {
     breadcrumbNav.innerHTML = ""; // Clear existing content
