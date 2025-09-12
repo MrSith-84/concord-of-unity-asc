@@ -11,6 +11,14 @@ The Apex Separatist Consortium is a dark-themed fictional faction website featur
 - **Visual Consistency**: Unified color palette across all pages including classified section, removing blue/purple accent inconsistencies
 - **Enhanced Authentication**: Secure Google OAuth integration with classified files access for verified users
 
+## Concord of Unity Faction (September 2025)
+- **New Faction Addition**: Created complete "Concord of Unity" faction as diplomatic architects focused on unity and negotiation
+- **Navigation Integration**: Added Concord of Unity link next to "The Shadow Grid" across all faction pages and main navigation
+- **Custom Emblem**: Generated AI-powered faction emblem matching red/silver cyberpunk aesthetic theme
+- **Complete Faction Page**: Built comprehensive faction page with 4-tab interface (Overview, Structure, Operations, Relations)
+- **Faction Grid Integration**: Added faction card to main index page with thematic description and proper styling
+- **Dropdown Menu Addition**: Integrated into faction dropdown menus across all pages with operational status indicator
+
 ## Mobile Optimization (September 2025)
 - **Touch-Friendly Interface**: Added 44px minimum touch targets for all interactive elements (buttons, navigation, tabs)
 - **Responsive Tab Navigation**: Enhanced tab system for faction pages with flexible wrapping and proper mobile sizing
