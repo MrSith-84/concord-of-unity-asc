@@ -108,12 +108,12 @@ body {
   top: 180px;
   left: 20px;
   z-index: 1000;
-  background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(180, 40, 40, 0.8));
-  border: 2px solid #e63946;
+  background: linear-gradient(135deg, rgba(50, 50, 55, 0.9), rgba(70, 70, 75, 0.8));
+  border: 2px solid rgba(192, 192, 192, 0.6);
   border-radius: 8px;
   padding: 0.8rem 1.2rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
-              0 0 20px rgba(230, 57, 70, 0.4);
+              0 0 20px rgba(192, 192, 192, 0.3);
   backdrop-filter: blur(10px);
   animation: offlinePulse 1.5s ease-in-out infinite;
   cursor: default;
@@ -1445,6 +1445,10 @@ footer {
 
 /* Glowing hover effect for faction crests */
 .faction-card img {
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
