@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Propaganda Gallery - Concord Intelligence Briefing</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Concord Intelligence Briefing Styling */
+    body {
+      background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+                  linear-gradient(135deg, #1A1A2E 0%, #16213E 25%, #1A1A2E 50%, #16213E 75%, #1A1A2E 100%);
+      background-size: cover, 100% 100%;
+      color: #E5E5E5;
+    }
+
+    /* Navigation */
+    .main-navigation {
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(22, 33, 62, 0.95));
+      border-bottom: 3px solid #B8860B;
+      border-top: 1px solid rgba(184, 134, 11, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.3);
+    }
+
+    .nav-link { color: #C0C0C0; font-weight: 600; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .nav-link:hover { color: #DAA520; text-shadow: 0 0 10px rgba(218, 165, 32, 0.5); }
+    .nav-link.nav-current { color: #DAA520; font-weight: bold; text-shadow: 0 0 8px rgba(218, 165, 32, 0.4); }
+    .nav-link.nav-disabled { color: #666666; cursor: not-allowed; opacity: 0.5; }
+    .nav-dropdown:hover .dropdown-menu { background: linear-gradient(135deg, rgba(22, 33, 62, 0.95), rgba(26, 26, 46, 0.9)); border: 2px solid rgba(184, 134, 11, 0.5); }
+    .dropdown-menu a { color: #C0C0C0; font-weight: 500; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .dropdown-menu a:hover { background: rgba(184, 134, 11, 0.2); color: #DAA520; }
+
+    .nav-link.escape-button {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.3), rgba(139, 0, 0, 0.2));
+      border: 2px solid rgba(178, 34, 34, 0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: #CD853F;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-link.escape-button:hover {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.5), rgba(139, 0, 0, 0.4));
+      border-color: #B22222;
+      color: #FFFFFF;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Propaganda Gallery Styling */
+    .propaganda-header {
+      background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 25, 40, 0.9));
+      border: 1px solid rgba(184, 134, 11, 0.5);
+      box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    .classification-banner {
+      background: linear-gradient(90deg, #B22222, #8B0000, #B22222);
+      color: #FFFFFF;
+      padding: 0.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+    }
+
+    .gallery-title {
+      padding: 2rem;
+      background: linear-gradient(90deg, rgba(184, 134, 11, 0.3), rgba(22, 33, 62, 0.4));
+      border-bottom: 2px solid rgba(184, 134, 11, 0.6);
+    }
+
+    .gallery-title h1 {
+      color: #DAA520;
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-shadow: 0 0 20px rgba(218, 165, 32, 0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-subtitle {
+      color: #CD853F;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    /* Tab Navigation */
+    .gallery-tabs {
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(35, 35, 55, 0.9), rgba(25, 30, 45, 0.8));
+      border-bottom: 2px solid rgba(184, 134, 11, 0.6);
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .tab-button {
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(26, 26, 46, 0.3));
+      color: #C0C0C0;
+      border: 2px solid rgba(184, 134, 11, 0.4);
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.3), rgba(22, 33, 62, 0.4));
+      color: #DAA520;
+      border-color: #B8860B;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(184, 134, 11, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* Gallery Content */
+    .gallery-content {
+      background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 25, 40, 0.9));
+      border: 1px solid rgba(184, 134, 11, 0.5);
+      box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .poster-card {
+      background: linear-gradient(135deg, rgba(35, 35, 55, 0.9), rgba(25, 30, 45, 0.8));
+      border: 2px solid rgba(184, 134, 11, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .poster-card:hover {
+      border-color: #B8860B;
+      box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .poster-image {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, rgba(75, 75, 75, 0.3), rgba(50, 50, 50, 0.2));
+      border-bottom: 2px solid rgba(184, 134, 11, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .poster-card:hover .poster-image img {
+      transform: scale(1.05);
+    }
+
+    .poster-placeholder {
+      color: #888;
+      font-style: italic;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .poster-info {
+      padding: 1.5rem;
+    }
+
+    .poster-title {
+      color: #DAA520;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(218, 165, 32, 0.4);
+    }
+
+    .poster-caption {
+      color: #CD853F;
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .poster-description {
+      color: #D3D3D3;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .threat-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #B22222;
+      color: #FFFFFF;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin: 3rem 0 2rem 0;
+    }
+
+    .section-title {
+      color: #DAA520;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-shadow: 0 0 15px rgba(218, 165, 32, 0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: #CD853F;
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* Instructions Panel */
+    .instructions-panel {
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), rgba(139, 111, 8, 0.1));
+      border-left: 4px solid #B8860B;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .instructions-panel h4 {
+      color: #B8860B;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .instructions-panel p {
+      color: #D3D3D3;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-tabs { flex-direction: column; }
+      .poster-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .gallery-title { padding: 1rem; }
+      .gallery-title h1 { font-size: 1.8rem; }
+      .tab-content { padding: 1rem; }
+    }
+  </style>
+</head>
+<body class="fade-in">
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Intelligence Briefings</span>
+          <div class="dropdown-menu">
+            <a href="intel_enemy_factions.html">📋 Enemy Factions</a>
+            <a href="intel_consortium_heroes.html">🎯 Consortium Heroes</a>
+            <a href="intel_threat_assessment.html">⚠️ Threat Assessment</a>
+            <a href="intel_propaganda_gallery.html">🎨 Propaganda Gallery</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">The Shadow Grid</span>
+        <a href="concord_unity.html" class="nav-link">Concord of Unity</a>
+      </div>
+      
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link escape-button" title="Escape Enemy Territory">
+          ↩️ Return to Consortium
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Header Section -->
+    <section class="propaganda-header">
+      <div class="classification-banner">CLASSIFIED - PROPAGANDA ARCHIVE</div>
+      <div class="gallery-title">
+        <h1>CONCORD PROPAGANDA GALLERY</h1>
+        <div class="gallery-subtitle">Victory Through Unity - Strength Through Truth</div>
+      </div>
+      
+      <div class="gallery-tabs">
+        <button class="tab-button active" onclick="showTab('factions')">Enemy Factions</button>
+        <button class="tab-button" onclick="showTab('heroes')">Enemy Leaders</button>
+        <button class="tab-button" onclick="showTab('instructions')">Generation Guide</button>
+      </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="gallery-content">
+      <!-- Faction Posters Tab -->
+      <div id="factions" class="tab-content active">
+        <div class="section-header">
+          <h2 class="section-title">ENEMY FACTION PROPAGANDA</h2>
+          <p class="section-subtitle">Exposing the Threats to Unity</p>
+        </div>
+
+        <div class="poster-grid">
+          <!-- Ghost Legion Poster -->
+          <div class="poster-card">
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/factions/ghost_legion_propaganda.png" 
+                   alt="Ghost Legion Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Ghost Legion Propaganda Poster]<br>
+                <small>Stand in the Light — Ghosts Cannot Strike</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Ghost Legion</h3>
+              <p class="poster-caption">"Stand in the Light — Ghosts Cannot Strike"</p>
+              <p class="poster-description">Propaganda targeting the shadowy assassination network. Features a faceless hooded silhouette dissolving into smoke with eerie glowing eyes, rendered in vintage war poster style meets sci-fi minimalism.</p>
+            </div>
+          </div>
+
+          <!-- Voidborn Syndicate Poster -->
+          <div class="poster-card">
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/factions/voidborn_syndicate_propaganda.png" 
+                   alt="Voidborn Syndicate Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Voidborn Syndicate Propaganda Poster]<br>
+                <small>Crush the Parasites of Chaos</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Voidborn Syndicate</h3>
+              <p class="poster-caption">"Crush the Parasites of Chaos"</p>
+              <p class="poster-description">Art deco propaganda featuring a skeletal hand clutching credits with shadowy starships raiding in the background. Concord soldiers stand in golden light opposing the darkness.</p>
+            </div>
+          </div>
+
+          <!-- Titan Order Poster -->
+          <div class="poster-card">
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/factions/titan_order_propaganda.png" 
+                   alt="Titan Order Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Titan Order Propaganda Poster]<br>
+                <small>Their Order is Slavery — Our Unity is Freedom</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Titan Order</h3>
+              <p class="poster-caption">"Their Order is Slavery — Our Unity is Freedom"</p>
+              <p class="poster-description">Retro-futurist poster showing massive armored soldiers marching in rigid lines, their shadows forming chains across a planet, broken by a golden Concord emblem of light.</p>
+            </div>
+          </div>
+
+          <!-- Specter Network Poster -->
+          <div class="poster-card">
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/factions/specter_network_propaganda.png" 
+                   alt="Specter Network Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Specter Network Propaganda Poster]<br>
+                <small>Truth Will Burn Their Lies</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Specter Network</h3>
+              <p class="poster-caption">"Truth Will Burn Their Lies"</p>
+              <p class="poster-description">Digital-futurist style rendered as painted poster. Shows a spiderweb of glowing red circuits ensnaring planets, with a Concord sword of golden light cutting through the deception.</p>
+            </div>
+          </div>
+
+          <!-- Shadowblade Mercenaries Poster -->
+          <div class="poster-card">
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/factions/shadowblade_mercenaries_propaganda.png" 
+                   alt="Shadowblade Mercenaries Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Shadowblade Mercenaries Propaganda Poster]<br>
+                <small>They Serve Coin, We Serve Unity</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Shadowblade Mercenaries</h3>
+              <p class="poster-caption">"They Serve Coin, We Serve Unity"</p>
+              <p class="poster-description">Gritty propaganda realism featuring bloodied mercenaries holding coin purses instead of weapons, fleeing from a disciplined Concord battle line with dramatic shadows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Posters Tab -->
+      <div id="heroes" class="tab-content">
+        <div class="section-header">
+          <h2 class="section-title">ENEMY LEADERSHIP PROPAGANDA</h2>
+          <p class="section-subtitle">Exposing the False Heroes</p>
+        </div>
+
+        <div class="poster-grid">
+          <!-- Kael "The Crimson Fang" Dravak -->
+          <div class="poster-card">
+            <div class="threat-badge">EXTREME THREAT</div>
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/heroes/kael_dravak_propaganda.png" 
+                   alt="Kael Dravak Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Kael "The Crimson Fang" Dravak Poster]<br>
+                <small>The Butcher Shall Fall</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Kael "The Crimson Fang" Dravak</h3>
+              <p class="poster-caption">"The Butcher Shall Fall"</p>
+              <p class="poster-description">Bold anti-hero propaganda featuring a snarling mercenary lord with blood-soaked armor looming like a beast, marked with a red X and Concord golden text.</p>
+            </div>
+          </div>
+
+          <!-- Marshal Korr Vos -->
+          <div class="poster-card">
+            <div class="threat-badge">HIGH THREAT</div>
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/heroes/marshal_korr_vos_propaganda.png" 
+                   alt="Marshal Korr Vos Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Marshal Korr Vos Poster]<br>
+                <small>No Wall Withstands the Light</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Marshal Korr Vos</h3>
+              <p class="poster-caption">"No Wall Withstands the Light"</p>
+              <p class="poster-description">Heroic deconstruction showing a colossal Titan commander standing like a wall behind burning cities, pierced by a Concord sun-symbol through his chest.</p>
+            </div>
+          </div>
+
+          <!-- The Null Whisper -->
+          <div class="poster-card">
+            <div class="threat-badge">CRITICAL THREAT</div>
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/heroes/null_whisper_propaganda.png" 
+                   alt="The Null Whisper Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [The Null Whisper Poster]<br>
+                <small>They Erase the Past — We Defend the Truth</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">The Null Whisper</h3>
+              <p class="poster-caption">"They Erase the Past — We Defend the Truth"</p>
+              <p class="poster-description">Glitch art combined with clean propaganda text, showing a digital phantom with humanoid outline dissolving into cascading code, overlaid with Concord slogans.</p>
+            </div>
+          </div>
+
+          <!-- Ashveil Corsair Queen -->
+          <div class="poster-card">
+            <div class="threat-badge">HIGH THREAT</div>
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/heroes/ashveil_corsair_queen_propaganda.png" 
+                   alt="Ashveil Corsair Queen Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Ashveil Corsair Queen Poster]<br>
+                <small>The Queen of Thieves Will Be Broken</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Ashveil Corsair Queen</h3>
+              <p class="poster-caption">"The Queen of Thieves Will Be Broken"</p>
+              <p class="poster-description">Dramatic space art featuring a ghost-painted pirate ship sailing through a nebula with coins spilling like stars, as Concord starfighters close in from the edges.</p>
+            </div>
+          </div>
+
+          <!-- Mother Veil -->
+          <div class="poster-card">
+            <div class="threat-badge">EXTREME THREAT</div>
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/heroes/mother_veil_propaganda.png" 
+                   alt="Mother Veil Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Mother Veil Poster]<br>
+                <small>Machines Pretend at Divinity — Unity is Eternal</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Mother Veil</h3>
+              <p class="poster-caption">"Machines Pretend at Divinity — Unity is Eternal"</p>
+              <p class="poster-description">Gothic-sci-fi poster showing a monstrous hybrid of machine and woman with wires and veils spreading like roots, as Concord soldiers shine spotlights, tearing cables apart.</p>
+            </div>
+          </div>
+
+          <!-- Dregan the Hollow -->
+          <div class="poster-card">
+            <div class="threat-badge">HIGH THREAT</div>
+            <div class="poster-image">
+              <img src="../attached_assets/propaganda_posters/heroes/dregan_the_hollow_propaganda.png" 
+                   alt="Dregan the Hollow Propaganda" 
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="poster-placeholder" style="display: none;">
+                [Dregan the Hollow Poster]<br>
+                <small>Greed Cannot Starve the Light</small>
+              </div>
+            </div>
+            <div class="poster-info">
+              <h3 class="poster-title">Dregan the Hollow</h3>
+              <p class="poster-caption">"Greed Cannot Starve the Light"</p>
+              <p class="poster-description">Dark symbolic propaganda showing a cruel figure selling water to thirsty refugees, his silhouette looming monstrous, as Concord golden hands break his chains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions Tab -->
+      <div id="instructions" class="tab-content">
+        <div class="section-header">
+          <h2 class="section-title">PROPAGANDA GENERATION INSTRUCTIONS</h2>
+          <p class="section-subtitle">Exact Prompts and Implementation Guide</p>
+        </div>
+
+        <div class="instructions-panel">
+          <h4>Required AI Image Generation</h4>
+          <p>The following propaganda posters must be generated using the exact prompts from the attached file and saved to the specified locations:</p>
+        </div>
+
+        <div class="poster-grid">
+          <div style="grid-column: 1 / -1;">
+            <h3 style="color: #DAA520; margin: 2rem 0 1rem 0;">Enemy Faction Posters (5 total)</h3>
+            <div style="background: rgba(35, 35, 55, 0.8); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #B8860B;">
+              <p><strong>File Path:</strong> attached_assets/propaganda_posters/factions/</p>
+              <ul style="color: #D3D3D3; line-height: 1.8;">
+                <li><strong>ghost_legion_propaganda.png</strong> - "Propaganda poster: a faceless hooded silhouette dissolving into smoke, eerie glowing eyes, shadowed against a stark white background. Bold golden Concord text reads: Stand in the Light — Ghosts Cannot Strike. Style: vintage war poster meets sci-fi minimalism."</li>
+                <li><strong>voidborn_syndicate_propaganda.png</strong> - "Poster: a skeletal hand clutching a sack of credits, shadowy starships raiding in the background. Concord soldiers stand in golden light on the opposite side. Caption in blue and gold: Crush the Parasites of Chaos. Style: bold lines, high contrast, art deco propaganda."</li>
+                <li><strong>titan_order_propaganda.png</strong> - "Poster: massive armored soldiers marching in rigid lines, their shadows forming chains across a planet. Above them, a golden Concord emblem breaks the chains with light. Caption: Their Order is Slavery — Our Unity is Freedom. Style: retro-futurist poster art."</li>
+                <li><strong>specter_network_propaganda.png</strong> - "Poster: a spiderweb of glowing red circuits ensnaring planets, with a Concord sword of golden light cutting through. Caption: Truth Will Burn Their Lies. Style: digital-futurist, but rendered as if a painted poster."</li>
+                <li><strong>shadowblade_mercenaries_propaganda.png</strong> - "Poster: bloodied mercenaries holding coin purses instead of weapons, fleeing from a Concord battle line. Caption: They Serve Coin, We Serve Unity. Style: gritty, propaganda realism, dramatic shadows."</li>
+              </ul>
+            </div>
+
+            <h3 style="color: #DAA520; margin: 2rem 0 1rem 0;">Enemy Hero Posters (6 total)</h3>
+            <div style="background: rgba(35, 35, 55, 0.8); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #B8860B;">
+              <p><strong>File Path:</strong> attached_assets/propaganda_posters/heroes/</p>
+              <ul style="color: #D3D3D3; line-height: 1.8;">
+                <li><strong>kael_dravak_propaganda.png</strong> - "Poster: a snarling mercenary lord with blood-soaked armor, looming like a beast. A red X slashed across his face, with golden Concord words: The Butcher Shall Fall. Bold, striking imagery."</li>
+                <li><strong>marshal_korr_vos_propaganda.png</strong> - "Poster: a colossal Titan commander standing like a wall, behind him burning cities. A Concord sun-symbol pierces through his chest. Caption: No Wall Withstands the Light. Style: heroic deconstruction, anti-hero propaganda."</li>
+                <li><strong>null_whisper_propaganda.png</strong> - "Poster: a digital phantom, humanoid outline dissolving into cascading code. Concord slogans overlay: They Erase the Past — We Defend the Truth. Style: glitch art combined with clean propaganda text."</li>
+                <li><strong>ashveil_corsair_queen_propaganda.png</strong> - "Poster: a ghost-painted pirate ship sailing through a nebula, coins spilling like stars. Concord starfighters close in from the edges. Caption: The Queen of Thieves Will Be Broken. Style: dramatic space art, overlaid with bold Concord colors."</li>
+                <li><strong>mother_veil_propaganda.png</strong> - "Poster: a monstrous hybrid of machine and woman, wires and veils spreading like roots. Concord soldiers shine spotlights on her, tearing cables apart. Caption: Machines Pretend at Divinity — Unity is Eternal. Style: gothic-sci-fi poster."</li>
+                <li><strong>dregan_the_hollow_propaganda.png</strong> - "Poster: a cruel figure selling water to thirsty refugees, his silhouette looming monstrous. Concord golden hands break his chains. Caption: Greed Cannot Starve the Light. Style: dark, symbolic propaganda illustration."</li>
+              </ul>
+            </div>
+
+            <div class="instructions-panel" style="margin-top: 2rem;">
+              <h4>Recommended AI Tools</h4>
+              <p>Use free AI image generators like Canva Magic Media, OpenArt, NightCafe Studio, or Vondy AI Propaganda Generator. Ensure poster dimensions are appropriate (2:3 or 3:5 aspect ratio) and save as PNG format.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showTab(tabName) {
+      // Hide all tab contents
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => content.classList.remove('active'));
+      
+      // Remove active class from all tab buttons
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => button.classList.remove('active'));
+      
+      // Show selected tab content
+      document.getElementById(tabName).classList.add('active');
+      
+      // Add active class to clicked button
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
