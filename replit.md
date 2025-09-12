@@ -4,6 +4,14 @@ The Apex Separatist Consortium is a dark-themed fictional faction website featur
 
 # Recent Changes
 
+## Intelligence Briefing System Expansion (September 2025)
+- **Propaganda Gallery Implementation**: Created comprehensive propaganda gallery system with military-style interface
+- **New Intelligence Briefings**: Added 4-section dropdown menu: Enemy Factions, Consortium Heroes, Threat Assessment, and Propaganda Gallery
+- **Enhanced Navigation**: Added "Return to Consortium" escape button across all Concord territory pages
+- **Military Document Styling**: Implemented authentic intelligence briefing layouts with classification badges and threat level indicators
+- **Propaganda Archive Integration**: Enhanced existing intel pages with poster sections displaying Concord's enemy propaganda campaigns
+- **Image Infrastructure**: Set up folder structure for 11 propaganda posters (5 factions + 6 enemy heroes) with placeholder system
+
 ## September 2025 Redesign
 - **Color Scheme Overhaul**: Transitioned from cyan/blue accents to striking red (#e63946) and metallic silver (#c0c0c0) theme
 - **Cyberpunk Background**: Added custom-generated cyberpunk background image with red and metallic elements
