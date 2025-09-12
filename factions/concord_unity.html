@@ -90,30 +90,36 @@
 
     /* Content Sections */
     main.container section {
-      background: linear-gradient(135deg, rgba(229, 229, 229, 0.9), rgba(30, 58, 138, 0.8));
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      box-shadow: 0 2px 12px rgba(255, 215, 0, 0.15);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.9));
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 2px 12px rgba(255, 215, 0, 0.2);
     }
 
     h1, h2 {
-      color: #FFD700;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      color: #1E3A8A;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      font-weight: bold;
     }
 
     h3, h4 {
-      color: #1E3A8A;
+      color: #B22222;
+      text-shadow: 0 0 5px rgba(178, 34, 34, 0.3);
     }
 
     p, li {
-      color: #4B4B4B;
+      color: #2D2D2D;
+      font-weight: 500;
     }
 
     strong {
-      color: #B22222;
+      color: #1E3A8A;
+      font-weight: bold;
     }
 
     em {
-      color: #FFD700;
+      color: #B22222;
+      font-style: italic;
+      font-weight: 600;
     }
 
     /* Tab Navigation */
@@ -134,23 +140,25 @@
 
     /* Tier Sections */
     .tier-section {
-      background: linear-gradient(135deg, rgba(229, 229, 229, 0.9), rgba(30, 58, 138, 0.8));
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      box-shadow: 0 2px 12px rgba(255, 215, 0, 0.15);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.9));
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 2px 12px rgba(255, 215, 0, 0.2);
     }
 
     .tier-header {
-      background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(30, 58, 138, 0.2));
-      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+      background: linear-gradient(90deg, rgba(255, 215, 0, 0.2), rgba(30, 58, 138, 0.15));
+      border-bottom: 2px solid rgba(255, 215, 0, 0.5);
     }
 
     .tier-info h4 {
-      color: #FFD700;
+      color: #1E3A8A;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
     }
 
     .tier-info p {
       color: #B22222;
       font-style: italic;
+      font-weight: 600;
     }
 
     /* Status Indicators */
@@ -168,16 +176,27 @@
     /* Links */
     a {
       color: #1E3A8A;
+      font-weight: 600;
     }
 
     a:hover {
       color: #FFD700;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
     }
 
     /* Figure Captions */
     figcaption {
-      color: #4B4B4B;
+      color: #2D2D2D;
       font-style: italic;
+      font-weight: 500;
+    }
+
+    /* Better contrast for body text */
+    body {
+      background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+                  linear-gradient(135deg, #F0F8FF 0%, #E6F3FF 25%, #F0F8FF 50%, #E6F3FF 75%, #F0F8FF 100%);
+      background-size: cover, 100% 100%;
+      color: #2D2D2D;
     }
   </style>
 </head>
