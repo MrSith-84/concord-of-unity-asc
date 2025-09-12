@@ -684,6 +684,39 @@ h3 {
   visibility: visible;
 }
 
+/* Warning Transition for Concord of Unity (Enemy Territory) */
+.transition-overlay.warning-transition {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.98), rgba(30, 58, 138, 0.95));
+  border: 3px solid #FFD700;
+}
+
+.transition-overlay.warning-transition .transition-title {
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  animation: pulse-gold 2s infinite;
+}
+
+.transition-overlay.warning-transition .transition-message {
+  color: #1E3A8A;
+}
+
+.transition-overlay.warning-transition .transition-status {
+  color: #B22222;
+}
+
+.transition-overlay.warning-transition .transition-progress-bar::before {
+  background: linear-gradient(90deg, #FFD700, #1E3A8A);
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+  }
+}
+
 .transition-content {
   text-align: center;
   color: #c0c0c0;

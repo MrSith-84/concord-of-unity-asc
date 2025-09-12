@@ -40,16 +40,49 @@ class TransitionManager {
   
   hide() {
     setTimeout(() => {
-      this.overlay.classList.remove('active');
+      this.overlay.classList.remove('active', 'warning-transition');
       this.isTransitioning = false;
     }, 2200); // Match animation duration
   }
   
   transition(url) {
-    this.show();
+    // Check if transitioning to Concord of Unity (enemy territory)
+    if (url.includes('concord_unity')) {
+      this.showConcordWarning();
+    } else {
+      this.show();
+    }
     setTimeout(() => {
       window.location.href = url;
     }, 2000);
+  }
+  
+  showConcordWarning() {
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+    
+    // Special warning messages for leaving Consortium network
+    const warningMessages = [
+      'WARNING: Leaving Consortium network...',
+      'ALERT: Connecting to hostile territory...',
+      'CAUTION: Entering enemy communications...',
+      'DANGER: Breaching secured perimeter...',
+      'NOTICE: Consortium protection ending...'
+    ];
+    
+    const warningStatus = [
+      '// CONSORTIUM NETWORK DISCONNECTED',
+      '// ENTERING CONCORD TERRITORY',
+      '// HOSTILE NETWORK DETECTED',
+      '// SECURITY PROTOCOLS DISABLED',
+      '// CONNECTION NOT SECURE'
+    ];
+    
+    this.message.textContent = warningMessages[Math.floor(Math.random() * warningMessages.length)];
+    this.status.textContent = warningStatus[Math.floor(Math.random() * warningStatus.length)];
+    
+    // Change overlay styling for warning
+    this.overlay.classList.add('active', 'warning-transition');
   }
 }
 
