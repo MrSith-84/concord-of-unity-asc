@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concord of Unity - Apex Separatist Consortium</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">APEX CONSORTIUM</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
+  
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="../factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
+        </div>
+        <a href="../index.html" class="nav-link nav-brand">Command Center</a>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Factions</span>
+          <div class="dropdown-menu">
+            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
+            <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
+            <a href="specter_network.html"><span class="intel-dot"></span>Specter Network</a>
+            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
+            <a href="concord_unity.html"><span class="online-dot"></span>Concord of Unity</a>
+          </div>
+        </div>
+        <a href="concord_unity.html" class="nav-link">Concord of Unity</a>
+        <span class="nav-link nav-disabled" title="In Development">The Shadow Grid</span>
+      </div>
+      
+      <div class="nav-right">
+        <div class="auth-section" id="authSection">
+          <div class="auth-loading" id="authLoading">
+            <span class="auth-spinner"></span>
+          </div>
+          <div class="auth-login" id="authLogin" style="display: none;">
+            <a href="/access.html" class="auth-button login-button hazard-button"><span class="warning-icon-left">⚠️</span>RESTRICTED ACCESS<span class="warning-icon-right">⚠️</span></a>
+          </div>
+          <div class="auth-user" id="authUser" style="display: none;">
+            <div class="user-info">
+              <img class="user-avatar" id="userAvatar" src="" alt="User">
+              <span class="user-name" id="userName"></span>
+            </div>
+            <a href="/logout" class="auth-button logout-button">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="container">
+    <section>
+      <h2>Concord of Unity</h2>
+      <p>Diplomatic architects of alliance and negotiation, weaving bonds where others would break them. Masters of unity through understanding.</p>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="tab-button active" data-tab="overview">Overview</button>
+        <button class="tab-button" data-tab="structure">Structure</button>
+        <button class="tab-button" data-tab="operations">Operations</button>
+        <button class="tab-button" data-tab="relations">Relations</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Overview Tab -->
+        <div class="tab-panel active" id="overview">
+          <figure style="text-align: center;">
+            <img src="images/concord_unity.png" alt="Concord of Unity Emblem" style="max-width:300px;">
+            <figcaption>Seal of the Concord of Unity</figcaption>
+          </figure>
+
+          <h3>Origins & Motivation</h3>
+          <p>Born from the ashes of failed negotiations and shattered alliances, the Concord of Unity emerged when scattered diplomats, mediators, and political architects realized that the Consortium's greatest weakness was not external enemies, but internal division. Their philosophical foundation rests on the principle that <strong>unity multiplies strength</strong> — that coordinated action achieves what raw force cannot.</p>
+          <p><strong>Core Doctrine:</strong> "Division breeds weakness, Unity forges power." They believe that sustainable victory comes not through domination, but through building alliances that make resistance impossible.</p>
+
+          <h3>Philosophy & Methods</h3>
+          <p>The Concord operates on multiple layers of engagement:</p>
+          <ul>
+            <li><strong>Strategic Diplomacy:</strong> Building long-term relationships with potential allies and neutralizing enemies through negotiation rather than annihilation.</li>
+            <li><strong>Intelligence Integration:</strong> Synthesizing information from all Consortium factions to create comprehensive strategic assessments.</li>
+            <li><strong>Cultural Assimilation:</strong> Understanding and adapting local customs, languages, and belief systems to facilitate smoother integration of conquered territories.</li>
+            <li><strong>Economic Leverage:</strong> Using trade agreements, resource dependencies, and financial incentives to create webs of mutual benefit.</li>
+          </ul>
+
+          <h3>Role in the Consortium</h3>
+          <p>While other factions break things, the Concord builds and maintains them. They serve as:</p>
+          <ul>
+            <li>Primary interface with neutral and allied factions</li>
+            <li>Post-conquest stabilization specialists</li>
+            <li>Inter-faction mediators within the Consortium</li>
+            <li>Long-term strategic planners and alliance architects</li>
+          </ul>
+          <p>The Concord often works behind the scenes, setting up the conditions that allow the more aggressive factions to succeed, then ensuring those victories can be maintained.</p>
+        </div>
+
+        <!-- Structure Tab -->
+        <div class="tab-panel" id="structure">
+          <h3>Organizational Hierarchy</h3>
+          
+          <h4>The Unity Council (Leadership)</h4>
+          <p>Seven senior diplomats, each representing different aspects of Consortium interests:</p>
+          <ul>
+            <li><strong>First Speaker:</strong> Overall strategic coordinator and face of the Concord</li>
+            <li><strong>Voice of Commerce:</strong> Economic and trade negotiations</li>
+            <li><strong>Voice of Culture:</strong> Integration and assimilation strategies</li>
+            <li><strong>Voice of Intelligence:</strong> Liaison with Specter Network and Ghost Legion</li>
+            <li><strong>Voice of Force:</strong> Military and security cooperation with Titan Order and Shadowblades</li>
+            <li><strong>Voice of the Void:</strong> Deep space and frontier expansion coordination</li>
+            <li><strong>Voice of the Future:</strong> Long-term planning and succession strategies</li>
+          </ul>
+
+          <h4>Diplomatic Corps</h4>
+          <p><strong>Ambassadors</strong> - Elite negotiators assigned to specific regions or factions, with autonomous authority to make binding agreements.</p>
+          <p><strong>Cultural Attachés</strong> - Specialists in local customs, languages, and belief systems who facilitate smoother integration processes.</p>
+          <p><strong>Trade Mediators</strong> - Economic specialists who structure deals, manage resource flows, and create dependencies that benefit the Consortium.</p>
+
+          <h4>Unity Guard</h4>
+          <p>Unlike other factions' military arms, the Unity Guard focuses on:</p>
+          <ul>
+            <li><strong>Diplomatic Protection:</strong> Safeguarding Concord personnel during negotiations</li>
+            <li><strong>Ceremonial Functions:</strong> Impressive displays during alliance ceremonies and treaty signings</li>
+            <li><strong>Peacekeeping:</strong> Maintaining order in newly integrated territories through measured force and community engagement</li>
+          </ul>
+
+          <h4>Information Network</h4>
+          <p>The Concord maintains its own intelligence apparatus, focused on:</p>
+          <ul>
+            <li>Political analysis and faction dynamics</li>
+            <li>Economic intelligence and market trends</li>
+            <li>Cultural and social mapping of target populations</li>
+            <li>Long-term strategic threat assessment</li>
+          </ul>
+        </div>
+
+        <!-- Operations Tab -->
+        <div class="tab-panel" id="operations">
+          <h3>Current Operations</h3>
+
+          <h4>The Neutral Zone Initiative</h4>
+          <p><strong>Status:</strong> Active | <strong>Classification:</strong> Strategic Expansion</p>
+          <p>Negotiating with three previously independent systems to create a "neutral buffer zone" that will, through careful economic integration, become de facto Consortium territory within two standard years.</p>
+
+          <h4>Operation: Bridgebuilder</h4>
+          <p><strong>Status:</strong> Planning Phase | <strong>Classification:</strong> Alliance Development</p>
+          <p>Long-term diplomatic engagement with the Kythera Trade Federation, aimed at converting them from nervous neutrals to active Consortium allies. Expected timeline: 18-24 months.</p>
+
+          <h4>Project: Harmony Protocol</h4>
+          <p><strong>Status:</strong> Implementation | <strong>Classification:</strong> Internal Optimization</p>
+          <p>Comprehensive reform of inter-faction communication within the Consortium to reduce conflicts and improve coordination. Already showing 23% improvement in joint operation efficiency.</p>
+
+          <h4>The Successor States Campaign</h4>
+          <p><strong>Status:</strong> Monitoring | <strong>Classification:</strong> Opportunity Development</p>
+          <p>Tracking the dissolution of the Meridian Empire to identify succession states that could be integrated peacefully, preventing the costly military campaigns that rapid conquest would require.</p>
+
+          <h3>Specialized Capabilities</h3>
+          
+          <h4>Deep Cover Integration</h4>
+          <p>Concord operatives spend years embedded within target governments and organizations, rising through local power structures while maintaining loyalty to the Consortium. When activation occurs, entire systems can shift allegiance overnight.</p>
+
+          <h4>Economic Web-Weaving</h4>
+          <p>Creating complex networks of trade relationships, resource dependencies, and financial obligations that make independence from the Consortium economically catastrophic for target populations.</p>
+
+          <h4>Cultural Architecture</h4>
+          <p>Long-term programs that gradually shift local customs, educational systems, and social structures to align with Consortium values, making eventual political integration feel natural rather than forced.</p>
+
+          <h4>Alliance Orchestration</h4>
+          <p>Bringing together multiple factions or governments in cooperative frameworks that the Consortium can then guide and eventually control from within.</p>
+        </div>
+
+        <!-- Relations Tab -->
+        <div class="tab-panel" id="relations">
+          <h3>Inter-Faction Relations</h3>
+
+          <h4>Ghost Legion</h4>
+          <p><strong>Relationship:</strong> Cooperative Symbiosis</p>
+          <p>The Concord provides political intelligence and diplomatic cover for Ghost Legion operations. In return, the Legion handles situations that require "deniable" resolution. The two factions share significant overlap in information gathering, with the Concord focusing on overt intelligence while the Legion handles covert operations.</p>
+          <p><strong>Joint Operations:</strong> Regular collaborative intelligence briefings, coordinated destabilization campaigns.</p>
+
+          <h4>Voidborn Syndicate</h4>
+          <p><strong>Relationship:</strong> Pragmatic Partnership</p>
+          <p>The Concord legitimizes Voidborn operations by providing political frameworks and diplomatic immunity. The Syndicate provides funding and black market resources that official diplomacy cannot acquire. Tension exists over the Syndicate's tendency toward chaos, which conflicts with the Concord's preference for stable, controlled growth.</p>
+          <p><strong>Friction Points:</strong> Resource allocation, operational methodology, long-term strategic goals.</p>
+
+          <h4>Titan Order</h4>
+          <p><strong>Relationship:</strong> Strategic Alliance</p>
+          <p>The Order provides the credible threat of force that makes diplomatic negotiations more effective. The Concord ensures that Titan victories can be consolidated and maintained rather than requiring constant military presence. Deep mutual respect exists between the two factions.</p>
+          <p><strong>Joint Doctrine:</strong> "Diplomacy backed by strength, strength guided by wisdom."</p>
+
+          <h4>Specter Network</h4>
+          <p><strong>Relationship:</strong> Intelligence Partnership</p>
+          <p>Extensive information sharing and coordinated intelligence operations. The Network provides technical and digital intelligence while the Concord contributes human intelligence and political analysis. Some overlap in methods creates occasional friction, but overall cooperation is high.</p>
+          <p><strong>Shared Assets:</strong> Joint communication networks, cross-trained operatives, integrated threat assessment protocols.</p>
+
+          <h4>Shadowblade Mercenary Guild</h4>
+          <p><strong>Relationship:</strong> Controlled Utilization</p>
+          <p>The Concord carefully employs Shadowblade services for situations where negotiation has failed but where conventional military action would be too visible or destabilizing. Significant philosophical differences exist regarding methods and acceptable casualties.</p>
+          <p><strong>Management Protocol:</strong> All Shadowblade contracts require Concord approval and oversight to prevent destabilizing escalation.</p>
+
+          <h3>External Relations</h3>
+
+          <h4>Allied Factions</h4>
+          <ul>
+            <li><strong>Meridian Trade Collective:</strong> Economic partnership with increasing political integration</li>
+            <li><strong>Outer Rim Defense Coalition:</strong> Mutual defense pact with gradual absorption protocols</li>
+            <li><strong>Independent Mining Guilds:</strong> Resource extraction agreements with increasing dependency relationships</li>
+          </ul>
+
+          <h4>Neutral States</h4>
+          <ul>
+            <li><strong>Core World Republics:</strong> Complex diplomatic engagement with mixed success</li>
+            <li><strong>Free Port Systems:</strong> Economic cooperation with careful political neutrality maintenance</li>
+            <li><strong>Frontier Colonies:</strong> Gradual influence expansion through aid and development programs</li>
+          </ul>
+
+          <h4>Hostile Entities</h4>
+          <ul>
+            <li><strong>Imperial Remnants:</strong> Ongoing diplomatic isolation and alliance-building against</li>
+            <li><strong>Corporate Hegemonies:</strong> Economic warfare and regulatory pressure campaigns</li>
+            <li><strong>Purist Movements:</strong> Ideological opposition requiring careful counter-narrative development</li>
+          </ul>
+
+          <h3>Diplomatic Philosophy</h3>
+          <p><strong>"Today's enemy is tomorrow's ally, if approached correctly."</strong></p>
+          <p>The Concord maintains that even the most hostile relationships can be transformed through patience, understanding, and the right combination of incentives and pressures. Their long-term approach often succeeds where more aggressive factions have failed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="container">
+    <nav class="breadcrumb"></nav>
+  </footer>
+  
+  <script src="../script.js"></script>
+
+</body>
+</html>
