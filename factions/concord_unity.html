@@ -293,21 +293,199 @@
       margin: 0;
     }
 
-    /* Mobile Responsiveness for Overview */
+    /* Operations Tab Styling */
+    .conflict-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .victory-card, .defeat-card {
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .victory-card {
+      background: linear-gradient(135deg, rgba(240, 255, 240, 0.9), rgba(230, 255, 230, 0.8));
+      border: 2px solid rgba(34, 139, 34, 0.3);
+    }
+
+    .victory-card:hover {
+      border-color: #228B22;
+      transform: translateY(-2px);
+    }
+
+    .defeat-card {
+      background: linear-gradient(135deg, rgba(255, 240, 240, 0.9), rgba(255, 230, 230, 0.8));
+      border: 2px solid rgba(178, 34, 34, 0.3);
+    }
+
+    .defeat-card:hover {
+      border-color: #B22222;
+      transform: translateY(-2px);
+    }
+
+    .outcome-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .outcome-badge.success {
+      background: #228B22;
+      color: white;
+    }
+
+    .outcome-badge.failure {
+      background: #B22222;
+      color: white;
+    }
+
+    /* Relations Tab Styling */
+    .relations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .enemy-card, .mercenary-card {
+      background: linear-gradient(135deg, rgba(255, 240, 240, 0.9), rgba(255, 230, 230, 0.8));
+      border: 2px solid rgba(178, 34, 34, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.15);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .mercenary-card {
+      background: linear-gradient(135deg, rgba(255, 248, 220, 0.9), rgba(250, 235, 180, 0.8));
+      border-color: rgba(184, 134, 11, 0.3);
+      box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);
+    }
+
+    .enemy-card:hover, .mercenary-card:hover {
+      border-color: #B22222;
+      transform: translateY(-2px);
+    }
+
+    .mercenary-card:hover {
+      border-color: #B8860B;
+    }
+
+    .status-badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 15px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .status-badge.mortal-enemy { background: #8B0000; color: white; }
+    .status-badge.hated { background: #DC143C; color: white; }
+    .status-badge.rival { background: #4169E1; color: white; }
+    .status-badge.propaganda { background: #9932CC; color: white; }
+    .status-badge.employed { background: #B8860B; color: white; }
+
+    .heroes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.9));
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      border-radius: 8px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .hero-card:hover {
+      border-color: #FFD700;
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .hero-title {
+      font-style: italic;
+      color: #B22222;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .martyrs-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .martyr-card {
+      background: linear-gradient(135deg, rgba(248, 248, 255, 0.9), rgba(240, 240, 248, 0.8));
+      border-left: 4px solid #1E3A8A;
+      padding: 1rem;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.1);
+    }
+
+    .martyr-card h4 {
+      color: #1E3A8A;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .martyr-card p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Mobile Responsiveness for All Tabs */
     @media (max-width: 768px) {
       .overview-grid,
-      .weakness-grid {
+      .weakness-grid,
+      .conflict-grid,
+      .relations-grid,
+      .heroes-grid,
+      .martyrs-section {
         grid-template-columns: 1fr;
       }
       
       .asset-card,
-      .weakness-card {
+      .weakness-card,
+      .victory-card,
+      .defeat-card,
+      .enemy-card,
+      .mercenary-card,
+      .hero-card,
+      .martyr-card {
         min-height: auto;
       }
       
       .overview-section {
         padding: 1rem;
         margin: 0.5rem 0;
+      }
+      
+      .conflict-grid {
+        gap: 1rem;
       }
     }
   </style>
@@ -512,110 +690,145 @@
             </div>
           </div>
 
-          <h3>Initiation & Loyalty</h3>
-          <p><strong>Entry Requirements:</strong> New members must pledge substantial fleets or wealth to the common cause</p>
-          <p><strong>Loyalty Mechanics:</strong> Allegiance is never absolute—members constantly evaluate whether the Concord serves their interests</p>
-          <p><strong>Internal Politics:</strong> Constant maneuvering as different blocs seek advantage over their supposed allies</p>
+          <h3>Unity Through Necessity</h3>
+          <div class="overview-section">
+            <p><strong>Entry Requirements:</strong> New members must pledge substantial fleets or wealth to the common cause, proving their commitment to the unified defense against the Consortium.</p>
+            <p><strong>Loyalty Mechanics:</strong> Allegiance is never absolute—members constantly evaluate whether the Concord serves their interests, leading to conditional support and shifting alliances.</p>
+            <p><strong>Internal Politics:</strong> Constant maneuvering as different blocs seek advantage over their supposed allies, undermining the very unity they claim to represent.</p>
+          </div>
         </div>
 
         <!-- Operations Tab -->
         <div class="tab-panel" id="operations">
-          <h3>Methods & Tactics</h3>
+          <div class="concord-overview">
+            <h3>Strategic Doctrine</h3>
+            <div class="overview-section">
+              <p><strong>Core Philosophy:</strong> Overwhelming coordination to compensate for individual weakness through massive unified fleet actions.</p>
+              <p><em>The harsh reality:</em> Often devolves into chaos due to incompatible command structures and competing priorities among member factions.</p>
+            </div>
 
-          <h4>Defensive Warfare</h4>
-          <p><strong>Primary Strategy:</strong> Fortress worlds protected by massive planetary shields and orbital defense networks</p>
-          <p><strong>Fleet Deployment:</strong> Concentrated defensive positions rather than offensive strikes</p>
-          <p><strong>Doctrine:</strong> Make every Consortium victory so costly that expansion becomes unsustainable</p>
+            <h3>Primary Tactics</h3>
+            <div class="overview-grid">
+              <div class="asset-card">
+                <h4>🏰 Defensive Warfare</h4>
+                <p><strong>Strategy:</strong> Fortress worlds with massive planetary shields and orbital defense networks</p>
+                <p><strong>Doctrine:</strong> Make every Consortium victory costly enough to halt expansion</p>
+              </div>
+              <div class="asset-card">
+                <h4>🚫 Economic Blockades</h4>
+                <p><strong>Trade Disruption:</strong> Systematically choking Consortium smuggling routes</p>
+                <p><strong>Resource Denial:</strong> Preventing access to critical expansion materials</p>
+              </div>
+              <div class="asset-card">
+                <h4>📢 Propaganda of Light</h4>
+                <p><strong>Narrative Control:</strong> Portraying Consortium as devils incarnate</p>
+                <p><strong>Moral Authority:</strong> Positioning as civilization's last defenders</p>
+              </div>
+              <div class="asset-card">
+                <h4>⚔️ Mercenary Contracts</h4>
+                <p><strong>Force Multiplication:</strong> Outside contractors supplement fractured military</p>
+                <p><strong>Risk Management:</strong> Keeping own forces intact while others bear casualties</p>
+              </div>
+            </div>
 
-          <h4>Economic Blockades</h4>
-          <p><strong>Trade Disruption:</strong> Systematic choking of Consortium smuggling routes and commercial traffic</p>
-          <p><strong>Resource Denial:</strong> Preventing access to critical materials needed for Consortium expansion</p>
-          <p><strong>Financial Warfare:</strong> Corporate cartels using economic leverage against Consortium allies</p>
-
-          <h4>Propaganda of Light</h4>
-          <p><strong>Narrative Control:</strong> Systematic portrayal of the Consortium as devils incarnate</p>
-          <p><strong>Moral Authority:</strong> Positioning the Concord as civilization's last defenders</p>
-          <p><strong>Counter-Intelligence:</strong> Combating Specter Network information operations</p>
-
-          <h4>Mercenary Contracts</h4>
-          <p><strong>Force Multiplication:</strong> Employing outside contractors to supplement fractured military</p>
-          <p><strong>Plausible Deniability:</strong> Using mercenaries for operations they cannot officially sanction</p>
-          <p><strong>Risk Management:</strong> Keeping their own forces intact while others bear casualties</p>
-
-          <h3>The Doctrine of Unity</h3>
-          <p><strong>Core Principle:</strong> Overwhelming coordination to compensate for individual weakness</p>
-          <p><strong>Implementation:</strong> Massive fleet actions combining all member forces</p>
-          <p><strong>Reality:</strong> Often devolves into chaos due to incompatible command structures and competing priorities</p>
-
-          <h3>Notable Campaigns & Failures</h3>
-          
-          <h4>The Bastion War</h4>
-          <p><strong>Hero:</strong> Admiral Lysara Veylan held Titan Order siege for three months through mines, feints, and guerrilla tactics</p>
-          <p><strong>Outcome:</strong> Tactical success, strategic stalemate</p>
-          <p><strong>Legacy:</strong> "The Bastion's Flame" became symbol of defiance against overwhelming power</p>
-
-          <h4>The Silent Betrayal of Damaris Prime</h4>
-          <p><strong>Incident:</strong> Damaris Prime lowered planetary shields mid-battle, allowing Voidborn fleet to devastate Concord forces</p>
-          <p><strong>Aftermath:</strong> Complete destruction of defending fleet, massive loss of life</p>
-          <p><strong>Theories:</strong> Voidborn bribes, Ghost Legion infiltration, or simple sabotage</p>
-          <p><strong>Impact:</strong> "Never again Damaris" became rallying cry and cautionary tale</p>
+            <h3>Major Conflicts</h3>
+            <div class="conflict-grid">
+              <div class="victory-card">
+                <h4>⭐ The Bastion War</h4>
+                <p><strong>Hero:</strong> Admiral Lysara Veylan held Titan Order siege for three months</p>
+                <p><strong>Tactics:</strong> Mines, feints, and guerrilla warfare</p>
+                <p><strong>Legacy:</strong> "The Bastion's Flame" became symbol of defiance</p>
+                <div class="outcome-badge success">Tactical Victory</div>
+              </div>
+              <div class="defeat-card">
+                <h4>💔 The Silent Betrayal of Damaris Prime</h4>
+                <p><strong>Incident:</strong> Damaris Prime lowered shields mid-battle</p>
+                <p><strong>Aftermath:</strong> Complete fleet destruction, massive casualties</p>
+                <p><strong>Impact:</strong> "Never again Damaris" rallying cry</p>
+                <div class="outcome-badge failure">Catastrophic Defeat</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Relations Tab -->
         <div class="tab-panel" id="relations">
-          <h3>Relationships with the Consortium</h3>
+          <div class="concord-overview">
+            <h3>Consortium Opposition</h3>
+            <div class="relations-grid">
+              <div class="enemy-card ghost-legion">
+                <h4>👻 Ghost Legion</h4>
+                <div class="status-badge mortal-enemy">Mortal Enemies</div>
+                <p><strong>Conflict:</strong> Eternal war between secrets and spies</p>
+                <p><strong>Threat:</strong> Legion operatives constantly infiltrate Concord leadership while counter-intelligence works desperately to root them out</p>
+              </div>
+              <div class="enemy-card voidborn">
+                <h4>🏴‍☠️ Voidborn Syndicate</h4>
+                <div class="status-badge hated">Hated Pirates</div>
+                <p><strong>Raids:</strong> Constantly strike Concord shipping and border worlds</p>
+                <p><strong>Corruption:</strong> Rumors that Council of Five Flames members secretly deal with Voidborn smugglers</p>
+              </div>
+              <div class="enemy-card titan">
+                <h4>⚡ Titan Order</h4>
+                <div class="status-badge rival">Rival Philosophy</div>
+                <p><strong>Clash:</strong> Both claim to represent "true" order and stability</p>
+                <p><strong>Military:</strong> Titan discipline vs Concord's chaotic mass tactics</p>
+              </div>
+              <div class="enemy-card specter">
+                <h4>📡 Specter Network</h4>
+                <div class="status-badge propaganda">Information War</div>
+                <p><strong>Battle:</strong> Constant fight for narrative control and public opinion</p>
+                <p><strong>Infiltration:</strong> Specter operatives sow discord within Concord leadership</p>
+              </div>
+              <div class="mercenary-card shadowblade">
+                <h4>🗡️ Shadowblade Guild</h4>
+                <div class="status-badge employed">Employed but Distrusted</div>
+                <p><strong>Use:</strong> Hired when Concord forces prove insufficient</p>
+                <p><strong>Reality:</strong> Purely transactional relationship built on mutual suspicion</p>
+              </div>
+            </div>
 
-          <h4>Ghost Legion</h4>
-          <p><strong>Status:</strong> Mortal Enemies</p>
-          <p><strong>Nature:</strong> Eternal war between secrets and spies</p>
-          <p><strong>Reality:</strong> Ghost Legion operatives are constantly infiltrating Concord leadership, while Concord counter-intelligence works desperately to root them out. Every major Concord decision is potentially compromised by Legion plants.</p>
+            <h3>Heroes & Legends</h3>
+            <div class="heroes-grid">
+              <div class="hero-card">
+                <h4>🔥 Admiral Lysara Veylan</h4>
+                <div class="hero-title">"The Bastion's Flame"</div>
+                <p><strong>Legend:</strong> Former imperial officer who held Titan siege for three months against impossible odds</p>
+                <p><strong>Current Role:</strong> High-ranking admiral frustrated by Council indecision</p>
+                <p><strong>Symbol:</strong> Appears on propaganda art as icon of defiance</p>
+              </div>
+              <div class="hero-card">
+                <h4>💰 Council of Five Flames</h4>
+                <div class="hero-title">"The Corporate Coalition"</div>
+                <p><strong>Origin:</strong> CEOs whose holdings were burned by Consortium raids</p>
+                <p><strong>Public Face:</strong> Unity through shared loss and common purpose</p>
+                <p><strong>Dark Truth:</strong> Driven by greed and profit rather than ideology</p>
+              </div>
+              <div class="hero-card">
+                <h4>⭐ The Prophet of Solis</h4>
+                <div class="hero-title">"Voice of the Divine"</div>
+                <p><strong>Miracle:</strong> At Sanctum of Lira, inspired militia to repel entire Voidborn fleet through faith alone</p>
+                <p><strong>Influence:</strong> No official position yet sways entire sectors with religious fervor</p>
+                <p><strong>Power:</strong> Living proof that faith can conquer shadow</p>
+              </div>
+            </div>
 
-          <h4>Voidborn Syndicate</h4>
-          <p><strong>Status:</strong> Hated Pirates</p>
-          <p><strong>Conflict:</strong> Voidborn raiders constantly strike Concord shipping and border worlds</p>
-          <p><strong>Corruption:</strong> Rumors persist that at least one member of the Council of Five Flames secretly deals with Voidborn smugglers for profit</p>
-
-          <h4>Titan Order</h4>
-          <p><strong>Status:</strong> Rival Philosophies of Order</p>
-          <p><strong>Ideological Clash:</strong> Both claim to represent "true" order and stability</p>
-          <p><strong>Military Opposition:</strong> Titan disciplined warfare against Concord's chaotic mass tactics</p>
-
-          <h4>Specter Network</h4>
-          <p><strong>Status:</strong> Propaganda Wars</p>
-          <p><strong>Information Warfare:</strong> Constant battle for narrative control and public opinion</p>
-          <p><strong>Infiltration:</strong> Specter operatives work to sow discord within Concord leadership</p>
-
-          <h4>Shadowblade Mercenary Guild</h4>
-          <p><strong>Status:</strong> Employed but Distrusted</p>
-          <p><strong>Pragmatic Use:</strong> Concord regularly hires Shadowblade mercenaries when their own forces prove insufficient</p>
-          <p><strong>Mutual Suspicion:</strong> Both sides know the relationship is purely transactional</p>
-
-          <h3>Notable Figures & Legends</h3>
-
-          <h4>Admiral Lysara Veylan — The Bastion's Flame</h4>
-          <p><strong>Background:</strong> Former imperial officer who rallied survivors into defense fleets</p>
-          <p><strong>Legend:</strong> Held Titan siege at the Bastion War for three months against impossible odds</p>
-          <p><strong>Current Role:</strong> High-ranking admiral, constantly frustrated by Council indecision</p>
-          <p><strong>Symbolism:</strong> Appears on propaganda art as symbol of defiance</p>
-
-          <h4>The Council of Five Flames</h4>
-          <p><strong>Background:</strong> Coalition of CEOs funding Concord military industry</p>
-          <p><strong>Origin:</strong> Named "Five Flames" after Consortium raids burned their corporate holdings</p>
-          <p><strong>Public Face:</strong> Unity through shared loss and common purpose</p>
-          <p><strong>Dark Reality:</strong> Driven by greed and profit rather than ideology</p>
-
-          <h4>The Prophet of Solis — Voice of the Divine</h4>
-          <p><strong>Background:</strong> Priest turned zealot leader spreading sermons against the Consortium</p>
-          <p><strong>Miracle:</strong> At Sanctum of Lira, inspired militia to repel entire Voidborn fleet through faith alone</p>
-          <p><strong>Influence:</strong> Holds no official position yet sways entire sectors with religious fervor</p>
-          <p><strong>Power:</strong> Proof to zealots that faith can conquer shadow</p>
-
-          <h3>Lesser Heroes & Martyrs</h3>
-          <ul>
-            <li><strong>Captain Ardyn Holt — The Last Signal:</strong> Died broadcasting "Hold the line"—now motto in Concord training</li>
-            <li><strong>Sister Calira — The Lightbearer:</strong> Medic turned folk saint, saved hundreds under Titan bombardment</li>
-            <li><strong>The Ashen Knights:</strong> Rumored Titan defectors clad in cracked white-painted armor</li>
-          </ul>
+            <h3>Martyrs & Folk Heroes</h3>
+            <div class="martyrs-section">
+              <div class="martyr-card">
+                <h4>📡 Captain Ardyn Holt — "The Last Signal"</h4>
+                <p>Died broadcasting "Hold the line"—now motto in Concord training</p>
+              </div>
+              <div class="martyr-card">
+                <h4>💡 Sister Calira — "The Lightbearer"</h4>
+                <p>Medic turned folk saint, saved hundreds under Titan bombardment</p>
+              </div>
+              <div class="martyr-card">
+                <h4>⚔️ The Ashen Knights</h4>
+                <p>Rumored Titan defectors clad in cracked white-painted armor</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
