@@ -686,34 +686,36 @@ h3 {
 
 /* Warning Transition for Concord of Unity (Enemy Territory) */
 .transition-overlay.warning-transition {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.98), rgba(30, 58, 138, 0.95));
-  border: 3px solid #FFD700;
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.98), rgba(15, 15, 25, 0.95));
+  border: 3px solid #B8860B;
 }
 
 .transition-overlay.warning-transition .transition-title {
-  color: #FFD700;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-  animation: pulse-gold 2s infinite;
+  color: #DAA520;
+  text-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
+  animation: pulse-dark-gold 2s infinite;
 }
 
 .transition-overlay.warning-transition .transition-message {
-  color: #1E3A8A;
+  color: #E5E5E5;
+  font-weight: 600;
 }
 
 .transition-overlay.warning-transition .transition-status {
-  color: #B22222;
+  color: #CD853F;
+  font-weight: bold;
 }
 
 .transition-overlay.warning-transition .transition-progress-bar::before {
-  background: linear-gradient(90deg, #FFD700, #1E3A8A);
+  background: linear-gradient(90deg, #B8860B, #CD853F);
 }
 
-@keyframes pulse-gold {
+@keyframes pulse-dark-gold {
   0%, 100% {
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    text-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
   }
   50% {
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    text-shadow: 0 0 30px rgba(218, 165, 32, 0.9);
   }
 }
 
