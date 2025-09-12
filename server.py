@@ -52,7 +52,12 @@ def after_request(response):
     return response
 
 
-# API route to get user info
+# API endpoints
+@app.route('/api')
+def api_status():
+    """Basic API status endpoint"""
+    return jsonify({'status': 'online', 'service': 'Apex Separatist Consortium'})
+
 @app.route('/api/user')
 def api_user():
     if current_user.is_authenticated:
