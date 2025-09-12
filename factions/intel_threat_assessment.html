@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Threat Assessment - Concord Intelligence Briefing</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Concord Intelligence Briefing Styling */
+    body {
+      background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+                  linear-gradient(135deg, #1A1A2E 0%, #16213E 25%, #1A1A2E 50%, #16213E 75%, #1A1A2E 100%);
+      background-size: cover, 100% 100%;
+      color: #E5E5E5;
+    }
+
+    /* Navigation */
+    .main-navigation {
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(22, 33, 62, 0.95));
+      border-bottom: 3px solid #B8860B;
+      border-top: 1px solid rgba(184, 134, 11, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.3);
+    }
+
+    .nav-link { color: #C0C0C0; font-weight: 600; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .nav-link:hover { color: #DAA520; text-shadow: 0 0 10px rgba(218, 165, 32, 0.5); }
+    .nav-link.nav-current { color: #DAA520; font-weight: bold; text-shadow: 0 0 8px rgba(218, 165, 32, 0.4); }
+    .nav-link.nav-disabled { color: #666666; cursor: not-allowed; opacity: 0.5; }
+    .nav-dropdown:hover .dropdown-menu { background: linear-gradient(135deg, rgba(22, 33, 62, 0.95), rgba(26, 26, 46, 0.9)); border: 2px solid rgba(184, 134, 11, 0.5); }
+    .dropdown-menu a { color: #C0C0C0; font-weight: 500; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .dropdown-menu a:hover { background: rgba(184, 134, 11, 0.2); color: #DAA520; }
+
+    /* Threat Matrix Styling */
+    .threat-matrix {
+      background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 25, 40, 0.9));
+      border: 1px solid rgba(184, 134, 11, 0.5);
+      box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .matrix-header {
+      background: linear-gradient(90deg, rgba(184, 134, 11, 0.3), rgba(22, 33, 62, 0.4));
+      padding: 1rem 2rem;
+      border-bottom: 2px solid rgba(184, 134, 11, 0.6);
+      text-align: center;
+    }
+
+    .matrix-title {
+      color: #DAA520;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 15px rgba(218, 165, 32, 0.4);
+    }
+
+    .threat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .threat-card {
+      background: linear-gradient(135deg, rgba(35, 35, 55, 0.9), rgba(25, 30, 45, 0.8));
+      border: 2px solid rgba(184, 134, 11, 0.4);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .threat-card:hover {
+      border-color: #B8860B;
+      box-shadow: 0 6px 20px rgba(184, 134, 11, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .threat-level-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .threat-critical { background: #B22222; color: white; }
+    .threat-high { background: #FF4500; color: white; }
+    .threat-moderate { background: #DAA520; color: black; }
+    .threat-low { background: #228B22; color: white; }
+
+    .threat-name {
+      color: #DAA520;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .threat-type {
+      color: #CD853F;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .threat-details {
+      color: #D3D3D3;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .strategic-overview {
+      background: linear-gradient(135deg, rgba(45, 25, 25, 0.9), rgba(35, 20, 20, 0.8));
+      border: 2px solid rgba(178, 34, 34, 0.4);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .overview-title {
+      color: #CD853F;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .overview-content {
+      color: #D3D3D3;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .classified-banner {
+      background: linear-gradient(90deg, #B22222, #8B0000, #B22222);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin: 2rem 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(178, 34, 34, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .threat-grid { grid-template-columns: 1fr; padding: 1rem; }
+      .strategic-overview { padding: 1rem; }
+    }
+  </style>
+</head>
+<body class="fade-in">
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Intelligence Briefings</span>
+          <div class="dropdown-menu">
+            <a href="intel_enemy_factions.html">📋 Enemy Factions</a>
+            <a href="intel_consortium_heroes.html">🎯 Consortium Heroes</a>
+            <a href="intel_threat_assessment.html">⚠️ Threat Assessment</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">Factions</span>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">The Shadow Grid</span>
+        <a href="concord_unity.html" class="nav-link">Concord of Unity</a>
+      </div>
+      
+      <div class="nav-right">
+        <!-- Auth section removed for Concord of Unity page -->
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section>
+      <h1 style="color: #DAA520; text-align: center; margin-bottom: 1rem; text-shadow: 0 0 15px rgba(218, 165, 32, 0.4);">
+        CONSORTIUM THREAT ASSESSMENT MATRIX
+      </h1>
+      <p style="text-align: center; color: #CD853F; font-style: italic; margin-bottom: 2rem;">
+        Strategic Intelligence Analysis | Classification: Restricted Access
+      </p>
+
+      <div class="classified-banner">
+        ⚠️ WARNING: CLASSIFIED MATERIAL - AUTHORIZED PERSONNEL ONLY ⚠️
+      </div>
+
+      <div class="strategic-overview">
+        <div class="overview-title">Strategic Assessment Summary</div>
+        <div class="overview-content">
+          <p>The Apex Separatist Consortium represents a multifaceted threat to Concord territories and civilian populations. Our intelligence services have identified five primary threat vectors, each requiring specialized countermeasures and strategic approaches.</p>
+          <p>This assessment provides operational priorities for field commanders, intelligence officers, and civilian protection agencies. All threat levels are subject to revision based on emerging intelligence and tactical developments.</p>
+        </div>
+      </div>
+
+      <div class="threat-matrix">
+        <div class="matrix-header">
+          <div class="matrix-title">ACTIVE THREAT ASSESSMENT</div>
+        </div>
+        <div class="threat-grid">
+          
+          <!-- Ghost Legion -->
+          <div class="threat-card">
+            <div class="threat-level-badge threat-critical">CRITICAL</div>
+            <div class="threat-name">Ghost Legion</div>
+            <div class="threat-type">Infiltration & Assassination</div>
+            <div class="threat-details">
+              <strong>Primary Concerns:</strong> Silent elimination of leadership, sabotage of critical infrastructure, intelligence penetration.<br><br>
+              <strong>Countermeasures:</strong> Enhanced security protocols, regular personnel screening, redundant communication systems.<br><br>
+              <strong>Impact:</strong> Destabilization of command structure, loss of operational security.
+            </div>
+          </div>
+
+          <!-- Specter Network -->
+          <div class="threat-card">
+            <div class="threat-level-badge threat-critical">CRITICAL</div>
+            <div class="threat-name">Specter Network</div>
+            <div class="threat-type">Information Warfare</div>
+            <div class="threat-details">
+              <strong>Primary Concerns:</strong> Data manipulation, identity erasure, propaganda dissemination, digital infrastructure attacks.<br><br>
+              <strong>Countermeasures:</strong> Analog backup systems, physical record keeping, transmission verification protocols.<br><br>
+              <strong>Impact:</strong> Loss of historical records, compromised communications, civilian demoralization.
+            </div>
+          </div>
+
+          <!-- Titan Order -->
+          <div class="threat-card">
+            <div class="threat-level-badge threat-high">HIGH</div>
+            <div class="threat-name">Titan Order</div>
+            <div class="threat-type">Military Conquest</div>
+            <div class="threat-details">
+              <strong>Primary Concerns:</strong> Direct military engagement, siege warfare, territorial occupation, resource acquisition.<br><br>
+              <strong>Countermeasures:</strong> Mobile defense strategies, asymmetric warfare, supply line disruption.<br><br>
+              <strong>Impact:</strong> Loss of territory, civilian casualties, resource depletion.
+            </div>
+          </div>
+
+          <!-- Shadowblade Mercenaries -->
+          <div class="threat-card">
+            <div class="threat-level-badge threat-high">HIGH</div>
+            <div class="threat-name">Shadowblade Mercenaries</div>
+            <div class="threat-type">Terror Operations</div>
+            <div class="threat-details">
+              <strong>Primary Concerns:</strong> Shock tactics, civilian targeting, psychological warfare, rapid strike operations.<br><br>
+              <strong>Countermeasures:</strong> Rapid response teams, civilian evacuation protocols, payment source elimination.<br><br>
+              <strong>Impact:</strong> Civilian terror, economic disruption, psychological demoralization.
+            </div>
+          </div>
+
+          <!-- Voidborn Syndicate -->
+          <div class="threat-card">
+            <div class="threat-level-badge threat-moderate">MODERATE</div>
+            <div class="threat-name">Voidborn Syndicate</div>
+            <div class="threat-type">Economic Disruption</div>
+            <div class="threat-details">
+              <strong>Primary Concerns:</strong> Trade route piracy, black market operations, resource smuggling, corruption facilitation.<br><br>
+              <strong>Countermeasures:</strong> Trade lane patrols, market regulation, anti-corruption protocols.<br><br>
+              <strong>Impact:</strong> Economic instability, resource shortages, increased crime rates.
+            </div>
+          </div>
+
+          <!-- Combined Threat -->
+          <div class="threat-card" style="border-color: #B22222;">
+            <div class="threat-level-badge threat-critical">EXTREME</div>
+            <div class="threat-name">Combined Operations</div>
+            <div class="threat-type">Coordinated Assault</div>
+            <div class="threat-details">
+              <strong>Primary Concerns:</strong> Multi-vector attacks, synchronized operations, overwhelming force projection.<br><br>
+              <strong>Countermeasures:</strong> Unified command structure, cross-department coordination, strategic resource allocation.<br><br>
+              <strong>Impact:</strong> Systemic failure, total territorial loss, civilian population displacement.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="strategic-overview">
+        <div class="overview-title">Operational Recommendations</div>
+        <div class="overview-content">
+          <p><strong>Priority Alpha:</strong> Counter-intelligence operations against Ghost Legion and Specter Network infiltration attempts. These threats pose the greatest risk to operational security and civilian morale.</p>
+          <p><strong>Priority Beta:</strong> Defensive preparations against Titan Order territorial expansion. Fortification of key systems and establishment of mobile defense networks.</p>
+          <p><strong>Priority Gamma:</strong> Economic warfare against Voidborn Syndicate funding sources and Shadowblade Mercenary payment networks.</p>
+          <p><strong>Contingency Protocol:</strong> In the event of coordinated Consortium assault, activate unified defense protocols and civilian evacuation procedures per Strategic Directive 7-Alpha.</p>
+        </div>
+      </div>
+
+      <div class="classified-banner">
+        END OF CLASSIFIED BRIEFING - SECURE DISPOSAL REQUIRED
+      </div>
+
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
