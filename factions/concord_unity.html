@@ -39,15 +39,16 @@
       text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
     }
 
-    .nav-link.nav-brand {
+    .nav-link.nav-current {
       color: #DAA520;
       font-weight: bold;
       text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
     }
 
-    .nav-link.nav-brand:hover {
-      color: #FFFFFF;
-      text-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
+    .nav-link.nav-disabled {
+      color: #666666;
+      cursor: not-allowed;
+      opacity: 0.5;
     }
 
     .nav-dropdown:hover .dropdown-menu {
@@ -510,22 +511,12 @@
         <div class="nav-logo">
           <img src="images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
         </div>
-        <a href="../index.html" class="nav-link nav-brand">Command Center</a>
       </div>
       
       <div class="nav-center">
-        <div class="nav-dropdown">
-          <span class="nav-link dropdown-toggle">Factions</span>
-          <div class="dropdown-menu">
-            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
-            <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
-            <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
-            <a href="specter_network.html"><span class="intel-dot"></span>Specter Network</a>
-            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
-          </div>
-        </div>
-        <span class="nav-link nav-disabled" title="In Development">The Shadow Grid</span>
-        <a href="concord_unity.html" class="nav-link">Concord of Unity</a>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">Factions</span>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">The Shadow Grid</span>
+        <a href="concord_unity.html" class="nav-link nav-current">Concord of Unity</a>
       </div>
       
       <div class="nav-right">
