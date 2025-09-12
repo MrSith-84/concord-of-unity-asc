@@ -6,6 +6,180 @@
   <title>Concord of Unity - Apex Separatist Consortium</title>
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Concord of Unity Custom Color Scheme */
+    body {
+      background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+                  linear-gradient(135deg, #E5E5E5 0%, #1E3A8A 25%, #E5E5E5 50%, #1E3A8A 75%, #E5E5E5 100%);
+      background-size: cover, 100% 100%;
+      color: #4B4B4B;
+    }
+
+    /* Navigation and UI Elements */
+    .main-navigation {
+      background: linear-gradient(135deg, rgba(229, 229, 229, 0.98), rgba(30, 58, 138, 0.95));
+      border-bottom: 3px solid #FFD700;
+      border-top: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6),
+                  0 0 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .main-navigation::before {
+      background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    }
+
+    .nav-link {
+      color: #4B4B4B;
+    }
+
+    .nav-link:hover {
+      color: #FFD700;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .nav-link.nav-brand {
+      color: #FFD700;
+    }
+
+    .nav-link.nav-brand:hover {
+      color: #E5E5E5;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(229, 229, 229, 0.9));
+      border: 2px solid rgba(255, 215, 0, 0.4);
+    }
+
+    .dropdown-menu a {
+      color: #4B4B4B;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255, 215, 0, 0.1);
+      color: #FFD700;
+    }
+
+    /* Auth Button */
+    .auth-button {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(229, 229, 229, 0.2));
+      color: #FFD700;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .auth-button:hover {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(229, 229, 229, 0.3));
+      color: #E5E5E5;
+      border-color: #FFD700;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 
+                  0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Floating Crest */
+    .floating-crest {
+      border: 3px solid rgba(255, 215, 0, 0.5);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+                  0 0 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .floating-crest:hover {
+      border-color: #FFD700;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+                  0 0 30px rgba(255, 215, 0, 0.4);
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(75, 75, 75, 0.9));
+    }
+
+    /* Content Sections */
+    main.container section {
+      background: linear-gradient(135deg, rgba(229, 229, 229, 0.9), rgba(30, 58, 138, 0.8));
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 2px 12px rgba(255, 215, 0, 0.15);
+    }
+
+    h1, h2 {
+      color: #FFD700;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    h3, h4 {
+      color: #1E3A8A;
+    }
+
+    p, li {
+      color: #4B4B4B;
+    }
+
+    strong {
+      color: #B22222;
+    }
+
+    em {
+      color: #FFD700;
+    }
+
+    /* Tab Navigation */
+    .tab-button {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(229, 229, 229, 0.2));
+      color: #1E3A8A;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(30, 58, 138, 0.3));
+      color: #FFD700;
+      border-color: #FFD700;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+                  0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Tier Sections */
+    .tier-section {
+      background: linear-gradient(135deg, rgba(229, 229, 229, 0.9), rgba(30, 58, 138, 0.8));
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 2px 12px rgba(255, 215, 0, 0.15);
+    }
+
+    .tier-header {
+      background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(30, 58, 138, 0.2));
+      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .tier-info h4 {
+      color: #FFD700;
+    }
+
+    .tier-info p {
+      color: #B22222;
+      font-style: italic;
+    }
+
+    /* Status Indicators */
+    .online-dot {
+      background: #FFD700;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      animation: glow-gold 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow-gold {
+      from { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+      to { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+    }
+
+    /* Links */
+    a {
+      color: #1E3A8A;
+    }
+
+    a:hover {
+      color: #FFD700;
+    }
+
+    /* Figure Captions */
+    figcaption {
+      color: #4B4B4B;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body class="fade-in">
   <!-- Transition Overlay -->
