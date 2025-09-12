@@ -11,6 +11,15 @@ The Apex Separatist Consortium is a dark-themed fictional faction website featur
 - **Visual Consistency**: Unified color palette across all pages including classified section, removing blue/purple accent inconsistencies
 - **Enhanced Authentication**: Secure Google OAuth integration with classified files access for verified users
 
+## Mobile Optimization (September 2025)
+- **Touch-Friendly Interface**: Added 44px minimum touch targets for all interactive elements (buttons, navigation, tabs)
+- **Responsive Tab Navigation**: Enhanced tab system for faction pages with flexible wrapping and proper mobile sizing
+- **Improved Mobile Typography**: Optimized font sizes, line heights, and spacing for better mobile readability
+- **Mobile-First Layout**: Reorganized tier cards, tactics grids, and content sections for optimal mobile viewing
+- **Touch Optimization**: Added webkit touch highlights, prevented text selection on buttons, disabled iOS font scaling
+- **Responsive Navigation**: Improved dropdown menus and navigation links for mobile devices
+- **Content Spacing**: Enhanced padding and margins for better mobile content consumption
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
