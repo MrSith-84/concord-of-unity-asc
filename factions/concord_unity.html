@@ -198,6 +198,110 @@
       background-size: cover, 100% 100%;
       color: #2D2D2D;
     }
+
+    /* Concord Overview Styling */
+    .concord-overview {
+      padding: 1rem 0;
+    }
+
+    .overview-section {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 248, 255, 0.6));
+      border-left: 4px solid #FFD700;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.1);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .asset-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .asset-card:hover {
+      border-color: #FFD700;
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .asset-card h4 {
+      color: #1E3A8A;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .asset-card p {
+      color: #2D2D2D;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .weakness-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .weakness-card {
+      background: linear-gradient(135deg, rgba(255, 245, 245, 0.9), rgba(255, 240, 240, 0.8));
+      border: 2px solid rgba(178, 34, 34, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .weakness-card:hover {
+      border-color: #B22222;
+      box-shadow: 0 6px 20px rgba(178, 34, 34, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .weakness-card h4 {
+      color: #B22222;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .weakness-card p {
+      color: #2D2D2D;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Mobile Responsiveness for Overview */
+    @media (max-width: 768px) {
+      .overview-grid,
+      .weakness-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .asset-card,
+      .weakness-card {
+        min-height: auto;
+      }
+      
+      .overview-section {
+        padding: 1rem;
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body class="fade-in">
@@ -280,29 +384,59 @@
             <figcaption>Seal of the Concord of Unity</figcaption>
           </figure>
 
-          <h3>Origins & Motivation</h3>
-          <p>Born of fear as the Consortium rose, isolated systems banded together under the desperate cry for survival. Their <strong>creed: Unity against darkness.</strong> They see themselves as guardians of civilization, the last bulwark against the spreading shadow of the Apex Separatist Consortium.</p>
-          <p>Yet beneath their noble proclamations lies harsh reality—<em>beneath unity lies dissonance</em>. Fallen empires, greedy corporations, fanatical zealots, and fractured militias, all forced together not by shared ideals but by mutual fear of annihilation.</p>
+          <div class="concord-overview">
+            <h3>The Unity Creed</h3>
+            <div class="overview-section">
+              <p><strong>"Unity against darkness"</strong> - the desperate rallying cry that binds together fallen empires, greedy corporations, fanatical zealots, and fractured militias. Born of fear as the Consortium rose, they see themselves as guardians of civilization, the last bulwark against spreading shadow.</p>
+              <p><em>Yet beneath noble proclamations lies harsh reality</em> - these are not allies united by shared ideals, but survivors bound together by mutual fear of annihilation.</p>
+            </div>
 
-          <h3>Role in the Galactic Struggle</h3>
-          <p>The Concord of Unity stands as <strong>the shield against the Consortium's blade.</strong> They claim to defend civilization itself, positioning themselves as the moral alternative to the Consortium's rule through strength. However, the very fractures that drove them together may ultimately undo them.</p>
-          
-          <h3>Resources & Capabilities</h3>
-          <ul>
-            <li><strong>Industrial Hubs:</strong> Control of inner system manufacturing centers</li>
-            <li><strong>Massive Fleets:</strong> Enormous armadas, though often outdated and poorly coordinated</li>
-            <li><strong>Corporate Backing:</strong> Financial support from powerful cartels seeking stability</li>
-            <li><strong>Religious Orders:</strong> Zealous faithful providing morale and ideological unity</li>
-          </ul>
+            <h3>The Shield Against Darkness</h3>
+            <div class="overview-section">
+              <p>The Concord positions itself as <strong>the moral alternative</strong> to the Consortium's rule through strength. They claim to defend civilization itself, standing as the shield against the Consortium's blade.</p>
+              <p>However, the very fractures that drove them together may ultimately prove their undoing.</p>
+            </div>
+            
+            <h3>Strengths & Assets</h3>
+            <div class="overview-grid">
+              <div class="asset-card">
+                <h4>Industrial Might</h4>
+                <p>Control of inner system manufacturing centers and production facilities</p>
+              </div>
+              <div class="asset-card">
+                <h4>Massive Fleets</h4>
+                <p>Enormous armadas, though often outdated and poorly coordinated</p>
+              </div>
+              <div class="asset-card">
+                <h4>Corporate Backing</h4>
+                <p>Financial support from powerful cartels seeking stability</p>
+              </div>
+              <div class="asset-card">
+                <h4>Religious Fervor</h4>
+                <p>Zealous faithful providing morale and ideological unity</p>
+              </div>
+            </div>
 
-          <h3>Fatal Weaknesses</h3>
-          <p>The Concord's strength is also its greatest vulnerability:</p>
-          <ul>
-            <li><strong>Fragile Unity:</strong> Allies constantly distrust each other's motives</li>
-            <li><strong>Bureaucratic Paralysis:</strong> Critical decisions delayed by committee</li>
-            <li><strong>Competing Agendas:</strong> Corporations, zealots, and militarists pulling in different directions</li>
-            <li><strong>Infiltration:</strong> Constant penetration by Ghost Legion spies and Specter Network manipulators</li>
-          </ul>
+            <h3>Fatal Vulnerabilities</h3>
+            <div class="weakness-grid">
+              <div class="weakness-card">
+                <h4>🔥 Fragile Unity</h4>
+                <p>Allies constantly distrust each other's true motives</p>
+              </div>
+              <div class="weakness-card">
+                <h4>⚖️ Bureaucratic Paralysis</h4>
+                <p>Critical decisions delayed by endless committee debates</p>
+              </div>
+              <div class="weakness-card">
+                <h4>🎯 Competing Agendas</h4>
+                <p>Corporations, zealots, and militarists pulling in different directions</p>
+              </div>
+              <div class="weakness-card">
+                <h4>🕵️ Infiltration</h4>
+                <p>Constant penetration by Ghost Legion spies and Specter Network manipulators</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Structure Tab -->
