@@ -811,8 +811,8 @@ h3 {
 /* Tier Section Styling */
 .tier-section {
   margin: 2rem 0;
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.12) 0%, rgba(30, 30, 35, 0.8) 100%);
-  border: 1px solid rgba(192, 192, 192, 0.3);
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.08) 0%, rgba(10, 10, 10, 0.4) 100%);
+  border: 1px solid rgba(230, 57, 70, 0.2);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
