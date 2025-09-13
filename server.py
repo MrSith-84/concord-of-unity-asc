@@ -77,11 +77,9 @@ def api_user():
 def signin():
     return redirect(url_for('google_auth.login'))
 
-# Protected classified page - requires authentication
+# Classified page - now open access
 @app.route('/classified.html')
 def classified():
-    if not current_user.is_authenticated:
-        return redirect(url_for('google_auth.login'))
     return send_from_directory('.', 'classified.html')
 
 
@@ -102,22 +100,12 @@ def serve_static(filename):
     if any(filename.startswith(path) or filename.endswith('.py') or filename.endswith('.db') for path in blocked_paths):
         return 'Access denied', 403
     
-    # Handle faction pages - require authentication except for Concord of Unity
+    # Handle faction pages - allow all access
     if filename.startswith('factions/') and filename.endswith('.html'):
-        # Allow access to Concord of Unity pages without authentication (enemy territory)
-        if 'concord_unity' in filename or 'intel_' in filename:
-            try:
-                return send_from_directory('.', filename)
-            except:
-                return send_from_directory('.', '404.html'), 404
-        # All other faction pages require authentication
-        elif not current_user.is_authenticated:
-            return redirect(url_for('google_auth.login'))
-        else:
-            try:
-                return send_from_directory('.', filename)
-            except:
-                return send_from_directory('.', '404.html'), 404
+        try:
+            return send_from_directory('.', filename)
+        except:
+            return send_from_directory('.', '404.html'), 404
 
     # Handle other safe static files
     allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp']
