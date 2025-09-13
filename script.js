@@ -60,12 +60,56 @@ class TransitionManager {
     // Check if transitioning to Concord of Unity (enemy territory)
     if (url.includes('concord_unity')) {
       this.showConcordWarning();
+    } else if (this.isReturningToConsortium(url)) {
+      this.showReturnTransition();
     } else {
       this.show();
     }
     setTimeout(() => {
       window.location.href = url;
     }, 2000);
+  }
+  
+  isReturningToConsortium(url) {
+    // Check if we're currently on a Concord page and going back to consortium
+    const currentPath = window.location.pathname;
+    const isOnConcordPage = currentPath.includes('concord_unity') || currentPath.includes('intel_');
+    const goingToConsortium = url.includes('index.html') || url.includes('factions/') && !url.includes('concord_unity') && !url.includes('intel_');
+    return isOnConcordPage && goingToConsortium;
+  }
+  
+  showReturnTransition() {
+    if (this.isTransitioning || !this.hasRequiredElements) return;
+    this.isTransitioning = true;
+    
+    // Special messages for returning to Consortium
+    const returnMessages = [
+      'Leaving enemy territory...',
+      'Reconnecting to Consortium network...',
+      'Establishing secure connection...',
+      'Returning to allied systems...',
+      'Re-entering protected space...'
+    ];
+    
+    const returnStatus = [
+      '// LEAVING CONCORD TERRITORY',
+      '// CONSORTIUM NETWORK RECONNECTED', 
+      '// SECURE CONNECTION RESTORED',
+      '// RETURNING TO PROTECTED NETWORK',
+      '// HOSTILE NETWORK DISCONNECTED'
+    ];
+    
+    if (this.message) {
+      this.message.textContent = returnMessages[Math.floor(Math.random() * returnMessages.length)];
+    }
+    if (this.status) {
+      this.status.textContent = returnStatus[Math.floor(Math.random() * returnStatus.length)];
+    }
+    
+    // Use regular transition styling (no warning class)
+    if (this.overlay) {
+      this.overlay.classList.add('active');
+    }
   }
   
   showConcordWarning() {
