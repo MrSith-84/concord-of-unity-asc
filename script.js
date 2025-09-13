@@ -155,8 +155,8 @@ function addTransitionToLinks() {
   const links = document.querySelectorAll('a[href]');
   links.forEach(link => {
     const href = link.getAttribute('href');
-    // Only add transitions to internal links (not external or auth links)
-    if (href && !href.startsWith('http') && !href.startsWith('/access') && !href.startsWith('/logout') && !href.includes('google')) {
+    // Only add transitions to internal links (not external links)
+    if (href && !href.startsWith('http')) {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         transitionManager.transition(href);
@@ -165,59 +165,6 @@ function addTransitionToLinks() {
   });
 }
 
-// Authentication functionality
-async function checkAuthStatus() {
-  try {
-    const response = await fetch('/api/user');
-    const data = await response.json();
-    
-    const authLoading = document.getElementById('authLoading');
-    const authLogin = document.getElementById('authLogin');
-    const authUser = document.getElementById('authUser');
-    
-    // Check if auth elements exist (not all pages have them)
-    if (!authLoading || !authLogin || !authUser) {
-      return; // Skip auth handling on pages without auth elements
-    }
-    
-    authLoading.style.display = 'none';
-    
-    if (data.authenticated) {
-      // User is logged in
-      const userName = document.getElementById('userName');
-      const userAvatar = document.getElementById('userAvatar');
-      
-      if (userName) {
-        userName.textContent = data.user.name;
-      }
-      if (userAvatar) {
-        if (data.user.picture) {
-          userAvatar.src = data.user.picture;
-        } else {
-          userAvatar.style.display = 'none';
-        }
-      }
-      authUser.style.display = 'flex';
-      authLogin.style.display = 'none';
-    } else {
-      // User is not logged in
-      authLogin.style.display = 'block';
-      authUser.style.display = 'none';
-    }
-  } catch (error) {
-    console.error('Auth check failed:', error);
-    // Show login on error - only if elements exist
-    const authLoading = document.getElementById('authLoading');
-    const authLogin = document.getElementById('authLogin');
-    
-    if (authLoading) {
-      authLoading.style.display = 'none';
-    }
-    if (authLogin) {
-      authLogin.style.display = 'block';
-    }
-  }
-}
 
 // Tab functionality for faction pages
 function initializeTabs() {
@@ -373,8 +320,7 @@ function optimizeImagesForMobile() {
 
 // Dynamic Breadcrumbs
 document.addEventListener("DOMContentLoaded", () => {
-  // Check authentication status
-  checkAuthStatus();
+  // No authentication needed
   
   // Initialize page transitions
   addTransitionToLinks();
