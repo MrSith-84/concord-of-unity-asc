@@ -77,10 +77,6 @@ def api_user():
 def signin():
     return redirect(url_for('google_auth.login'))
 
-# Classified page - now open access
-@app.route('/classified.html')
-def classified():
-    return send_from_directory('.', 'classified.html')
 
 
 # Serve static files with proper routing
