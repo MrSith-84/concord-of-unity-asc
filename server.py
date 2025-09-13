@@ -76,7 +76,7 @@ def index():
 def access_page():
     return send_from_directory('.', 'access.html')
 
-# Concord of Unity site routes
+# Concord of Unity Command Center routes
 @app.route('/concord/')
 def concord_index():
     return send_from_directory('concord_site', 'index.html')
@@ -84,6 +84,38 @@ def concord_index():
 @app.route('/concord')
 def concord_redirect():
     return redirect('/concord/', code=301)
+
+# Command Divisions routing - placeholder implementation
+@app.route('/divisions/diplomatic_corps.html')
+def diplomatic_corps():
+    # Redirect to Unity faction page as placeholder
+    return redirect('/factions/concord_unity.html', code=302)
+
+@app.route('/divisions/peace_keepers.html')
+def peace_keepers():
+    # Redirect to Unity faction page as placeholder
+    return redirect('/factions/concord_unity.html', code=302)
+
+@app.route('/divisions/unity_council.html')
+def unity_council():
+    # Redirect to Unity faction page as placeholder
+    return redirect('/factions/concord_unity.html', code=302)
+
+@app.route('/divisions/mediation_office.html')
+def mediation_office():
+    # Redirect to Unity faction page as placeholder
+    return redirect('/factions/concord_unity.html', code=302)
+
+@app.route('/divisions/cultural_exchange.html')
+def cultural_exchange():
+    # Redirect to Unity faction page as placeholder
+    return redirect('/factions/concord_unity.html', code=302)
+
+# Consortium threat assessment routing
+@app.route('/consortium/')
+def consortium_threat():
+    # Redirect to existing threat assessment page
+    return redirect('/factions/intel_threat_assessment.html', code=302)
 
 @app.route('/concord/<path:filename>')
 def serve_concord_static(filename):
