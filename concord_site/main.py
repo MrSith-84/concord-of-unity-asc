@@ -2,7 +2,7 @@
 from flask import Flask, send_from_directory, jsonify
 import os
 
-app = Flask(__name__, static_folder='.', static_url_path='')
+app = Flask(__name__)
 
 # Cache control for static files
 @app.after_request
@@ -34,18 +34,28 @@ def index():
 
 @app.route('/<path:filename>')
 def serve_static(filename):
-    # Security: Block access to sensitive paths
-    blocked_paths = ['.git/', '__pycache__/', '.env', 'main.py']
-    if any(filename.startswith(path) or filename.endswith('.py') for path in blocked_paths):
+    # Security: Block access to sensitive paths and files
+    blocked_paths = ['.git/', '__pycache__/', '.env', 'main.py', '.gitignore', 'requirements.txt', 'pyproject.toml', 'README.md']
+    blocked_extensions = ['.py', '.pyc', '.pyo', '.db', '.log', '.txt', '.md', '.toml']
+    
+    # Block sensitive paths and files
+    if any(filename.startswith(path) for path in blocked_paths):
         return 'Access denied', 403
     
-    # Handle allowed file types
-    allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp', '.txt']
+    # Block sensitive file extensions
+    if any(filename.endswith(ext) for ext in blocked_extensions):
+        return 'Access denied', 403
+    
+    # Block dotfiles (hidden files)
+    if filename.startswith('.') or '/.' in filename:
+        return 'Access denied', 403
+    
+    # Only allow specific safe file types
+    allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp']
     if any(filename.endswith(ext) for ext in allowed_extensions):
         try:
             return send_from_directory('.', filename)
         except:
-            # File doesn't exist, serve 404
             return 'File not found', 404
     
     # Block everything else
