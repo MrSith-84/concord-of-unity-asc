@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 from flask import Flask, send_from_directory, jsonify
 import os
+from pathlib import Path
+
+# Get the directory containing this file (concord_site)
+base_dir = Path(__file__).parent
 
 app = Flask(__name__)
 
@@ -30,7 +34,7 @@ def api_territory():
 # Main routes
 @app.route('/')
 def index():
-    return send_from_directory('.', 'index.html')
+    return send_from_directory(str(base_dir), 'index.html')
 
 @app.route('/<path:filename>')
 def serve_static(filename):
@@ -54,7 +58,7 @@ def serve_static(filename):
     allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp']
     if any(filename.endswith(ext) for ext in allowed_extensions):
         try:
-            return send_from_directory('.', filename)
+            return send_from_directory(str(base_dir), filename)
         except:
             return 'File not found', 404
     
