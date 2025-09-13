@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 from flask import Flask, redirect, url_for, request, send_from_directory, jsonify
-from flask_login import LoginManager, current_user
+# Flask-Login removed - no authentication required
 import os
 from models import db, User
-from google_auth import google_auth
+# Google auth import removed - no authentication
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 # Require proper secret key in production
@@ -25,16 +25,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize extensions
 db.init_app(app)
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'google_auth.login'
+# Authentication system removed - no login required
 
 # Register blueprints
-app.register_blueprint(google_auth)
+# Google auth blueprint removed - no authentication
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+# User loader removed - no authentication
 
 # Create database tables
 with app.app_context():
@@ -60,15 +56,7 @@ def api_status():
 
 @app.route('/api/user')
 def api_user():
-    if current_user.is_authenticated:
-        return jsonify({
-            'authenticated': True,
-            'user': {
-                'name': current_user.username,
-                'email': current_user.email,
-                'picture': ''  # Can be added later if needed
-            }
-        })
+    # Authentication removed - all users are now considered unauthenticated
     return jsonify({'authenticated': False})
 
 
