@@ -187,7 +187,7 @@ body {
 .hazard-button {
   position: relative !important;
   display: inline-block !important;
-  padding: 0.6rem 1.5rem !important;
+  padding: 0.4rem 1.5rem !important;
   background: linear-gradient(45deg, #cc5500 0%, #ff6600 25%, #cc5500 50%, #ff6600 75%, #cc5500 100%) !important;
   background-size: 40px 40px !important;
   border: 2px solid #ffaa00 !important;
