@@ -217,6 +217,11 @@ body {
   }
 }
 
+/* Command Center navigation link - smaller text */
+.nav-brand {
+  font-size: 0.85rem !important;
+}
+
 /* Specter Network pulsing green effect */
 .specter-pulse {
   background: #00ff41 !important;
