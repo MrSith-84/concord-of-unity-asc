@@ -1488,6 +1488,52 @@ footer {
   border-color: rgba(230, 57, 70, 0.5);
 }
 
+/* Enemy Card Styling */
+.enemy-card {
+  position: relative;
+  border: 2px solid rgba(218, 165, 32, 0.4) !important;
+  background: linear-gradient(135deg, rgba(35, 30, 20, 0.9), rgba(25, 25, 25, 0.8)) !important;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5),
+              0 0 20px rgba(218, 165, 32, 0.2) !important;
+}
+
+.enemy-card:hover {
+  border-color: #DAA520 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6),
+              0 0 30px rgba(218, 165, 32, 0.3) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+.enemy-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(45deg, #DAA520, #B8860B);
+  color: #000000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid rgba(218, 165, 32, 0.8);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(218, 165, 32, 0.4);
+  animation: warningPulse 2s ease-in-out infinite alternate;
+  z-index: 10;
+}
+
+@keyframes warningPulse {
+  0% { 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(218, 165, 32, 0.4);
+  }
+  100% { 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(218, 165, 32, 0.6);
+  }
+}
+
 .faction-card h3 {
   margin-top: 0;
   font-size: 1.1rem;
