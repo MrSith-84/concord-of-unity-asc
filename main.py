@@ -7,7 +7,6 @@ to satisfy the deployment configuration requirement for main:app.
 
 # Import the Flask app from the concord_site directory
 from concord_site.main import app
-from concord_site.main import app
 from flask import jsonify
 
 # Add a simple health check for deployment health checks
