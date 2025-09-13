@@ -81,6 +81,10 @@ def access_page():
 def concord_index():
     return send_from_directory('concord_site', 'index.html')
 
+@app.route('/concord')
+def concord_redirect():
+    return redirect('/concord/', code=301)
+
 @app.route('/concord/<path:filename>')
 def serve_concord_static(filename):
     # Security: Block access to sensitive paths
