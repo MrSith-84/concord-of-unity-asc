@@ -19,7 +19,7 @@ This site is designed to be deployed on Replit with a custom domain: **concord-o
 2. **Configure Reserved VM Deployment**
    - Click "Deploy" in your Replit workspace
    - Select "Reserved VM" deployment type
-   - Set run command: `gunicorn --bind=0.0.0.0:5000 --reuse-port main:app`
+   - Set run command: `gunicorn --bind=0.0.0.0:$PORT --reuse-port main:app`
 
 3. **Set Up Custom Domain**
    - In Deployment settings, go to "Settings" tab
