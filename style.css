@@ -2134,3 +2134,84 @@ footer {
   background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
   box-shadow: 0 8px 20px rgba(218, 165, 32, 0.3) !important;
 }
+
+/* Threat Assessment Styling */
+.threat-level-high, .threat-level-medium, .threat-level-low {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.threat-level-high {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(178, 34, 34, 0.2));
+  border: 2px solid #B22222;
+  color: #FF6B6B;
+  box-shadow: 0 0 10px rgba(178, 34, 34, 0.3);
+}
+
+.threat-recommendations {
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.threat-recommendations h4 {
+  color: #DAA520;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(218, 165, 32, 0.4);
+}
+
+.captured-dossier {
+  margin-top: 2rem;
+  border: 1px solid rgba(139, 0, 0, 0.3);
+  border-radius: 6px;
+  background: rgba(26, 14, 14, 0.4);
+}
+
+.dossier-header {
+  background: rgba(139, 0, 0, 0.2);
+  padding: 1rem;
+  border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dossier-header:hover {
+  background: rgba(139, 0, 0, 0.3);
+}
+
+.floating-threat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.threat-float-link {
+  display: block;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(178, 34, 34, 0.9), rgba(139, 0, 0, 0.8));
+  color: #FF6B6B;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  border: 2px solid rgba(178, 34, 34, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(178, 34, 34, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.threat-float-link:hover {
+  background: linear-gradient(135deg, rgba(178, 34, 34, 1), rgba(139, 0, 0, 0.9));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(178, 34, 34, 0.6);
+  border-color: #B22222;
+}

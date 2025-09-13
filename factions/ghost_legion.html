@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ghost Legion - Apex Separatist Consortium</title>
+  <title>Threat Assessment: Ghost Legion - Concord Intelligence</title>
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -11,12 +11,12 @@
   <!-- Transition Overlay -->
   <div class="transition-overlay" id="transitionOverlay">
     <div class="transition-content">
-      <div class="transition-title">APEX CONSORTIUM</div>
-      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-title">CONCORD INTELLIGENCE</div>
+      <div class="transition-message" id="transitionMessage">Accessing threat assessment database...</div>
       <div class="transition-progress">
         <div class="transition-progress-bar"></div>
       </div>
-      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+      <div class="transition-status" id="transitionStatus">// INTELLIGENCE BRIEFING AUTHORIZED</div>
     </div>
   </div>
 
@@ -27,21 +27,21 @@
         <div class="nav-logo">
           <img src="../factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
         </div>
-        <a href="../index.html" class="nav-link nav-brand">Command Center</a>
+        <a href="../index.html" class="nav-link nav-brand">Concord Command</a>
       </div>
       
       <div class="nav-center">
         <div class="nav-dropdown">
-          <span class="nav-link dropdown-toggle">Factions</span>
+          <span class="nav-link dropdown-toggle">Threat Intel</span>
           <div class="dropdown-menu">
-            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="ghost_legion.html"><span class="intel-dot"></span>Ghost Legion</a>
             <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
             <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
             <a href="specter_network.html"><span class="intel-dot specter-pulse"></span>Specter Network</a>
-            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
+            <a href="shadowblade_mercenary.html"><span class="intel-dot"></span>Shadowblade Mercenary</a>
           </div>
         </div>
-        <span class="nav-link nav-disabled" title="In Development">The Shadow Grid</span>
+        <a href="intel_threat_assessment.html" class="nav-link">Assessment Overview</a>
         
       </div>
       
@@ -65,21 +65,22 @@
     </div>
   </nav>
 
-  <!-- Floating Concord Unity Button -->
-  <div class="floating-concord-button">
-    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  <!-- Floating Threat Alert -->
+  <div class="floating-threat-button">
+    <a href="intel_threat_assessment.html" class="threat-float-link">⚠ ASSESSMENT OVERVIEW</a>
   </div>
   <main class="container">
     <section>
-      <h2>Ghost Legion</h2>
-      <p>Elite operatives skilled in infiltration, sabotage, and intelligence gathering. Masters of the unseen war.</p>
+      <h2>THREAT ASSESSMENT: Ghost Legion</h2>
+      <div class="threat-level-high">⚠ THREAT LEVEL: HIGH</div>
+      <p><strong>ENEMY CLASSIFICATION:</strong> Elite covert operations unit specializing in infiltration, sabotage, and intelligence gathering. Highly dangerous asymmetric warfare specialists.</p>
       
       <!-- Tab Navigation -->
       <div class="tab-navigation">
-        <button class="tab-button active" data-tab="overview">Overview</button>
-        <button class="tab-button" data-tab="structure">Structure</button>
-        <button class="tab-button" data-tab="operations">Operations</button>
-        <button class="tab-button" data-tab="relations">Relations</button>
+        <button class="tab-button active" data-tab="overview">Threat Profile</button>
+        <button class="tab-button" data-tab="structure">Organization</button>
+        <button class="tab-button" data-tab="operations">Tactics</button>
+        <button class="tab-button" data-tab="relations">Intel Network</button>
       </div>
 
       <!-- Tab Content -->
@@ -91,11 +92,45 @@
             <figcaption>Symbol of the Ghost Legion</figcaption>
           </figure>
 
-          <h3>Origins & Motivation</h3>
-          <p>Born from necessity during the early rise of the Apex Separatist Consortium, the Ghost Legion was formed by defectors, spies, and criminals who possessed intimate knowledge of enemy tactics. Their philosophical core revolves around the belief that <strong>knowledge is power</strong> — wars are won before armies clash, through controlling information, disrupting logistics, and fracturing trust.</p>
-          <p>The Legion sees itself as the Consortium's unseen blade, operating in the shadows while open warfare belongs to the Titan Order and Shadowblade Mercenaries.</p>
+          <h3>Intelligence Brief</h3>
+          <p><strong>THREAT ANALYSIS:</strong> The Ghost Legion represents one of the most dangerous asymmetric threats to Concord operations. Their advanced stealth capabilities, psychological warfare tactics, and precision strike capabilities make them a high-priority neutralization target.</p>
+          
+          <div class="threat-recommendations">
+            <h4>Recommended Countermeasures:</h4>
+            <ul>
+              <li>Enhanced sensor sweeps in sensitive areas</li>
+              <li>Increased security protocols for diplomatic missions</li>
+              <li>Counter-intelligence operations to identify infiltration attempts</li>
+              <li>Compartmentalized communications in high-risk zones</li>
+            </ul>
+          </div>
+          
+          <p><strong>RECENT ACTIVITY:</strong> Ghost Legion operatives have been detected near three Concord diplomatic installations in the past cycle. Exercise extreme caution.</p>
         </div>
-
+      </div>
+      
+      <div class="captured-dossier">
+        <div class="dossier-header" onclick="toggleDossier()">
+          <h3>⚠ Captured Consortium Dossier (Legacy Intelligence)</h3>
+          <p><em>Click to expand intercepted enemy documentation</em></p>
+        </div>
+        <div class="dossier-content" id="dossierContent">
+          <!-- Tab Navigation -->
+          <div class="tab-navigation">
+            <button class="tab-button" data-tab="origins">Enemy Origins</button>
+            <button class="tab-button active" data-tab="structure">Organization</button>
+            <button class="tab-button" data-tab="operations">Tactics</button>
+            <button class="tab-button" data-tab="relations">Networks</button>
+          </div>
+          
+          <div class="tab-content">
+            <!-- Origins Tab -->
+            <div class="tab-panel" id="origins">
+              <h3>Origins & Motivation</h3>
+              <p>Born from necessity during the early rise of the Apex Separatist Consortium, the Ghost Legion was formed by defectors, spies, and criminals who possessed intimate knowledge of enemy tactics. Their philosophical core revolves around the belief that <strong>knowledge is power</strong> — wars are won before armies clash, through controlling information, disrupting logistics, and fracturing trust.</p>
+              <p>The Legion sees itself as the Consortium's unseen blade, operating in the shadows while open warfare belongs to the Titan Order and Shadowblade Mercenaries.</p>
+            </div>
+        
         <!-- Structure Tab -->
         <div class="tab-panel" id="structure">
           <h3>Organizational Structure</h3>
