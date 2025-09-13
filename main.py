@@ -8,6 +8,7 @@ to satisfy the deployment configuration requirement for main:app.
 # Import the Flask app from the concord_site directory
 from concord_site.main import app
 from flask import jsonify
+import os
 
 # Add a simple health check for deployment health checks
 @app.route('/health')
@@ -16,4 +17,5 @@ def deployment_health():
 
 if __name__ == '__main__':
     # If run directly, start the app
-    app.run(host='0.0.0.0', port=5001, debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
