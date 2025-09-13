@@ -89,17 +89,34 @@ function smoothScrollTo(target) {
 function showTerritoryWarning(destination) {
     const warning = document.createElement('div');
     warning.className = 'territory-warning-popup';
-    warning.innerHTML = `
-        <div class="warning-content">
-            <h3>⚠️ TERRITORY TRANSITION WARNING ⚠️</h3>
-            <p>You are about to leave Concord of Unity space and enter:</p>
-            <p><strong>${destination}</strong></p>
-            <div class="warning-buttons">
-                <button onclick="proceedToTerritory()" class="btn proceed-btn">Proceed</button>
-                <button onclick="cancelTransition()" class="btn cancel-btn">Stay in Concord Space</button>
-            </div>
-        </div>
+    
+    // Create safe DOM structure
+    const warningContent = document.createElement('div');
+    warningContent.className = 'warning-content';
+    
+    const title = document.createElement('h3');
+    title.textContent = '⚠️ TERRITORY TRANSITION WARNING ⚠️';
+    
+    const subtitle = document.createElement('p');
+    subtitle.textContent = 'You are about to leave Concord of Unity space and enter:';
+    
+    const destinationPara = document.createElement('p');
+    const destinationStrong = document.createElement('strong');
+    destinationStrong.textContent = destination; // Safe: uses textContent
+    destinationPara.appendChild(destinationStrong);
+    
+    const buttons = document.createElement('div');
+    buttons.className = 'warning-buttons';
+    buttons.innerHTML = `
+        <button onclick="proceedToTerritory()" class="btn proceed-btn">Proceed</button>
+        <button onclick="cancelTransition()" class="btn cancel-btn">Stay in Concord Space</button>
     `;
+    
+    warningContent.appendChild(title);
+    warningContent.appendChild(subtitle);
+    warningContent.appendChild(destinationPara);
+    warningContent.appendChild(buttons);
+    warning.appendChild(warningContent);
     
     warning.style.cssText = `
         position: fixed;
