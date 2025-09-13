@@ -6,8 +6,8 @@ channel = "stable-24_11"
 packages = ["imagemagick", "static-web-server"]
 
 [deployment]
-deploymentTarget = "vm"
-run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "main:app"]
+deploymentTarget = "cloudrun"
+run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "--timeout=30", "--keep-alive=5", "main:app"]
 
 [workflows]
 runButton = "Project"
@@ -57,10 +57,6 @@ externalPort = 80
 [[ports]]
 localPort = 5001
 externalPort = 3003
-
-[[ports]]
-localPort = 33019
-externalPort = 4200
 
 [[ports]]
 localPort = 33673
