@@ -1,13 +1,13 @@
 entrypoint = "index.html"
-modules = ["python-3.11"]
+modules = ["web", "python-3.11"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["imagemagick"]
+packages = ["imagemagick", "static-web-server"]
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["gunicorn", "--bind=0.0.0.0:$PORT", "--reuse-port", "--timeout=30", "--keep-alive=5", "main:app"]
+run = ["python3", "server.py"]
 
 [workflows]
 runButton = "Project"
@@ -32,31 +32,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Server Port 8080"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Server Port 5000"
+args = "Web Server"
 
 [[workflows.workflow]]
-name = "Server Port 8080"
+name = "Web Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "PORT=8080 python3 main.py"
-waitForPort = 8080
-
-[workflows.workflow.metadata]
-outputType = "console"
-
-[[workflows.workflow]]
-name = "Server Port 5000"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "PORT=5000 python3 server.py"
+args = "python3 server.py"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -71,12 +55,12 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 8080
-externalPort = 3003
-
-[[ports]]
 localPort = 33673
 externalPort = 3001
+
+[[ports]]
+localPort = 38519
+externalPort = 3003
 
 [[ports]]
 localPort = 41537

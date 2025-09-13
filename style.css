@@ -262,43 +262,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Backup Access Links */
-.concord-backup-link {
-  display: block;
-  margin-top: 0.3rem;
-  padding: 0.2rem 0.5rem;
-  background: rgba(218, 165, 32, 0.1);
-  border: 1px solid rgba(218, 165, 32, 0.3);
-  border-radius: 6px;
-  color: #CD853F;
-  font-size: 0.65rem;
-  text-decoration: none;
-  text-align: center;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-.concord-backup-link:hover {
-  color: #DAA520;
-  background: rgba(218, 165, 32, 0.2);
-  border-color: rgba(218, 165, 32, 0.5);
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.backup-access {
-  color: #CD853F !important;
-  text-decoration: none;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-.backup-access:hover {
-  color: #DAA520 !important;
-  opacity: 1;
-}
-
 @keyframes floatPulse {
   0% { 
     border-color: rgba(218, 165, 32, 0.6);

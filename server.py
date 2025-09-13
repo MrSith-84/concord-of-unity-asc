@@ -48,12 +48,6 @@ def after_request(response):
     return response
 
 
-# Health check endpoint for Cloud Run
-@app.route('/health')
-def health_check():
-    """Health check endpoint for deployment health checks"""
-    return jsonify({'status': 'healthy', 'service': 'Apex Separatist Consortium'}), 200
-
 # API endpoints
 @app.route('/api')
 def api_status():
@@ -76,18 +70,42 @@ def signin():
 # Serve static files with proper routing
 @app.route('/')
 def index():
-    """Root endpoint with error handling for health checks"""
-    try:
-        return send_from_directory('.', 'index.html')
-    except Exception as e:
-        # Fallback response for health checks if index.html is missing
-        return jsonify({'status': 'healthy', 'service': 'Apex Separatist Consortium'}), 200
+    return send_from_directory('.', 'index.html')
 
 @app.route('/access.html')
 def access_page():
     return send_from_directory('.', 'access.html')
 
-# Concord routes removed - now deployed as separate app at concord-of-unity.org
+# Concord of Unity site routes
+@app.route('/concord/')
+def concord_index():
+    return send_from_directory('concord_site', 'index.html')
+
+@app.route('/concord')
+def concord_redirect():
+    return redirect('/concord/', code=301)
+
+@app.route('/concord/<path:filename>')
+def serve_concord_static(filename):
+    # Security: Block access to sensitive paths
+    blocked_paths = ['instance/', '.git/', '__pycache__/', '.env', 'server.py', 'models.py', 'google_auth.py']
+    if any(filename.startswith(path) or filename.endswith('.py') or filename.endswith('.db') for path in blocked_paths):
+        return 'Access denied', 403
+    
+    # Handle allowed file types for Concord site
+    allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp']
+    if any(filename.endswith(ext) for ext in allowed_extensions):
+        try:
+            return send_from_directory('concord_site', filename)
+        except:
+            # File doesn't exist in concord_site, serve 404
+            try:
+                return send_from_directory('.', '404.html'), 404
+            except:
+                return 'File not found', 404
+    
+    # Block everything else
+    return 'Access denied', 403
 
 
 @app.route('/<path:filename>')

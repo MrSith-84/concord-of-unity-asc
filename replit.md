@@ -4,14 +4,6 @@ The Apex Separatist Consortium is a dark-themed fictional faction website featur
 
 # Recent Changes
 
-## Concord of Unity Standalone Deployment (September 2025)
-- **Separate Domain Architecture**: Restructured Concord of Unity as completely independent Flask application for deployment on concord-of-unity.org
-- **Standalone Flask Server**: Created secure main.py with proper file serving controls, API endpoints, and deployment configuration
-- **Cross-Domain Navigation**: Updated all navigation links to use https://concord-of-unity.org for seamless territory transitions
-- **Deployment Ready**: Configured for Replit Reserved VM deployment with gunicorn, custom domain support, and security hardening
-- **Project Independence**: Complete separation with own requirements.txt, gitignore, deployment config, and documentation
-- **Enhanced Security**: Implemented comprehensive file access controls blocking sensitive files and extensions
-
 ## Authentication System Removal (September 2025)
 - **Public Access**: Completely removed authentication system - all faction pages and classified content now publicly accessible
 - **Enemy Territory Maintained**: Concord of Unity retains enemy faction styling with warning badges and hostile territory design for immersion
