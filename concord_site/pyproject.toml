@@ -1,0 +1,20 @@
+[project]
+name = "concord-of-unity"
+version = "1.0.0"
+description = "Concord of Unity - Enemy Territory Website"
+authors = [{name = "Apex Separatist Consortium"}]
+requires-python = ">=3.8"
+dependencies = [
+    "Flask>=3.0.0",
+    "gunicorn>=21.2.0"
+]
+
+[project.urls]
+Homepage = "https://concord-of-unity.org"
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main"]
