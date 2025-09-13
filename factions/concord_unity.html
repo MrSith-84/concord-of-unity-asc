@@ -117,11 +117,25 @@
       background: linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(75, 75, 75, 0.9));
     }
 
-    /* Content Sections */
+    /* Content Sections - Warning Pulse Effect */
     main.container section {
       background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 25, 40, 0.9));
       border: 1px solid rgba(184, 134, 11, 0.5);
       box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      animation: warningContentPulse 3s ease-in-out infinite alternate;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes warningContentPulse {
+      0% { 
+        border-color: rgba(184, 134, 11, 0.5);
+        box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      }
+      100% { 
+        border-color: rgba(218, 165, 32, 0.7);
+        box-shadow: 0 4px 18px rgba(218, 165, 32, 0.4),
+                    0 0 15px rgba(184, 134, 11, 0.3);
+      }
     }
 
     h1, h2 {
@@ -167,11 +181,25 @@
                   0 0 10px rgba(184, 134, 11, 0.4);
     }
 
-    /* Tier Sections */
+    /* Tier Sections - Warning Pulse Effect */
     .tier-section {
       background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 25, 40, 0.9));
       border: 1px solid rgba(184, 134, 11, 0.5);
       box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      animation: warningTierPulse 2.8s ease-in-out infinite alternate;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes warningTierPulse {
+      0% { 
+        border-color: rgba(184, 134, 11, 0.5);
+        box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      }
+      100% { 
+        border-color: rgba(218, 165, 32, 0.8);
+        box-shadow: 0 3px 16px rgba(218, 165, 32, 0.5),
+                    0 0 12px rgba(184, 134, 11, 0.4);
+      }
     }
 
     .tier-header {
@@ -543,7 +571,7 @@
           </div>
         </div>
         <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">The Shadow Grid</span>
-        <a href="concord_unity.html" class="nav-link nav-current">Concord of Unity</a>
+        <a href="concord_unity.html" class="nav-link enemy-nav-link nav-current">⚠ Concord of Unity</a>
       </div>
       
       <div class="nav-right">

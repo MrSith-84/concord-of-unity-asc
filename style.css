@@ -184,6 +184,39 @@ body {
 }
 
 
+/* Enemy faction navigation link styling */
+.enemy-nav-link {
+  color: #DAA520 !important;
+  background: linear-gradient(45deg, rgba(218, 165, 32, 0.15), rgba(184, 134, 11, 0.1)) !important;
+  border: 1px solid rgba(218, 165, 32, 0.3) !important;
+  border-radius: 6px !important;
+  padding: 0.4rem 0.8rem !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 8px rgba(218, 165, 32, 0.6) !important;
+  animation: enemyNavPulse 2.5s ease-in-out infinite alternate !important;
+  transition: all 0.3s ease !important;
+}
+
+.enemy-nav-link:hover {
+  color: #FFD700 !important;
+  background: linear-gradient(45deg, rgba(218, 165, 32, 0.25), rgba(184, 134, 11, 0.2)) !important;
+  border-color: rgba(255, 215, 0, 0.6) !important;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.8) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3) !important;
+}
+
+@keyframes enemyNavPulse {
+  0% { 
+    text-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+    border-color: rgba(218, 165, 32, 0.3);
+  }
+  100% { 
+    text-shadow: 0 0 12px rgba(218, 165, 32, 0.8);
+    border-color: rgba(218, 165, 32, 0.5);
+  }
+}
+
 /* Mobile responsive adjustments for floating crest */
 @media (max-width: 768px) {
   .floating-crest {
