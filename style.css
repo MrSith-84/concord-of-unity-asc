@@ -186,8 +186,11 @@ body {
 /* Hazard button styling */
 .hazard-button {
   position: relative !important;
-  display: inline-block !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   padding: 0.4rem 1.5rem !important;
+  text-align: center !important;
   background: linear-gradient(45deg, #cc5500 0%, #ff6600 25%, #cc5500 50%, #ff6600 75%, #cc5500 100%) !important;
   background-size: 40px 40px !important;
   border: 2px solid #ffaa00 !important;
@@ -354,7 +357,9 @@ h3 {
 }
 
 .auth-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.3rem 1rem;
   background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(192, 192, 192, 0.2));
   color: #e63946;
@@ -366,6 +371,7 @@ h3 {
   border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1549,7 +1555,9 @@ footer {
 }
 
 .faction-card a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 1rem;
   padding: 0.4rem 1.8rem;
   background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(192, 192, 192, 0.2));
@@ -1562,6 +1570,7 @@ footer {
   border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: center;
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
