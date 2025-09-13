@@ -217,6 +217,25 @@ body {
   }
 }
 
+/* Specter Network pulsing green effect */
+.specter-pulse {
+  background: #00ff41 !important;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.6) !important;
+  animation: specterGreenPulse 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes specterGreenPulse {
+  0% { 
+    background: #00ff41 !important;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.6) !important;
+  }
+  100% { 
+    background: #39ff14 !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.9), 
+                0 0 25px rgba(0, 255, 65, 0.4) !important;
+  }
+}
+
 /* Mobile responsive adjustments for floating crest */
 @media (max-width: 768px) {
   .floating-crest {
