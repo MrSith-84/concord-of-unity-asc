@@ -4,6 +4,14 @@ The Apex Separatist Consortium is a dark-themed fictional faction website featur
 
 # Recent Changes
 
+## Concord of Unity Site Separation (September 2025)
+- **Independent Website Architecture**: Separated Concord of Unity into completely independent website structure under `/concord/` path
+- **Dedicated Assets**: Created separate CSS, JavaScript, and image assets for enemy territory styling with golden color scheme
+- **Server Routing**: Configured Flask to serve both Consortium (root `/`) and Concord (`/concord/`) sites independently
+- **Territory-Specific Design**: Implemented enemy territory warning banners and atmospheric effects for immersive faction experience
+- **Cross-Site Navigation**: Maintained floating button navigation between territories while preserving thematic separation
+- **Route Flexibility**: Added redirect handling for both `/concord` and `/concord/` paths for robust URL access
+
 ## Authentication System Removal (September 2025)
 - **Public Access**: Completely removed authentication system - all faction pages and classified content now publicly accessible
 - **Enemy Territory Maintained**: Concord of Unity retains enemy faction styling with warning badges and hostile territory design for immersion
