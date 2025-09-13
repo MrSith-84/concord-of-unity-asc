@@ -27,8 +27,9 @@ button, .tab-button, .nav-link, .faction-card a, .back-faction-link {
 }
 
 body {
-  background: linear-gradient(135deg, #1a1a0a 0%, #2a2a0a 25%, #1a1a0a 50%, #2a2a0a 75%, #1a1a0a 100%);
-  background-size: 100% 100%;
+  background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+              linear-gradient(135deg, #1a1a0a 0%, #2a2a0a 25%, #1a1a0a 50%, #2a2a0a 75%, #1a1a0a 100%);
+  background-size: cover, 100% 100%;
   animation: fadeInPage 1s ease-out forwards;
   color: #daa520;
   font-family: 'Rajdhani', 'Orbitron', 'Arial', sans-serif;

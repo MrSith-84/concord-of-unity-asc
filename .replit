@@ -66,6 +66,10 @@ externalPort = 3002
 localPort = 45185
 externalPort = 3000
 
+[[ports]]
+localPort = 46449
+externalPort = 3001
+
 [agent]
 expertMode = true
 integrations = ["flask_google_oauth:1.0.0"]
