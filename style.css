@@ -226,7 +226,7 @@ body {
 .floating-concord-button {
   position: fixed;
   top: 100px;
-  right: 20px;
+  right: calc((100vw - 1400px) / 2 + 20px);
   z-index: 1000;
   animation: floatPulse 3s ease-in-out infinite alternate;
 }
@@ -276,6 +276,12 @@ body {
 }
 
 /* Mobile adjustments for floating button */
+@media (max-width: 1420px) {
+  .floating-concord-button {
+    right: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .floating-concord-button {
     top: 90px;
