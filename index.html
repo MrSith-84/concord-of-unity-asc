@@ -63,8 +63,51 @@
           </div>
         </div>
       </div>
+      
+      <!-- Mobile Hamburger Menu -->
+      <button class="mobile-nav-toggle" aria-label="Toggle mobile navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav-menu">
+    <button class="mobile-close-button" aria-label="Close mobile navigation">&times;</button>
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link nav-current">Command Center</a>
+        
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle">Factions</button>
+          <div class="mobile-dropdown-menu">
+            <a href="factions/ghost_legion.html" class="nav-link"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="factions/voidborn_syndicate.html" class="nav-link"><span class="intel-dot"></span>Voidborn Syndicate</a>
+            <a href="factions/titan_order.html" class="nav-link"><span class="intel-dot"></span>Titan Order</a>
+            <a href="factions/specter_network.html" class="nav-link"><span class="intel-dot"></span>Specter Network</a>
+            <a href="factions/shadowblade_mercenary.html" class="nav-link"><span class="online-dot"></span>Shadowblade Mercenary</a>
+          </div>
+        </div>
+        
+        <span class="nav-link nav-disabled">The Shadow Grid</span>
+        <a href="factions/concord_unity.html" class="nav-link">Concord of Unity</a>
+        <a href="classified.html" class="nav-link">Classified Files</a>
+        <a href="codex.html" class="nav-link">Faction Codex</a>
+        
+        <div class="mobile-auth-section">
+          <div class="auth-login-mobile" id="authLoginMobile" style="display: none;">
+            <a href="/access.html" class="nav-link auth-button">RESTRICTED ACCESS</a>
+          </div>
+          <div class="auth-user-mobile" id="authUserMobile" style="display: none;">
+            <span class="nav-link" id="userNameMobile">User</span>
+            <a href="/logout" class="nav-link auth-button">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main class="container">
     <section style="text-align:center;">
