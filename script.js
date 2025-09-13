@@ -8,6 +8,9 @@ class TransitionManager {
     this.status = document.getElementById('transitionStatus');
     this.isTransitioning = false;
     
+    // Check if required elements exist
+    this.hasRequiredElements = this.overlay && this.message && this.status;
+    
     this.messages = [
       'Establishing link to data stream...',
       'Accessing faction networks...',
@@ -28,19 +31,27 @@ class TransitionManager {
   }
   
   show() {
-    if (this.isTransitioning) return;
+    if (this.isTransitioning || !this.hasRequiredElements) return;
     this.isTransitioning = true;
     
     // Randomize messages for variety
-    this.message.textContent = this.messages[Math.floor(Math.random() * this.messages.length)];
-    this.status.textContent = this.statusMessages[Math.floor(Math.random() * this.statusMessages.length)];
+    if (this.message) {
+      this.message.textContent = this.messages[Math.floor(Math.random() * this.messages.length)];
+    }
+    if (this.status) {
+      this.status.textContent = this.statusMessages[Math.floor(Math.random() * this.statusMessages.length)];
+    }
     
-    this.overlay.classList.add('active');
+    if (this.overlay) {
+      this.overlay.classList.add('active');
+    }
   }
   
   hide() {
     setTimeout(() => {
-      this.overlay.classList.remove('active', 'warning-transition');
+      if (this.overlay) {
+        this.overlay.classList.remove('active', 'warning-transition');
+      }
       this.isTransitioning = false;
     }, 2200); // Match animation duration
   }
@@ -58,7 +69,7 @@ class TransitionManager {
   }
   
   showConcordWarning() {
-    if (this.isTransitioning) return;
+    if (this.isTransitioning || !this.hasRequiredElements) return;
     this.isTransitioning = true;
     
     // Special warning messages for leaving Consortium network
@@ -78,11 +89,17 @@ class TransitionManager {
       '// CONNECTION NOT SECURE'
     ];
     
-    this.message.textContent = warningMessages[Math.floor(Math.random() * warningMessages.length)];
-    this.status.textContent = warningStatus[Math.floor(Math.random() * warningStatus.length)];
+    if (this.message) {
+      this.message.textContent = warningMessages[Math.floor(Math.random() * warningMessages.length)];
+    }
+    if (this.status) {
+      this.status.textContent = warningStatus[Math.floor(Math.random() * warningStatus.length)];
+    }
     
     // Change overlay styling for warning
-    this.overlay.classList.add('active', 'warning-transition');
+    if (this.overlay) {
+      this.overlay.classList.add('active', 'warning-transition');
+    }
   }
 }
 
@@ -114,15 +131,27 @@ async function checkAuthStatus() {
     const authLogin = document.getElementById('authLogin');
     const authUser = document.getElementById('authUser');
     
+    // Check if auth elements exist (not all pages have them)
+    if (!authLoading || !authLogin || !authUser) {
+      return; // Skip auth handling on pages without auth elements
+    }
+    
     authLoading.style.display = 'none';
     
     if (data.authenticated) {
       // User is logged in
-      document.getElementById('userName').textContent = data.user.name;
-      if (data.user.picture) {
-        document.getElementById('userAvatar').src = data.user.picture;
-      } else {
-        document.getElementById('userAvatar').style.display = 'none';
+      const userName = document.getElementById('userName');
+      const userAvatar = document.getElementById('userAvatar');
+      
+      if (userName) {
+        userName.textContent = data.user.name;
+      }
+      if (userAvatar) {
+        if (data.user.picture) {
+          userAvatar.src = data.user.picture;
+        } else {
+          userAvatar.style.display = 'none';
+        }
       }
       authUser.style.display = 'flex';
       authLogin.style.display = 'none';
@@ -133,9 +162,16 @@ async function checkAuthStatus() {
     }
   } catch (error) {
     console.error('Auth check failed:', error);
-    // Show login on error
-    document.getElementById('authLoading').style.display = 'none';
-    document.getElementById('authLogin').style.display = 'block';
+    // Show login on error - only if elements exist
+    const authLoading = document.getElementById('authLoading');
+    const authLogin = document.getElementById('authLogin');
+    
+    if (authLoading) {
+      authLoading.style.display = 'none';
+    }
+    if (authLogin) {
+      authLogin.style.display = 'block';
+    }
   }
 }
 
@@ -164,6 +200,133 @@ function initializeTabs() {
   });
 }
 
+// Mobile Navigation functionality
+function initializeMobileNavigation() {
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileMenu = document.querySelector('.mobile-nav-menu');
+  const mobileClose = document.querySelector('.mobile-close-button');
+  const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+  
+  // Only initialize if mobile elements exist
+  if (mobileToggle && mobileMenu) {
+    
+    // Hamburger menu toggle
+    function toggleMobileMenu() {
+      mobileToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    // Event listeners
+    mobileToggle.addEventListener('click', toggleMobileMenu);
+    
+    if (mobileClose) {
+      mobileClose.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close menu when clicking on menu links
+    const mobileNavLinks = mobileMenu.querySelectorAll('.nav-link:not(.mobile-dropdown-toggle)');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMobileMenu();
+      });
+    });
+    
+    // Handle mobile dropdowns
+    mobileDropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.mobile-dropdown-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        });
+      }
+    });
+    
+    // Close mobile menu on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        mobileMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
+  }
+}
+
+// Enhanced Tab functionality for mobile
+function initializeTabs() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  
+  if (tabButtons.length === 0) return; // No tabs on this page
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      // Prevent default for mobile touch handling
+      e.preventDefault();
+      
+      const targetTab = button.getAttribute('data-tab');
+      
+      // Remove active class from all buttons and panels
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+      
+      // Add active class to clicked button and corresponding panel
+      button.classList.add('active');
+      const targetPanel = document.getElementById(targetTab);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        
+        // Smooth scroll to tab panel on mobile
+        if (window.innerWidth <= 768) {
+          targetPanel.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest' 
+          });
+        }
+      }
+    });
+    
+    // Add touch feedback for mobile
+    if ('ontouchstart' in window) {
+      button.addEventListener('touchstart', () => {
+        button.style.transform = 'scale(0.95)';
+      });
+      
+      button.addEventListener('touchend', () => {
+        button.style.transform = '';
+      });
+    }
+  });
+}
+
+// Improved mobile image loading
+function optimizeImagesForMobile() {
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(img => {
+    // Add loading optimization
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+    
+    // Handle image load errors gracefully
+    img.addEventListener('error', () => {
+      img.style.display = 'none';
+      console.warn('Failed to load image:', img.src);
+    });
+  });
+}
+
 // Dynamic Breadcrumbs
 document.addEventListener("DOMContentLoaded", () => {
   // Check authentication status
@@ -172,8 +335,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize page transitions
   addTransitionToLinks();
   
+  // Initialize mobile navigation
+  initializeMobileNavigation();
+  
   // Initialize tabs if they exist on this page
   initializeTabs();
+  
+  // Optimize images for mobile
+  optimizeImagesForMobile();
   const breadcrumbNav = document.querySelector(".breadcrumb");
   if (breadcrumbNav) {
     breadcrumbNav.innerHTML = ""; // Clear existing content
@@ -215,8 +384,11 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.addEventListener("input", (e) => {
       const term = e.target.value.toLowerCase();
       document.querySelectorAll(".faction-card").forEach(card => {
-        const name = card.querySelector("h3").textContent.toLowerCase();
-        card.style.display = name.includes(term) ? "block" : "none";
+        const nameElement = card.querySelector("h3");
+        if (nameElement) {
+          const name = nameElement.textContent.toLowerCase();
+          card.style.display = name.includes(term) ? "block" : "none";
+        }
       });
     });
   }
