@@ -222,6 +222,73 @@ body {
   font-size: 0.85rem !important;
 }
 
+/* Floating Concord of Unity Button */
+.floating-concord-button {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+  animation: floatPulse 3s ease-in-out infinite alternate;
+}
+
+.concord-float-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(45deg, rgba(218, 165, 32, 0.2), rgba(184, 134, 11, 0.15));
+  border: 2px solid rgba(218, 165, 32, 0.6);
+  border-radius: 12px;
+  color: #DAA520;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(218, 165, 32, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(218, 165, 32, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.concord-float-link:hover {
+  color: #FFD700;
+  background: linear-gradient(45deg, rgba(218, 165, 32, 0.3), rgba(184, 134, 11, 0.25));
+  border-color: rgba(255, 215, 0, 0.8);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5),
+              0 0 20px rgba(218, 165, 32, 0.4);
+  transform: translateY(-2px);
+}
+
+@keyframes floatPulse {
+  0% { 
+    border-color: rgba(218, 165, 32, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(218, 165, 32, 0.3);
+  }
+  100% { 
+    border-color: rgba(218, 165, 32, 0.8);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(218, 165, 32, 0.4);
+  }
+}
+
+/* Mobile adjustments for floating button */
+@media (max-width: 768px) {
+  .floating-concord-button {
+    top: 90px;
+    right: 10px;
+    z-index: 1002; /* Above mobile nav */
+  }
+  
+  .concord-float-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
 /* Specter Network pulsing green effect */
 .specter-pulse {
   background: #00ff41 !important;
