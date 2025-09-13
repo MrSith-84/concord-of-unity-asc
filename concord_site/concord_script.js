@@ -89,17 +89,49 @@ function smoothScrollTo(target) {
 function showTerritoryWarning(destination) {
     const warning = document.createElement('div');
     warning.className = 'territory-warning-popup';
-    warning.innerHTML = `
-        <div class="warning-content">
-            <h3>⚠️ TERRITORY TRANSITION WARNING ⚠️</h3>
-            <p>You are about to leave Concord of Unity space and enter:</p>
-            <p><strong>${destination}</strong></p>
-            <div class="warning-buttons">
-                <button onclick="proceedToTerritory()" class="btn proceed-btn">Proceed</button>
-                <button onclick="cancelTransition()" class="btn cancel-btn">Stay in Concord Space</button>
-            </div>
-        </div>
-    `;
+    
+    // Create content container
+    const warningContent = document.createElement('div');
+    warningContent.className = 'warning-content';
+    
+    // Create header
+    const header = document.createElement('h3');
+    header.textContent = '⚠️ TERRITORY TRANSITION WARNING ⚠️';
+    
+    // Create description paragraph
+    const description = document.createElement('p');
+    description.textContent = 'You are about to leave Concord of Unity space and enter:';
+    
+    // Create destination paragraph with safe text content
+    const destinationPara = document.createElement('p');
+    const destinationStrong = document.createElement('strong');
+    destinationStrong.textContent = destination; // Safe: uses textContent instead of innerHTML
+    destinationPara.appendChild(destinationStrong);
+    
+    // Create buttons container
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.className = 'warning-buttons';
+    
+    const proceedBtn = document.createElement('button');
+    proceedBtn.onclick = proceedToTerritory;
+    proceedBtn.className = 'btn proceed-btn';
+    proceedBtn.textContent = 'Proceed';
+    
+    const cancelBtn = document.createElement('button');
+    cancelBtn.onclick = cancelTransition;
+    cancelBtn.className = 'btn cancel-btn';
+    cancelBtn.textContent = 'Stay in Concord Space';
+    
+    buttonsDiv.appendChild(proceedBtn);
+    buttonsDiv.appendChild(cancelBtn);
+    
+    // Assemble the content
+    warningContent.appendChild(header);
+    warningContent.appendChild(description);
+    warningContent.appendChild(destinationPara);
+    warningContent.appendChild(buttonsDiv);
+    
+    warning.appendChild(warningContent);
     
     warning.style.cssText = `
         position: fixed;
