@@ -7,7 +7,7 @@ packages = ["imagemagick"]
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["gunicorn", "--bind=0.0.0.0:$PORT", "--reuse-port", "--timeout=30", "--keep-alive=5", "main:app"]
+run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "--timeout=30", "--keep-alive=5", "main:app"]
 
 [workflows]
 runButton = "Project"
@@ -71,6 +71,10 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
+localPort = 8080
+externalPort = 3003
+
+[[ports]]
 localPort = 33673
 externalPort = 3001
 
@@ -81,10 +85,6 @@ externalPort = 3002
 [[ports]]
 localPort = 45185
 externalPort = 3000
-
-[[ports]]
-localPort = 8080
-externalPort = 8080
 
 [agent]
 expertMode = true
