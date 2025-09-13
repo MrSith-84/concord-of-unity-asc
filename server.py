@@ -76,36 +76,7 @@ def index():
 def access_page():
     return send_from_directory('.', 'access.html')
 
-# Concord of Unity site routes
-@app.route('/concord/')
-def concord_index():
-    return send_from_directory('concord_site', 'index.html')
-
-@app.route('/concord')
-def concord_redirect():
-    return redirect('/concord/', code=301)
-
-@app.route('/concord/<path:filename>')
-def serve_concord_static(filename):
-    # Security: Block access to sensitive paths
-    blocked_paths = ['instance/', '.git/', '__pycache__/', '.env', 'server.py', 'models.py', 'google_auth.py']
-    if any(filename.startswith(path) or filename.endswith('.py') or filename.endswith('.db') for path in blocked_paths):
-        return 'Access denied', 403
-    
-    # Handle allowed file types for Concord site
-    allowed_extensions = ['.html', '.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp']
-    if any(filename.endswith(ext) for ext in allowed_extensions):
-        try:
-            return send_from_directory('concord_site', filename)
-        except:
-            # File doesn't exist in concord_site, serve 404
-            try:
-                return send_from_directory('.', '404.html'), 404
-            except:
-                return 'File not found', 404
-    
-    # Block everything else
-    return 'Access denied', 403
+# Concord routes removed - now deployed as separate app at concord-of-unity.org
 
 
 @app.route('/<path:filename>')
