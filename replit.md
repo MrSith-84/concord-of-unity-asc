@@ -4,6 +4,12 @@ The Apex Separatist Consortium is a dark-themed fictional faction website featur
 
 # Recent Changes
 
+## Faction Authentication & Territory System (September 2025)
+- **Authentication Restrictions**: All Consortium faction pages now require user login for access, creating exclusive member-only content
+- **Enemy Territory Implementation**: Concord of Unity redesigned as enemy faction with warning badges and hostile territory styling
+- **Enhanced Transition System**: Added territory-specific messaging and seamless navigation between Consortium and enemy Concord networks
+- **Return Navigation**: Implemented escape routes from enemy territory with appropriate transition messaging and security protocols
+
 ## Intelligence Briefing System Expansion (September 2025)
 - **New Intelligence Briefings**: Added 3-section dropdown menu: Enemy Factions, Consortium Heroes, and Threat Assessment
 - **Enhanced Navigation**: Added "Return to Consortium" escape button across all Concord territory pages
