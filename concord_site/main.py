@@ -59,7 +59,7 @@ def serve_static(filename):
     if any(filename.endswith(ext) for ext in allowed_extensions):
         try:
             return send_from_directory(str(base_dir), filename)
-        except:
+        except (FileNotFoundError, PermissionError, OSError):
             return 'File not found', 404
     
     # Block everything else
