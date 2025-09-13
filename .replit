@@ -7,7 +7,7 @@ packages = ["imagemagick"]
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "--timeout=30", "--keep-alive=5", "main:app"]
+run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "--timeout=30", "--keep-alive=5", "server:app"]
 
 [workflows]
 runButton = "Project"
