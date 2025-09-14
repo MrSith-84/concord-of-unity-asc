@@ -2080,8 +2080,8 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1.5rem;
-  background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
-  color: #2F1B14;
+  background: linear-gradient(135deg, #808080, #606060);
+  color: #FFFFFF;
   border: none;
   border-radius: 8px;
   font-weight: 600;
@@ -2094,9 +2094,9 @@ footer {
 }
 
 .division-card a:hover {
-  background: linear-gradient(135deg, #f0f0f0, #c0c0c0);
+  background: linear-gradient(135deg, #a0a0a0, #808080);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(192, 192, 192, 0.3);
+  box-shadow: 0 8px 20px rgba(128, 128, 128, 0.3);
 }
 
 /* Threat card styling for Consortium from Concord perspective */
@@ -2197,22 +2197,22 @@ footer {
 .threat-float-link {
   display: block;
   padding: 12px 20px;
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.9), rgba(160, 160, 160, 0.8));
-  color: #8B0000;
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.9), rgba(96, 96, 96, 0.8));
+  color: #FFFFFF;
   text-decoration: none;
   border-radius: 25px;
   font-weight: bold;
   font-size: 0.85rem;
-  border: 2px solid rgba(192, 192, 192, 0.6);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(192, 192, 192, 0.4);
+  border: 2px solid rgba(128, 128, 128, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(128, 128, 128, 0.4);
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .threat-float-link:hover {
-  background: linear-gradient(135deg, rgba(192, 192, 192, 1), rgba(160, 160, 160, 0.9));
+  background: linear-gradient(135deg, rgba(160, 160, 160, 1), rgba(128, 128, 128, 0.9));
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(192, 192, 192, 0.6);
-  border-color: #DAA520;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(160, 160, 160, 0.6);
+  border-color: #A0A0A0;
 }
