@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consortium Heroes - Concord Intelligence Briefing</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Concord Intelligence Briefing Styling */
+    body {
+      background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+                  linear-gradient(135deg, #1A1A2E 0%, #16213E 25%, #1A1A2E 50%, #16213E 75%, #1A1A2E 100%);
+      background-size: cover, 100% 100%;
+      color: #E5E5E5;
+    }
+
+    /* Navigation */
+    .main-navigation {
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(22, 33, 62, 0.95));
+      border-bottom: 3px solid #B8860B;
+      border-top: 1px solid rgba(184, 134, 11, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.3);
+    }
+
+    .nav-link { color: #C0C0C0; font-weight: 600; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .nav-link:hover { color: #DAA520; text-shadow: 0 0 10px rgba(218, 165, 32, 0.5); }
+    .nav-link.nav-current { color: #DAA520; font-weight: bold; text-shadow: 0 0 8px rgba(218, 165, 32, 0.4); }
+    .nav-link.nav-disabled { color: #666666; cursor: not-allowed; opacity: 0.5; }
+    .nav-dropdown:hover .dropdown-menu { background: linear-gradient(135deg, rgba(22, 33, 62, 0.95), rgba(26, 26, 46, 0.9)); border: 2px solid rgba(184, 134, 11, 0.5); }
+    .dropdown-menu a { color: #C0C0C0; font-weight: 500; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .dropdown-menu a:hover { background: rgba(184, 134, 11, 0.2); color: #DAA520; }
+
+    .nav-link.escape-button {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.3), rgba(139, 0, 0, 0.2));
+      border: 2px solid rgba(178, 34, 34, 0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: #CD853F;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-link.escape-button:hover {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.5), rgba(139, 0, 0, 0.4));
+      border-color: #B22222;
+      color: #FFFFFF;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Enemy Hero Profile Styling */
+    .hero-dossier {
+      background: linear-gradient(135deg, rgba(45, 25, 25, 0.95), rgba(35, 20, 20, 0.9));
+      border: 1px solid rgba(178, 34, 34, 0.5);
+      box-shadow: 0 2px 12px rgba(178, 34, 34, 0.3);
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .threat-level {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #B22222;
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.4);
+    }
+
+    .hero-header {
+      background: linear-gradient(90deg, rgba(178, 34, 34, 0.3), rgba(139, 0, 0, 0.2));
+      padding: 2rem;
+      border-bottom: 2px solid rgba(178, 34, 34, 0.6);
+    }
+
+    .hero-name {
+      color: #CD853F;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px rgba(205, 133, 63, 0.4);
+    }
+
+    .hero-title {
+      color: #B22222;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .hero-faction {
+      color: #D3D3D3;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .intel-sections {
+      padding: 2rem;
+    }
+
+    .intel-block {
+      background: linear-gradient(135deg, rgba(35, 35, 55, 0.8), rgba(25, 30, 45, 0.7));
+      border-left: 4px solid #CD853F;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .intel-block h4 {
+      color: #DAA520;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .intel-block p {
+      color: #D3D3D3;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .advisory-critical {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.3), rgba(139, 0, 0, 0.2));
+      border-left: 4px solid #B22222;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .advisory-critical h4 {
+      color: #B22222;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .propaganda-spin {
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), rgba(139, 111, 8, 0.1));
+      border-left: 4px solid #B8860B;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .propaganda-spin h4 {
+      color: #B8860B;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .document-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .classified-stamp {
+      position: absolute;
+      top: -1rem;
+      right: 2rem;
+      background: rgba(178, 34, 34, 0.2);
+      border: 2px solid rgba(178, 34, 34, 0.4);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      color: #B22222;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transform: rotate(-15deg);
+    }
+
+    @media (max-width: 768px) {
+      .hero-header { padding: 1rem; }
+      .intel-sections { padding: 1rem; }
+      .threat-level { position: relative; margin: 1rem 0; }
+      .classified-stamp { position: relative; transform: none; margin: 1rem 0; }
+    }
+  </style>
+</head>
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">CONCORD OF UNITY</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Intelligence Briefings</span>
+          <div class="dropdown-menu">
+            <a href="intel_enemy_factions.html">📋 Enemy Factions</a>
+            <a href="intel_consortium_heroes.html">🎯 Consortium Heroes</a>
+            <a href="intel_threat_assessment.html">⚠️ Threat Assessment</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">The Shadow Grid</span>
+        
+      </div>
+      
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link escape-button" title="Escape Enemy Territory">
+          ↩️ Return to Consortium
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+
+  <main class="container">
+    <section>
+      <div class="document-header">
+        <div class="classified-stamp">TOP SECRET</div>
+        <h1 style="color: #B22222; text-shadow: 0 0 15px rgba(178, 34, 34, 0.4); margin-bottom: 1rem;">
+          CONSORTIUM HEROES - ENEMY LEADERSHIP DOSSIERS
+        </h1>
+        <p style="color: #CD853F; font-style: italic;">
+          Classification: Top Secret | Distribution: Command Staff & Field Intelligence Only
+        </p>
+      </div>
+
+      <!-- Kael "The Crimson Fang" Dravak -->
+      <div class="hero-dossier">
+        <div class="threat-level">EXTREME THREAT</div>
+        <div class="hero-header">
+          <h2 class="hero-name">Kael "The Crimson Fang" Dravak</h2>
+          <div class="hero-title">The Butcher of Meridian</div>
+          <div class="hero-faction">Shadowblade Mercenaries - Command</div>
+        </div>
+        <div class="intel-sections">
+          <div class="intel-block">
+            <h4>Profile Analysis</h4>
+            <p>Mercenary lord infamous for atrocities. Leaves fields of corpses painted in blood as warnings.</p>
+          </div>
+          <div class="advisory-critical">
+            <h4>Critical Advisory</h4>
+            <p>If captured, execute immediately. Avoid glorification of his myth.</p>
+          </div>
+          <div class="propaganda-spin">
+            <h4>Public Information Campaign</h4>
+            <p>A butcher with delusions of grandeur. His fear tactics betray weakness.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marshal Korr Vos -->
+      <div class="hero-dossier">
+        <div class="threat-level">HIGH THREAT</div>
+        <div class="hero-header">
+          <h2 class="hero-name">Marshal Korr Vos</h2>
+          <div class="hero-title">"The Stonewall"</div>
+          <div class="hero-faction">Titan Order - Strategic Command</div>
+        </div>
+        <div class="intel-sections">
+          <div class="intel-block">
+            <h4>Profile Analysis</h4>
+            <p>Legendary commander, called The Stonewall. Once held an entire world against three fleets.</p>
+          </div>
+          <div class="advisory-critical">
+            <h4>Critical Advisory</h4>
+            <p>Avoid direct confrontation. Target supply lines.</p>
+          </div>
+          <div class="propaganda-spin">
+            <h4>Public Information Campaign</h4>
+            <p>His legend is exaggerated. Without endless soldiers, he is just a man.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Null Whisper -->
+      <div class="hero-dossier">
+        <div class="threat-level">CRITICAL THREAT</div>
+        <div class="hero-header">
+          <h2 class="hero-name">The Null Whisper</h2>
+          <div class="hero-title">Master of Erasure</div>
+          <div class="hero-faction">Specter Network - Data Operations</div>
+        </div>
+        <div class="intel-sections">
+          <div class="intel-block">
+            <h4>Profile Analysis</h4>
+            <p>Master of erasure—can wipe identities from every record. Victims vanish as if they never lived.</p>
+          </div>
+          <div class="advisory-critical">
+            <h4>Critical Advisory</h4>
+            <p>Protect archives with redundancy. Keep physical records hidden.</p>
+          </div>
+          <div class="propaganda-spin">
+            <h4>Public Information Campaign</h4>
+            <p>A ghost story spread to terrify the weak-minded. The Concord remembers all.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ashveil Corsair Queen -->
+      <div class="hero-dossier">
+        <div class="threat-level">HIGH THREAT</div>
+        <div class="hero-header">
+          <h2 class="hero-name">Ashveil Corsair Queen</h2>
+          <div class="hero-title">The Ghost Fleet Admiral</div>
+          <div class="hero-faction">Voidborn Syndicate - Pirate Fleet Command</div>
+        </div>
+        <div class="intel-sections">
+          <div class="intel-block">
+            <h4>Profile Analysis</h4>
+            <p>Pirate queen commanding ghost-painted warships. Raids colonies, vanishes into nebulae.</p>
+          </div>
+          <div class="advisory-critical">
+            <h4>Critical Advisory</h4>
+            <p>Patrol nebula borders. Hunt her fleets with Concord squadrons.</p>
+          </div>
+          <div class="propaganda-spin">
+            <h4>Public Information Campaign</h4>
+            <p>A glorified thief hiding behind illusions of grandeur.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mother Veil -->
+      <div class="hero-dossier">
+        <div class="threat-level">CRITICAL THREAT</div>
+        <div class="hero-header">
+          <h2 class="hero-name">Mother Veil</h2>
+          <div class="hero-title">The Fragmented Mind</div>
+          <div class="hero-faction">Specter Network - Rumored Founder</div>
+        </div>
+        <div class="intel-sections">
+          <div class="intel-block">
+            <h4>Profile Analysis</h4>
+            <p>Hybrid of flesh and machine, her mind scattered across dozens of nodes. Some call her immortal.</p>
+          </div>
+          <div class="advisory-critical">
+            <h4>Critical Advisory</h4>
+            <p>Eliminate nodes. Cut power grids. Destroy her fragments before they coalesce.</p>
+          </div>
+          <div class="propaganda-spin">
+            <h4>Public Information Campaign</h4>
+            <p>A machine pretending to be divine. Her so-called immortality is cowardice.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dregan the Hollow -->
+      <div class="hero-dossier">
+        <div class="threat-level">MODERATE THREAT</div>
+        <div class="hero-header">
+          <h2 class="hero-name">Dregan the Hollow</h2>
+          <div class="hero-title">The Water Thief</div>
+          <div class="hero-faction">Voidborn Syndicate - Resource Operations</div>
+        </div>
+        <div class="intel-sections">
+          <div class="intel-block">
+            <h4>Profile Analysis</h4>
+            <p>Infamous for selling a colony's water supply to the highest bidder, enslaving survivors.</p>
+          </div>
+          <div class="advisory-critical">
+            <h4>Critical Advisory</h4>
+            <p>Use his cruelty as propaganda to unite civilians.</p>
+          </div>
+          <div class="propaganda-spin">
+            <h4>Public Information Campaign</h4>
+            <p>He is not feared, he is despised. His greed will be his downfall.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

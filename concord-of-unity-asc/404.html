@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Classified Territory | Apex Separatist Consortium</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-container {
+      text-align: center;
+      padding: 4rem 2rem;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: bold;
+      color: #e63946;
+      text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+      margin: 0;
+      line-height: 1;
+    }
+
+    .error-message {
+      font-size: 1.5rem;
+      color: #f1faee;
+      margin: 1rem 0 2rem 0;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .error-description {
+      max-width: 600px;
+      color: #bbb;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .consortium-logo {
+      width: 150px;
+      height: 150px;
+      margin: 2rem 0;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.3));
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .error-actions a {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(90deg, #3a0d0d, #7a1f1f, #2d0d0d);
+      color: #ffe0e0;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      border: 1px solid #e63946;
+      transition: all 0.3s ease;
+    }
+
+    .error-actions a:hover {
+      background: linear-gradient(90deg, #7a1f1f, #ff3a3a, #3a0d0d);
+      color: #fff0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+    }
+
+    .classified-warning {
+      background: rgba(230, 57, 70, 0.1);
+      border: 1px solid #e63946;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+      color: #ff4c4c;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Command Center</a>
+        <a href="codex.html" class="nav-link">Codex</a>
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Factions</span>
+          <div class="dropdown-menu">
+            <a href="factions/ghost_legion.html">Ghost Legion</a>
+            <a href="factions/voidborn_syndicate.html">Voidborn Syndicate</a>
+            <a href="factions/titan_order.html">Titan Order</a>
+            <a href="factions/specter_network.html">Specter Network</a>
+            <a href="factions/shadowblade_mercenary.html">Shadowblade Mercenary</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container error-container">
+    <img src="factions/images/master_crest.png" alt="Apex Consortium Crest" class="consortium-logo">
+
+    <h1 class="error-code">404</h1>
+    <h2 class="error-message">CLASSIFIED TERRITORY</h2>
+
+    <div class="classified-warning">
+      ⚠️ ACCESS DENIED ⚠️<br>
+      You have attempted to access a restricted sector of the Consortium network.
+    </div>
+
+    <p class="error-description">
+      The requested coordinates do not exist within our controlled territories.
+      This sector may have been purged, relocated, or is classified above your clearance level.
+      Our surveillance systems have logged this unauthorized access attempt.
+    </p>
+
+    <div class="error-actions">
+      <a href="/">Return to Command Center</a>
+      <a href="/codex.html">Access Codex</a>
+      <a href="javascript:history.back()">Retreat to Previous Position</a>
+    </div>
+  </main>
+
+  <footer class="container">
+    <small>
+      <a href="#">Privacy Protocol</a> • <a href="#">Sovereign Decree</a> •
+      Error Code: ASC-404-CLASSIFIED
+    </small>
+  </footer>
+  <script src="../script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Threat Assessment: Voidborn Syndicate - Concord Intelligence</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">CONCORD INTELLIGENCE</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
+  <!-- Intel Notice -->
+  <div class="offline-indicator">
+    <span class="offline-icon">●</span>
+    <span class="offline-text">GATHERING INTEL</span>
+  </div>
+  
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="../factions/images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Threat Intel</span>
+          <div class="dropdown-menu">
+            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
+            <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
+            <a href="specter_network.html"><span class="intel-dot specter-pulse"></span>Specter Network</a>
+            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="In Development">Strategic Operations</span>
+        
+      </div>
+      
+      <div class="nav-right">
+        <div class="auth-section" id="authSection">
+          <div class="auth-loading" id="authLoading">
+            <span class="auth-spinner"></span>
+          </div>
+          <div class="auth-login" id="authLogin" style="display: none;">
+            <a href="/access.html" class="auth-button login-button hazard-button">RESTRICTED ACCESS</a>
+          </div>
+          <div class="auth-user" id="authUser" style="display: none;">
+            <div class="user-info">
+              <img class="user-avatar" id="userAvatar" src="" alt="User">
+              <span class="user-name" id="userName"></span>
+            </div>
+            <a href="/logout" class="auth-button logout-button">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+
+  <main class="container">
+    <section>
+      <h2>THREAT ASSESSMENT: Voidborn Syndicate</h2>
+      <div class="threat-level-high">⚠ THREAT LEVEL: HIGH</div>
+      <p><strong>ENEMY CLASSIFICATION:</strong> Criminal organization specializing in black market operations, arms trafficking, and economic warfare. High threat to trade security and diplomatic stability.</p>
+      <figure style="text-align: center;">
+        <img src="images/voidborn_syndicate.png" alt="Voidborn Syndicate Emblem" style="max-width:300px;">
+        <figcaption>Emblem of the Voidborn Syndicate</figcaption>
+      </figure>
+      <h3>Intelligence Brief</h3>
+      <p><strong>THREAT ANALYSIS:</strong> The Voidborn Syndicate poses a critical economic and security threat through systematic disruption of trade routes and corruption of local officials. Their decentralized structure makes conventional military responses ineffective.</p>
+      
+      <div class="threat-recommendations">
+        <h4>Recommended Countermeasures:</h4>
+        <ul>
+          <li>Enhanced customs screening at all trade checkpoints</li>
+          <li>Financial monitoring of suspected shell corporations</li>
+          <li>Diplomatic pressure on systems providing safe harbor</li>
+          <li>Counter-intelligence infiltration of syndicate networks</li>
+        </ul>
+      </div>
+      
+      <div class="captured-dossier">
+        <div class="dossier-header" onclick="toggleDossier()">
+          <h3>⚠ Captured Consortium Dossier (Legacy Intelligence)</h3>
+          <p><em>Click to expand intercepted enemy documentation</em></p>
+        </div>
+        <div class="dossier-content" id="dossierContent">
+          <h3>Enemy Lore</h3>
+          <p>The Syndicate thrives on chaos, fueling black markets and arms trades across uncharted systems. They whisper promises in one ear and place a dagger in the other, weaving a web of profit and betrayal across the stars.</p>
+        </div>
+      </div>
+      
+      <a href="intel_threat_assessment.html" class="back-faction-link">Return to Assessment Overview</a>
+    </section>
+  </main>
+  
+  <footer class="container">
+    <nav class="breadcrumb"></nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+  </footer>
+  
+  <script src="../script.js"></script>
+
+</body>
+
+</html>

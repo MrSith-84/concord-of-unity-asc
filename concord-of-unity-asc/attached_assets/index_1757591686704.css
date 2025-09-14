@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('@assets/styles_1757247242252.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Red and Metallic Silver Theme */
+  --background: hsl(0, 5%, 6%);
+  --foreground: hsl(0, 10%, 95%);
+  --card: hsl(0, 8%, 10%);
+  --card-foreground: hsl(0, 10%, 95%);
+  --popover: hsl(0, 8%, 10%);
+  --popover-foreground: hsl(0, 10%, 95%);
+  --primary: hsl(0, 85%, 45%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(0, 0%, 75%);
+  --secondary-foreground: hsl(0, 5%, 6%);
+  --muted: hsl(0, 5%, 15%);
+  --muted-foreground: hsl(0, 8%, 65%);
+  --accent: hsl(0, 75%, 55%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 75%, 50%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 8%, 25%);
+  --input: hsl(0, 8%, 10%);
+  --ring: hsl(0, 75%, 55%);
+  --chart-1: hsl(0, 85%, 45%);
+  --chart-2: hsl(0, 0%, 75%);
+  --chart-3: hsl(200, 12%, 40%);
+  --chart-4: hsl(210, 16%, 24%);
+  --chart-5: hsl(0, 65%, 46%);
+  --sidebar: hsl(210, 12%, 10%);
+  --sidebar-foreground: hsl(210, 20%, 92%);
+  --sidebar-primary: hsl(24, 95%, 58%);
+  --sidebar-primary-foreground: hsl(210, 14%, 8%);
+  --sidebar-accent: hsl(48, 100%, 50%);
+  --sidebar-accent-foreground: hsl(210, 14%, 8%);
+  --sidebar-border: hsl(210, 10%, 28%);
+  --sidebar-ring: hsl(24, 95%, 58%);
+  --font-sans: "Share Tech Mono", "Oswald", system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "Share Tech Mono", "Oswald", ui-monospace, monospace;
+  --radius: 8px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0, 0%, 0%);
+  --shadow-xs: 0px 2px 0px 0px hsl(0, 0%, 0%);
+  --shadow-sm: 0px 2px 0px 0px hsl(0, 0%, 0%), 0px 1px 2px -1px hsl(0, 0%, 0%);
+  --shadow: 0px 2px 0px 0px hsl(0, 0%, 0%), 0px 1px 2px -1px hsl(0, 0%, 0%);
+  --shadow-md: 0px 2px 0px 0px hsl(0, 0%, 0%), 0px 2px 4px -1px hsl(0, 0%, 0%);
+  --shadow-lg: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0px 12px 24px 0px rgba(0, 0, 0, 0.4);
+  --shadow-2xl: 0px 24px 48px 0px rgba(0, 0, 0, 0.6);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(210, 40%, 2%);
+  --foreground: hsl(210, 20%, 92%);
+  --card: hsl(210, 12%, 12%);
+  --card-foreground: hsl(210, 20%, 92%);
+  --popover: hsl(210, 12%, 12%);
+  --popover-foreground: hsl(210, 20%, 92%);
+  --primary: hsl(24, 95%, 58%);
+  --primary-foreground: hsl(210, 14%, 8%);
+  --secondary: hsl(48, 100%, 50%);
+  --secondary-foreground: hsl(210, 14%, 8%);
+  --muted: hsl(210, 10%, 16%);
+  --muted-foreground: hsl(210, 12%, 65%);
+  --accent: hsl(24, 95%, 58%);
+  --accent-foreground: hsl(210, 14%, 8%);
+  --destructive: hsl(0, 75%, 50%);
+  --destructive-foreground: hsl(210, 20%, 96%);
+  --border: hsl(210, 10%, 28%);
+  --input: hsl(210, 12%, 12%);
+  --ring: hsl(24, 95%, 58%);
+  --chart-1: hsl(24, 95%, 58%);
+  --chart-2: hsl(48, 100%, 50%);
+  --chart-3: hsl(200, 12%, 40%);
+  --chart-4: hsl(210, 16%, 24%);
+  --chart-5: hsl(0, 65%, 46%);
+  --sidebar: hsl(210, 12%, 10%);
+  --sidebar-foreground: hsl(210, 20%, 92%);
+  --sidebar-primary: hsl(24, 95%, 58%);
+  --sidebar-primary-foreground: hsl(210, 14%, 8%);
+  --sidebar-accent: hsl(48, 100%, 50%);
+  --sidebar-accent-foreground: hsl(210, 14%, 8%);
+  --sidebar-border: hsl(210, 10%, 28%);
+  --sidebar-ring: hsl(24, 95%, 58%);
+  --font-sans: "Oswald", system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "Oswald", ui-monospace, monospace;
+  --radius: 8px;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    border-style: solid;
+    border-width: 0;
+  }
+
+  body {
+    font-family: var(--font-sans, "Oswald", sans-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  /* Industrial brushed steel background with subtle vignette */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(1200px 800px at 50% 0%, rgba(255,255,255,0.04), transparent 60%),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 6px),
+      linear-gradient(180deg, hsl(210, 14%, 10%) 0%, hsl(210, 14%, 6%) 100%);
+    z-index: -1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.45) 100%);
+    z-index: -1;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Custom hover effects */
+.card-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
+/* Glow effect for containers */
+.container-glow {
+  position: relative;
+  background: var(--card);
+  border: 1px solid rgba(255, 68, 68, 0.2);
+  box-shadow:
+    0 0 20px rgba(255, 68, 68, 0.1),
+    0 0 40px rgba(204, 51, 51, 0.05),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.container-glow:hover {
+  border-color: rgba(255, 68, 68, 0.4);
+  box-shadow:
+    0 0 30px rgba(255, 68, 68, 0.2),
+    0 0 60px rgba(204, 51, 51, 0.1),
+    0 8px 12px -2px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Enhanced glow for special sections */
+.container-glow-strong {
+  position: relative;
+  background: var(--card);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  box-shadow:
+    0 0 25px rgba(255, 68, 68, 0.15),
+    0 0 50px rgba(204, 51, 51, 0.08),
+    0 6px 8px -2px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.container-glow-strong:hover {
+  border-color: rgba(255, 68, 68, 0.5);
+  box-shadow:
+    0 0 40px rgba(255, 68, 68, 0.25),
+    0 0 80px rgba(204, 51, 51, 0.15),
+    0 12px 16px -4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Table hover effects */
+.table-row-hover:hover {
+  background: rgba(249, 115, 22, 0.08); /* safety orange glow */
+}
+
+/* Link hover effects */
+.link-hover {
+  color: var(--primary);
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+.link-hover:hover {
+  color: hsl(48, 100%, 50%); /* hazard yellow */
+  text-decoration: underline;
+}
+
+/* Optional utility: hazard stripe border */
+.hazard-border { position: relative; }
+.hazard-border::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -4px;
+  height: 4px;
+  background: repeating-linear-gradient(45deg,
+    hsl(48, 100%, 50%) 0 12px,
+    hsl(210, 14%, 8%) 12px 24px);
+}
+
+/* Fix garbled mission icon by replacing content */
+[data-testid="division-mission"] .bg-accent span { color: transparent; position: relative; }
+[data-testid="division-mission"] .bg-accent span::after {
+  content: "⚙️";
+  color: var(--accent-foreground);
+  font-size: 1.25rem;
+}
+
+/* Footer text cleanup via pseudo-element */
+p[data-testid="text-footer"] { font-size: 0; }
+p[data-testid="text-footer"]::after {
+  content: "The Shadow Grid DevOps Consortium • Order Through Automation • May your pipelines remain swift and your clusters stable.";
+  font-size: 1rem;
+}
+
+/* Replace garbled contact icons */
+[data-testid="link-github"] > div:first-child,
+[data-testid="link-holonet"] > div:first-child,
+[data-testid="link-nebula"] > div:first-child,
+[data-testid="link-redshift"] > div:first-child { font-size: 0; position: relative; }
+[data-testid="link-github"] > div:first-child::after { content: "🐙"; font-size: 1.25rem; }
+[data-testid="link-holonet"] > div:first-child::after { content: "📡"; font-size: 1.25rem; }
+[data-testid="link-nebula"] > div:first-child::after { content: "📘"; font-size: 1.25rem; }
+[data-testid="link-redshift"] > div:first-child::after { content: "🤖"; font-size: 1.25rem; }
+@media (min-width: 768px) {
+  a[data-testid="cta-projects"]::after { font-size: 1rem; }
+}
+
+/* Top-oriented hazard stripe */
+.hazard-border-top { position: relative; }
+.hazard-border-top::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: -4px;
+  height: 4px;
+  background: repeating-linear-gradient(45deg,
+    hsl(48, 100%, 50%) 0 12px,
+    hsl(210, 14%, 8%) 12px 24px);
+}
