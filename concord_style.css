@@ -1,4 +1,4 @@
-/* Concord of Unity - Enemy Territory Styling */
+/* Concord of Unity - Site Styling */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 /* Mobile Touch Optimizations */
@@ -83,7 +83,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Navigation Styling - Enemy Territory */
+/* Navigation */
 nav {
   background: linear-gradient(135deg, rgba(26, 26, 10, 0.95), rgba(42, 42, 10, 0.9));
   border-bottom: 2px solid #daa520;
@@ -122,29 +122,7 @@ nav {
   text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
 }
 
-/* Warning Banner for Enemy Territory */
-.enemy-warning {
-  background: linear-gradient(45deg, #8B4513, #CD853F);
-  color: #fff;
-  text-align: center;
-  padding: 0.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 2px solid #daa520;
-  animation: warningPulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes warningPulse {
-  from { 
-    background: linear-gradient(45deg, #8B4513, #CD853F);
-    box-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
-  }
-  to { 
-    background: linear-gradient(45deg, #A0522D, #DEB887);
-    box-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
-  }
-}
+/* (removed enemy-warning styles) */
 
 /* Navigation Links */
 .nav-links {
@@ -240,31 +218,13 @@ h1 {
   transform: translateY(-5px);
 }
 
-/* Return to Consortium Button */
-.return-consortium {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  z-index: 1000;
-  background: linear-gradient(135deg, #e63946, #c1121f);
-  color: #fff;
-  border: none;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.return-consortium:hover {
-  background: linear-gradient(135deg, #dc3545, #e63946);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+/* Footer */
+.site-footer {
+  border-top: 2px solid rgba(218, 165, 32, 0.3);
+  background: linear-gradient(135deg, rgba(26, 26, 10, 0.95), rgba(35, 35, 15, 0.9));
+  padding: 1rem 0;
+  text-align: center;
+  color: #daa520;
 }
 
 /* Mobile Responsive */
@@ -285,13 +245,6 @@ h1 {
     right: 10px;
     width: 60px;
     height: 60px;
-  }
-  
-  .return-consortium {
-    bottom: 20px;
-    left: 20px;
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
   }
   
   h1 {
