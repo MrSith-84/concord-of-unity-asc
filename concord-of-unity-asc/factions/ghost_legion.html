@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Threat Assessment: Ghost Legion - Concord Intelligence</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">CONCORD INTELLIGENCE</div>
+      <div class="transition-message" id="transitionMessage">Accessing threat assessment database...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// INTELLIGENCE BRIEFING AUTHORIZED</div>
+    </div>
+  </div>
+
+  
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="../factions/images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Threat Intel</span>
+          <div class="dropdown-menu">
+            <a href="ghost_legion.html"><span class="intel-dot"></span>Ghost Legion</a>
+            <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
+            <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
+            <a href="specter_network.html"><span class="intel-dot specter-pulse"></span>Specter Network</a>
+            <a href="shadowblade_mercenary.html"><span class="intel-dot"></span>Shadowblade Mercenary</a>
+          </div>
+        </div>
+        <a href="intel_threat_assessment.html" class="nav-link">Assessment Overview</a>
+        <span class="nav-link nav-disabled" title="In Development">Strategic Operations</span>
+      </div>
+      
+      <div class="nav-right">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Threat Alert -->
+  <div class="floating-threat-button">
+    <a href="intel_threat_assessment.html" class="threat-float-link">⚠ ASSESSMENT OVERVIEW</a>
+  </div>
+  <main class="container">
+    <section>
+      <h2>THREAT ASSESSMENT: Ghost Legion</h2>
+      <div class="threat-level-high">⚠ THREAT LEVEL: HIGH</div>
+      <p><strong>ENEMY CLASSIFICATION:</strong> Elite covert operations unit specializing in infiltration, sabotage, and intelligence gathering. Highly dangerous asymmetric warfare specialists.</p>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="tab-button active" data-tab="overview">Threat Profile</button>
+        <button class="tab-button" data-tab="structure">Organization</button>
+        <button class="tab-button" data-tab="operations">Tactics</button>
+        <button class="tab-button" data-tab="relations">Intel Network</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Overview Tab -->
+        <div class="tab-panel active" id="overview">
+          <figure style="text-align: center;">
+            <img src="images/ghost_legion.png" alt="Ghost Legion Emblem" style="max-width:300px;">
+            <figcaption>Symbol of the Ghost Legion</figcaption>
+          </figure>
+
+          <h3>Intelligence Brief</h3>
+          <p><strong>THREAT ANALYSIS:</strong> The Ghost Legion represents one of the most dangerous asymmetric threats to Concord operations. Their advanced stealth capabilities, psychological warfare tactics, and precision strike capabilities make them a high-priority neutralization target.</p>
+          
+          <div class="threat-recommendations">
+            <h4>Recommended Countermeasures:</h4>
+            <ul>
+              <li>Enhanced sensor sweeps in sensitive areas</li>
+              <li>Increased security protocols for diplomatic missions</li>
+              <li>Counter-intelligence operations to identify infiltration attempts</li>
+              <li>Compartmentalized communications in high-risk zones</li>
+            </ul>
+          </div>
+          
+          <p><strong>RECENT ACTIVITY:</strong> Ghost Legion operatives have been detected near three Concord diplomatic installations in the past cycle. Exercise extreme caution.</p>
+        </div>
+      </div>
+      
+      <div class="captured-dossier">
+        <div class="dossier-header" onclick="toggleDossier()">
+          <h3>⚠ Captured Consortium Dossier (Legacy Intelligence)</h3>
+          <p><em>Click to expand intercepted enemy documentation</em></p>
+        </div>
+        <div class="dossier-content" id="dossierContent">
+          <!-- Tab Navigation -->
+          <div class="tab-navigation">
+            <button class="tab-button" data-tab="origins">Enemy Origins</button>
+            <button class="tab-button active" data-tab="structure">Organization</button>
+            <button class="tab-button" data-tab="operations">Tactics</button>
+            <button class="tab-button" data-tab="relations">Networks</button>
+          </div>
+          
+          <div class="tab-content">
+            <!-- Origins Tab -->
+            <div class="tab-panel" id="origins">
+              <h3>Origins & Motivation</h3>
+              <p>Born from necessity during the early rise of the Apex Separatist Consortium, the Ghost Legion was formed by defectors, spies, and criminals who possessed intimate knowledge of enemy tactics. Their philosophical core revolves around the belief that <strong>knowledge is power</strong> — wars are won before armies clash, through controlling information, disrupting logistics, and fracturing trust.</p>
+              <p>The Legion sees itself as the Consortium's unseen blade, operating in the shadows while open warfare belongs to the Titan Order and Shadowblade Mercenaries.</p>
+            </div>
+        
+        <!-- Structure Tab -->
+        <div class="tab-panel" id="structure">
+          <h3>Organizational Structure</h3>
+          <p>Ghost Legion operates in layers of secrecy, with three distinct tiers:</p>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <img src="../attached_assets/generated_images/Shade_Operatives_cyberpunk_emblem_2826073d.png" alt="Shade Operatives Emblem" class="tier-emblem">
+              <div class="tier-info">
+                <h4>Shade Operatives</h4>
+                <p><strong>The faceless infiltrators, moving unseen.</strong></p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p>Field agents conducting infiltration, reconnaissance, and sabotage operations. Their identities are compartmentalized and often completely "ghosted." These operatives maintain the highest level of secrecy, operating with masked identities in the field.</p>
+            </div>
+          </div>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <img src="../attached_assets/generated_images/Cipher_Cells_cryptographic_lattice_emblem_ba6150f7.png" alt="Cipher Cells Emblem" class="tier-emblem">
+              <div class="tier-info">
+                <h4>Cipher Cells</h4>
+                <p><strong>The analysts and code-breakers, hidden in the net.</strong></p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p>Cryptographers, digital interceptors, and intelligence analysts who control stolen and manipulated information. Operating from remote, secure nodes, they coordinate operations with minimal direct communication while maintaining mid-high trust levels within their cells.</p>
+            </div>
+          </div>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <img src="../attached_assets/generated_images/Veil_Command_authority_mask_emblem_bcac3f3f.png" alt="Veil Command Emblem" class="tier-emblem">
+              <div class="tier-info">
+                <h4>Veil Command</h4>
+                <p><strong>The secret architects, unseen even by their own agents.</strong></p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p>Strategic planners who decide infiltration targets, maintain Legion doctrine, and ensure plausible deniability for the Consortium. Operating under the highest secrecy levels, their identities may be known only to top-level Consortium leadership.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Operations Tab -->
+        <div class="tab-panel" id="operations">
+          <h3>Methods & Tactics</h3>
+          <div class="tactics-grid">
+            <div class="tactic-card">
+              <div class="tactic-icon">🎭</div>
+              <div class="tactic-content">
+                <h4>Infiltration</h4>
+                <p>Using forged documents, planted sympathizers, and identity theft to penetrate enemy forces</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">⚡</div>
+              <div class="tactic-content">
+                <h4>Sabotage</h4>
+                <p>Supply chain disruption, infrastructure tampering, and strategic misinformation campaigns</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">🔍</div>
+              <div class="tactic-content">
+                <h4>Intelligence Gathering</h4>
+                <p>Signal interception, spy networks, and cyber-espionage operations</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">👻</div>
+              <div class="tactic-content">
+                <h4>The "Phantom Weapon"</h4>
+                <p>Making operations appear to be conducted by other parties to sow distrust</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">🌫️</div>
+              <div class="tactic-content">
+                <h4>Ghosting</h4>
+                <p>Complete disappearance after missions, leaving no witnesses or records</p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Resources & Capabilities</h3>
+          <p>The Legion maintains an extensive network of safe houses across both Consortium and enemy territories, equipped with cutting-edge technology including signal jammers, cloaking devices, hacking tools, and biometric countermeasures. Their intelligence network spans sleeper agents, smugglers, and informants within official channels.</p>
+        </div>
+
+        <!-- Relations Tab -->
+        <div class="tab-panel" id="relations">
+          <h3>Internal Challenges</h3>
+          <p>The Legion's strength in secrecy also breeds internal weaknesses. Isolation creates mistrust and paranoia among agents, while over-reliance on compartmentalization can slow critical decisions. The mental strain of maintaining double lives leads to high psychological casualties and internal faction disputes.</p>
+
+          <h3>Inter-Faction Relations</h3>
+          <p>Ghost Legion maintains complex relationships with other Consortium factions — complementary yet tense cooperation with the Titan Order, competitive collaboration with Specter Network in digital warfare, and cautious partnerships with both Shadowblade Mercenaries and the Voidborn Syndicate for logistics and transport.</p>
+
+          <h3>Role in Consortium Goals</h3>
+          <p>As the Consortium's advance guard, Ghost Legion enables strategic autonomy by opening pathways for larger operations. They sabotage enemy supply lines, gather forbidden knowledge, and anticipate enemy movements — serving as the invisible foundation upon which the Consortium's power rests.</p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-faction-link">Back to Overview</a>
+    </section>
+  </main>
+
+  <footer class="container">
+    <nav class="breadcrumb"></nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Initialize auth on faction pages
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof checkAuthStatus === 'function') {
+        checkAuthStatus();
+      }
+      
+      // Initialize tab functionality
+      initializeTabs();
+    });
+
+    // Tab System Functionality
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+
+          // Remove active class from all buttons and panels
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabPanels.forEach(panel => panel.classList.remove('active'));
+
+          // Add active class to clicked button and corresponding panel
+          button.classList.add('active');
+          document.getElementById(targetTab).classList.add('active');
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>

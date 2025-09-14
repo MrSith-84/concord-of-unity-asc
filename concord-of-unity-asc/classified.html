@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSIFIED - Apex Separatist Consortium</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        /* Classified page specific styles */
+        .classified-header {
+            background: linear-gradient(135deg, #1a0e0e 0%, #2d1515 50%, #1a0e0e 100%);
+            border: 2px solid #e63946;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .classified-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(230, 57, 70, 0.05) 10px,
+                rgba(230, 57, 70, 0.05) 20px
+            );
+            animation: scan 4s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .classified-stamp {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #e63946;
+            color: #f1faee;
+            padding: 0.5rem 1rem;
+            border: 3px solid #e63946;
+            border-radius: 4px;
+            font-weight: bold;
+            transform: rotate(15deg);
+            font-size: 1.2rem;
+            z-index: 10;
+        }
+        
+        .access-level {
+            display: inline-block;
+            background: linear-gradient(45deg, #e63946, #c1121f);
+            color: #f1faee;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+            box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+        }
+        
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .classified-file {
+            background: linear-gradient(145deg, #1a0e0e, #0a0a0a);
+            border: 1px solid #e63946;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .classified-file:hover {
+            border-color: #e63946;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.2);
+        }
+        
+        .file-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #c0c0c0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .file-icon {
+            font-size: 1.5rem;
+            color: #e63946;
+        }
+        
+        .classification-level {
+            font-size: 0.7rem;
+            color: #f1faee;
+            background: #e63946;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+        }
+        
+        .terminal-window {
+            background: #000;
+            border: 1px solid #e63946;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            color: #c0c0c0;
+            position: relative;
+        }
+        
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+        
+        .terminal-dots {
+            display: flex;
+            gap: 0.3rem;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca3f; }
+        
+        .terminal-title {
+            margin-left: 1rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #e63946;
+            white-space: nowrap;
+            animation: typing 3s steps(40) infinite alternate;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        .security-notice {
+            background: linear-gradient(45deg, #e63946, #c1121f);
+            color: #f1faee;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            border-left: 4px solid #f1faee;
+        }
+        
+        .faction-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .faction-badge {
+            background: linear-gradient(145deg, #1a0e0e, #0a0a0a);
+            border: 1px solid #e63946;
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faction-badge:hover {
+            border-color: #ff4c4c;
+            background: linear-gradient(145deg, #2d1515, #1a0e0e);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+        }
+        
+        .faction-badge img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+        <ul>
+            <li>
+                <a href="/" class="contrast">
+                    <img src="factions/images/master_crest.png" alt="Consortium Crest" style="height: 2rem; margin-right: 0.5rem;">
+                    <strong>Apex Separatist Consortium</strong>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <!-- Authentication Section -->
+            <li id="authLoading" style="display: block;">
+                <span aria-busy="true">Verifying clearance...</span>
+            </li>
+            
+            <li id="authLogin" style="display: none;">
+                <a href="/signin" role="button" class="outline">Authenticate</a>
+            </li>
+            
+            <li id="authUser" style="display: none;">
+                <details class="dropdown">
+                    <summary>
+                        <img id="userAvatar" src="" alt="Avatar" style="width: 2rem; height: 2rem; border-radius: 50%; margin-right: 0.5rem;">
+                        <span id="userName">Agent</span>
+                    </summary>
+                    <ul>
+                        <li><a href="/logout">Terminate Session</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Classified Header -->
+        <div class="classified-header">
+            <div class="classified-stamp">CLASSIFIED</div>
+            <h1>SECURE ACCESS TERMINAL</h1>
+            <p>Authorization Level: <span class="access-level">ALPHA CLEARANCE</span></p>
+            <p>Welcome to the classified operations center. Your access has been verified.</p>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+            <strong>⚠️ SECURITY NOTICE:</strong> All activities in this area are monitored and logged. Unauthorized access or distribution of classified materials is strictly prohibited and will result in immediate termination of access privileges.
+        </div>
+
+        <!-- Terminal Window -->
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <div class="terminal-title">APEX-SYSTEM-TERMINAL-v2.1</div>
+            </div>
+            <div>
+                <p>apex-system:~$ <span class="typing-animation">access_granted --user="<span id="terminalUser">agent</span>" --clearance="alpha"</span></p>
+                <p>Establishing secure connection...</p>
+                <p>Loading faction databases...</p>
+                <p>Decrypting classified files...</p>
+                <p style="color: #e63946;">ACCESS GRANTED ✓</p>
+            </div>
+        </div>
+
+        <!-- Classified Files Grid -->
+        <section>
+            <h2>CLASSIFIED FILE ARCHIVE</h2>
+            <div class="file-grid">
+                <div class="classified-file">
+                    <div class="file-header">
+                        <span class="file-icon">📁</span>
+                        <span class="classification-level">TOP SECRET</span>
+                    </div>
+                    <h3>Operation Phantom Strike</h3>
+                    <p>Detailed tactical operations for stealth missions across contested sectors. Includes deployment schedules and asset allocations.</p>
+                    <small>Last Updated: 2157.089.12:45</small>
+                </div>
+
+                <div class="classified-file">
+                    <div class="file-header">
+                        <span class="file-icon">🗂️</span>
+                        <span class="classification-level">SECRET</span>
+                    </div>
+                    <h3>Faction Intelligence Reports</h3>
+                    <p>Comprehensive analysis of rival faction movements, resource acquisitions, and strategic weaknesses.</p>
+                    <small>Last Updated: 2157.089.08:22</small>
+                </div>
+
+                <div class="classified-file">
+                    <div class="file-header">
+                        <span class="file-icon">⚗️</span>
+                        <span class="classification-level">TOP SECRET</span>
+                    </div>
+                    <h3>Advanced Technology Research</h3>
+                    <p>Experimental weapons systems, shield technology improvements, and prototype vessel specifications.</p>
+                    <small>Last Updated: 2157.088.16:33</small>
+                </div>
+
+                <div class="classified-file">
+                    <div class="file-header">
+                        <span class="file-icon">🌌</span>
+                        <span class="classification-level">SECRET</span>
+                    </div>
+                    <h3>Sector Control Maps</h3>
+                    <p>Real-time territorial control data, resource extraction sites, and strategic chokepoint analysis.</p>
+                    <small>Last Updated: 2157.089.14:17</small>
+                </div>
+
+                <div class="classified-file">
+                    <div class="file-header">
+                        <span class="file-icon">👥</span>
+                        <span class="classification-level">CONFIDENTIAL</span>
+                    </div>
+                    <h3>Agent Personnel Files</h3>
+                    <p>Classified dossiers on active operatives, their specializations, and current mission assignments.</p>
+                    <small>Last Updated: 2157.089.11:28</small>
+                </div>
+
+                <div class="classified-file">
+                    <div class="file-header">
+                        <span class="file-icon">💰</span>
+                        <span class="classification-level">SECRET</span>
+                    </div>
+                    <h3>Financial Operations</h3>
+                    <p>Resource acquisition reports, black market transactions, and funding allocation for covert operations.</p>
+                    <small>Last Updated: 2157.089.13:55</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faction Access Levels -->
+        <section>
+            <h2>FACTION ACCESS PRIVILEGES</h2>
+            <div class="faction-access">
+                <div class="faction-badge">
+                    <img src="factions/images/ghost_legion.png" alt="Ghost Legion">
+                    <h4>Ghost Legion</h4>
+                    <span class="access-level">AUTHORIZED</span>
+                </div>
+                <div class="faction-badge">
+                    <img src="factions/images/voidborn_syndicate.png" alt="Voidborn Syndicate">
+                    <h4>Voidborn Syndicate</h4>
+                    <span class="access-level">AUTHORIZED</span>
+                </div>
+                <div class="faction-badge">
+                    <img src="factions/images/titan_order.png" alt="Titan Order">
+                    <h4>Titan Order</h4>
+                    <span class="access-level">AUTHORIZED</span>
+                </div>
+                <div class="faction-badge">
+                    <img src="factions/images/specter_network.png" alt="Specter Network">
+                    <h4>Specter Network</h4>
+                    <span class="access-level">AUTHORIZED</span>
+                </div>
+                <div class="faction-badge">
+                    <img src="factions/images/shadowblade_mercenary.png" alt="Shadowblade Mercenary">
+                    <h4>Shadowblade Mercenary</h4>
+                    <span class="access-level">AUTHORIZED</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section>
+            <h2>QUICK ACCESS</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <a href="/codex.html" role="button" class="outline">📚 Public Codex</a>
+                <a href="/factions/" role="button" class="outline">🏛️ Faction Details</a>
+                <a href="#" role="button" class="outline">📡 Comm Channels</a>
+                <a href="#" role="button" class="outline">🗺️ Sector Maps</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+        <hr>
+        <p><small>APEX SEPARATIST CONSORTIUM | Classification Level: ALPHA | Session Encrypted</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update terminal with actual username
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for auth check to complete
+            setTimeout(() => {
+                const userName = document.getElementById('userName').textContent;
+                if (userName && userName !== 'Agent') {
+                    document.getElementById('terminalUser').textContent = userName.toLowerCase();
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

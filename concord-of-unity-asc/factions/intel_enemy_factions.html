@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enemy Factions - Concord Intelligence Briefing</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Concord Intelligence Briefing Styling */
+    body {
+      background: url('../attached_assets/concord_background.svg') center center/cover no-repeat fixed,
+                  linear-gradient(135deg, #1A1A2E 0%, #16213E 25%, #1A1A2E 50%, #16213E 75%, #1A1A2E 100%);
+      background-size: cover, 100% 100%;
+      color: #E5E5E5;
+    }
+
+    /* Navigation */
+    .main-navigation {
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(22, 33, 62, 0.95));
+      border-bottom: 3px solid #B8860B;
+      border-top: 1px solid rgba(184, 134, 11, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(184, 134, 11, 0.3);
+    }
+
+    .nav-link { color: #C0C0C0; font-weight: 600; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .nav-link:hover { color: #DAA520; text-shadow: 0 0 10px rgba(218, 165, 32, 0.5); }
+    .nav-link.nav-current { color: #DAA520; font-weight: bold; text-shadow: 0 0 8px rgba(218, 165, 32, 0.4); }
+    .nav-link.nav-disabled { color: #666666; cursor: not-allowed; opacity: 0.5; }
+    .nav-dropdown:hover .dropdown-menu { background: linear-gradient(135deg, rgba(22, 33, 62, 0.95), rgba(26, 26, 46, 0.9)); border: 2px solid rgba(184, 134, 11, 0.5); }
+    .dropdown-menu a { color: #C0C0C0; font-weight: 500; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+    .dropdown-menu a:hover { background: rgba(184, 134, 11, 0.2); color: #DAA520; }
+
+    .nav-link.escape-button {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.3), rgba(139, 0, 0, 0.2));
+      border: 2px solid rgba(178, 34, 34, 0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: #CD853F;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-link.escape-button:hover {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.5), rgba(139, 0, 0, 0.4));
+      border-color: #B22222;
+      color: #FFFFFF;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Intelligence Document Styling */
+    .intel-document {
+      background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 25, 40, 0.9));
+      border: 1px solid rgba(184, 134, 11, 0.5);
+      box-shadow: 0 2px 12px rgba(184, 134, 11, 0.3);
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .intel-header {
+      background: linear-gradient(90deg, rgba(184, 134, 11, 0.3), rgba(22, 33, 62, 0.4));
+      padding: 1rem 2rem;
+      border-bottom: 2px solid rgba(184, 134, 11, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .classification {
+      background: #B22222;
+      color: #FFFFFF;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .faction-profile {
+      padding: 2rem;
+    }
+
+    .faction-name {
+      color: #DAA520;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px rgba(218, 165, 32, 0.4);
+    }
+
+    .faction-subtitle {
+      color: #CD853F;
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .intel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .intel-section {
+      background: linear-gradient(135deg, rgba(35, 35, 55, 0.8), rgba(25, 30, 45, 0.7));
+      border-left: 4px solid #B8860B;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .intel-section h4 {
+      color: #DAA520;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .intel-section p {
+      color: #D3D3D3;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .spin-section {
+      background: linear-gradient(135deg, rgba(178, 34, 34, 0.2), rgba(139, 0, 0, 0.1));
+      border-left: 4px solid #CD853F;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .spin-section h4 {
+      color: #CD853F;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .document-stamp {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      background: rgba(184, 134, 11, 0.15);
+      border: 2px solid rgba(184, 134, 11, 0.3);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      color: #B8860B;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      transform: rotate(15deg);
+    }
+
+    @media (max-width: 768px) {
+      .intel-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .intel-header { flex-direction: column; gap: 1rem; }
+      .faction-profile { padding: 1rem; }
+      .document-stamp { position: relative; transform: none; margin: 1rem 0; }
+    }
+  </style>
+</head>
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">CONCORD OF UNITY</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Intelligence Briefings</span>
+          <div class="dropdown-menu">
+            <a href="intel_enemy_factions.html">📋 Enemy Factions</a>
+            <a href="intel_consortium_heroes.html">🎯 Consortium Heroes</a>
+            <a href="intel_threat_assessment.html">⚠️ Threat Assessment</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="Access Denied - Enemy Territory">The Shadow Grid</span>
+        
+      </div>
+      
+      <div class="nav-right">
+        <a href="../index.html" class="nav-link escape-button" title="Escape Enemy Territory">
+          ↩️ Return to Consortium
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+
+  <main class="container">
+    <section style="position: relative;">
+      <div class="document-stamp">CLASSIFIED</div>
+      <h1 style="color: #DAA520; text-align: center; margin-bottom: 2rem; text-shadow: 0 0 15px rgba(218, 165, 32, 0.4);">
+        CONSORTIUM FACTION INTELLIGENCE BRIEFING
+      </h1>
+      <p style="text-align: center; color: #CD853F; font-style: italic; margin-bottom: 3rem;">
+        Classification: High Priority | Distribution: Command Staff Only
+      </p>
+
+      <!-- Ghost Legion -->
+      <div class="intel-document">
+        <div class="intel-header">
+          <h2 class="faction-name">Ghost Legion</h2>
+          <div class="classification">High-Priority Infiltration Threat</div>
+        </div>
+        <div class="faction-profile">
+          <div class="faction-subtitle">The Whispering Enemy</div>
+          
+          <div class="intel-grid">
+            <div class="intel-section">
+              <h4>Profile Analysis</h4>
+              <p>A shadow army of assassins and saboteurs. They erase targets silently—leaders vanish, supply depots burn, fleets collapse without battle.</p>
+            </div>
+            <div class="intel-section">
+              <h4>Concord Advisory</h4>
+              <p>Trust no unexplained silence. Strengthen internal security. Report irregularities immediately.</p>
+            </div>
+          </div>
+          
+          <div class="spin-section">
+            <h4>Public Information Campaign</h4>
+            <p>They are cowards who hide in the dark. Stand in the light, and they cannot strike.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voidborn Syndicate -->
+      <div class="intel-document">
+        <div class="intel-header">
+          <h2 class="faction-name">Voidborn Syndicate</h2>
+          <div class="classification">Piracy & Smuggling Threat</div>
+        </div>
+        <div class="faction-profile">
+          <div class="faction-subtitle">Merchants of Misery</div>
+          
+          <div class="intel-grid">
+            <div class="intel-section">
+              <h4>Profile Analysis</h4>
+              <p>Smugglers, raiders, and profiteers who thrive on chaos. They sell forbidden tech, drugs, and weapons to the highest bidder.</p>
+            </div>
+            <div class="intel-section">
+              <h4>Concord Advisory</h4>
+              <p>Eliminate black markets. Protect trade lanes. Deny them profit, and they wither.</p>
+            </div>
+          </div>
+          
+          <div class="spin-section">
+            <h4>Public Information Campaign</h4>
+            <p>They are parasites feeding on honest labor. Without our vigilance, they will choke the galaxy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Titan Order -->
+      <div class="intel-document">
+        <div class="intel-header">
+          <h2 class="faction-name">Titan Order</h2>
+          <div class="classification">Military Conquest Threat</div>
+        </div>
+        <div class="faction-profile">
+          <div class="faction-subtitle">The Iron Tide</div>
+          
+          <div class="intel-grid">
+            <div class="intel-section">
+              <h4>Profile Analysis</h4>
+              <p>Disciplined armies clad in impenetrable armor. Masters of sieges, they overwhelm through numbers and brute force.</p>
+            </div>
+            <div class="intel-section">
+              <h4>Concord Advisory</h4>
+              <p>Avoid prolonged engagements. Use mobility and unconventional tactics. Their strength is also their weakness—rigidity.</p>
+            </div>
+          </div>
+          
+          <div class="spin-section">
+            <h4>Public Information Campaign</h4>
+            <p>They are relics, clinging to dead empires. Their order is slavery, their glory a lie.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specter Network -->
+      <div class="intel-document">
+        <div class="intel-header">
+          <h2 class="faction-name">Specter Network</h2>
+          <div class="classification">Information Warfare Threat</div>
+        </div>
+        <div class="faction-profile">
+          <div class="faction-subtitle">The Phantom Web</div>
+          
+          <div class="intel-grid">
+            <div class="intel-section">
+              <h4>Profile Analysis</h4>
+              <p>Hackers, AI phantoms, and digital infiltrators. They twist truth, forge messages, and erase identities.</p>
+            </div>
+            <div class="intel-section">
+              <h4>Concord Advisory</h4>
+              <p>Verify all transmissions. Employ analog backups. Mistrust anything unseen.</p>
+            </div>
+          </div>
+          
+          <div class="spin-section">
+            <h4>Public Information Campaign</h4>
+            <p>They are liars, their empire built on shadows. Truth will burn them away.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shadowblade Mercenaries -->
+      <div class="intel-document">
+        <div class="intel-header">
+          <h2 class="faction-name">Shadowblade Mercenaries</h2>
+          <div class="classification">Hired Violence Threat</div>
+        </div>
+        <div class="faction-profile">
+          <div class="faction-subtitle">The Coinblades</div>
+          
+          <div class="intel-grid">
+            <div class="intel-section">
+              <h4>Profile Analysis</h4>
+              <p>Ruthless mercenaries who strike fast and leave terror behind. Loyal only to coin.</p>
+            </div>
+            <div class="intel-section">
+              <h4>Concord Advisory</h4>
+              <p>Deny them payment. Isolate and destroy companies before they regroup.</p>
+            </div>
+          </div>
+          
+          <div class="spin-section">
+            <h4>Public Information Campaign</h4>
+            <p>They are dogs, not warriors. Bought today, sold tomorrow.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

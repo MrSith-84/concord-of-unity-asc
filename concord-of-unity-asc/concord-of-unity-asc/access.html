@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorized Access - Apex Separatist Consortium</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        .access-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .access-panel {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(26, 14, 14, 0.9));
+            border: 2px solid #e63946;
+            border-radius: 12px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+                        0 0 30px rgba(230, 57, 70, 0.3);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .access-panel::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(230, 57, 70, 0.03) 10px,
+                rgba(230, 57, 70, 0.03) 20px
+            );
+            animation: scanline 6s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .access-title {
+            color: #e63946;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .access-subtitle {
+            color: #c0c0c0;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .access-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .access-btn {
+            background: linear-gradient(135deg, #e63946, #c1121f);
+            color: #f1faee;
+            border: 2px solid #e63946;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .access-btn:hover {
+            background: linear-gradient(135deg, #ff4757, #e63946);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+            transform: translateY(-2px);
+            color: #f1faee;
+        }
+        
+        .access-btn.secondary {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(160, 160, 160, 0.15));
+            border-color: #c0c0c0;
+            color: #c0c0c0;
+        }
+        
+        .access-btn.secondary:hover {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(160, 160, 160, 0.25));
+            box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+            color: #f1faee;
+        }
+        
+        .request-form {
+            display: none;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #e63946;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .request-form.active {
+            display: block;
+            animation: fadeInForm 0.5s ease-out;
+        }
+        
+        @keyframes fadeInForm {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            color: #e63946;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #e63946;
+            border-radius: 4px;
+            padding: 0.8rem;
+            color: #c0c0c0;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff4757;
+            box-shadow: 0 0 10px rgba(230, 57, 70, 0.3);
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .back-link a {
+            color: #c0c0c0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link a:hover {
+            color: #e63946;
+        }
+        
+        @media (max-width: 768px) {
+            .access-panel {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .access-title {
+                font-size: 1.5rem;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="fade-in">
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="factions/images/master_crest.png" alt="Apex Consortium" class="nav-logo-img">
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Command Center</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-toggle">Factions</span>
+                    <div class="dropdown-menu">
+                        <a href="factions/ghost_legion.html">Ghost Legion</a>
+                        <a href="factions/voidborn_syndicate.html">Voidborn Syndicate</a>
+                        <a href="factions/titan_order.html">Titan Order</a>
+                        <a href="factions/specter_network.html">Specter Network</a>
+                        <a href="factions/shadowblade_mercenary.html">Shadowblade Mercenary</a>
+                    </div>
+                </div>
+                <span class="nav-link" title="In Development">The Shadow Grid</span>
+                <div class="auth-section" id="authSection">
+                    <div class="auth-loading" id="authLoading">
+                        <span class="auth-spinner"></span>
+                    </div>
+                    <div class="auth-login" id="authLogin" style="display: none;">
+                        <a href="/access.html" class="auth-button login-button hazard-button"><span class="warning-icon-left">⚠️</span>RESTRICTED ACCESS<span class="warning-icon-right">⚠️</span></a>
+                    </div>
+                    <div class="auth-user" id="authUser" style="display: none;">
+                        <div class="user-info">
+                            <img class="user-avatar" id="userAvatar" src="" alt="User">
+                            <span class="user-name" id="userName"></span>
+                        </div>
+                        <a href="/logout" class="auth-button logout-button">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="access-container">
+        <div class="access-panel">
+            <h1 class="access-title">RESTRICTED ACCESS</h1>
+            <p class="access-subtitle">Restricted Consortium Operations</p>
+            
+            <div class="access-buttons">
+                <a href="/signin" class="access-btn">LOGIN</a>
+                <button class="access-btn secondary" onclick="toggleRequestForm()">REQUEST ACCESS</button>
+            </div>
+            
+            <div class="request-form" id="requestForm">
+                <form onsubmit="submitAccessRequest(event)">
+                    <div class="form-group">
+                        <label for="requestName">Full Name</label>
+                        <input type="text" id="requestName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="requestEmail">Email Address</label>
+                        <input type="email" id="requestEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="requestReason">Access Justification</label>
+                        <textarea id="requestReason" name="reason" rows="4" placeholder="State your purpose and clearance level..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="access-btn secondary" onclick="toggleRequestForm()">Cancel</button>
+                        <button type="submit" class="access-btn">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="back-link">
+                <a href="index.html">← Return to Command Center</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleRequestForm() {
+            const form = document.getElementById('requestForm');
+            form.classList.toggle('active');
+        }
+        
+        function submitAccessRequest(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                reason: formData.get('reason')
+            };
+            
+            // For now, just show an alert. In a real implementation, 
+            // this would send data to a server endpoint
+            alert('Access request submitted. You will be contacted within 48 hours for security verification.');
+            
+            // Reset and close form
+            event.target.reset();
+            toggleRequestForm();
+        }
+        
+        // Check auth status on page load
+        async function checkAuthStatus() {
+            try {
+                const response = await fetch('/api/user');
+                const data = await response.json();
+                
+                if (data.authenticated) {
+                    // User is already logged in, redirect to classified
+                    window.location.href = '/classified';
+                }
+            } catch (error) {
+                console.log('Not authenticated, showing login options');
+            }
+        }
+        
+        // Check on page load
+        document.addEventListener('DOMContentLoaded', checkAuthStatus);
+    </script>
+</body>
+</html>

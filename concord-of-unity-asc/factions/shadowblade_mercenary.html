@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadowblade Mercenary Guild - Apex Consortium</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">APEX CONSORTIUM</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
+  
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="../factions/images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Threat Intel</span>
+          <div class="dropdown-menu">
+            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
+            <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
+            <a href="specter_network.html"><span class="intel-dot specter-pulse"></span>Specter Network</a>
+            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="In Development">The Shadow Grid</span>
+        
+      </div>
+      
+      <div class="nav-right">
+        <div class="auth-section" id="authSection">
+          <div class="auth-loading" id="authLoading">
+            <span class="auth-spinner"></span>
+          </div>
+          <div class="auth-login" id="authLogin" style="display: none;">
+            <a href="/access.html" class="auth-button login-button hazard-button">RESTRICTED ACCESS</a>
+          </div>
+          <div class="auth-user" id="authUser" style="display: none;">
+            <div class="user-info">
+              <img class="user-avatar" id="userAvatar" src="" alt="User">
+              <span class="user-name" id="userName"></span>
+            </div>
+            <a href="/logout" class="auth-button logout-button">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+  <main class="container">
+    <section>
+      <h2>Shadowblade Mercenary Guild</h2>
+      <p>Ruthless killers-for-hire, striking fast for coin and leaving terror in their wake. They are the Consortium's dagger, cutting where others hesitate.</p>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="tab-button active" data-tab="overview">Overview</button>
+        <button class="tab-button" data-tab="structure">Structure</button>
+        <button class="tab-button" data-tab="operations">Operations</button>
+        <button class="tab-button" data-tab="relations">Relations</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Overview Tab -->
+        <div class="tab-panel active" id="overview">
+          <figure style="text-align: center;">
+            <img src="images/shadowblade_mercenary.png" alt="Shadowblade Mercenary Guild Emblem" style="max-width:300px;">
+            <figcaption>Mark of the Shadowblade Guild</figcaption>
+          </figure>
+
+          <h3>Origins & Motivation</h3>
+          <p>Born of warlords, deserters, and exiled fighters, the Shadowblades were once a ragged band of killers who sold their blades to the highest bidder. Over time, they evolved into a professionalized but still ruthless organization.</p>
+          <p><strong>Creed:</strong> Coin and carnage. Loyal only to contracts, though some whisper a hidden code of honor beneath the blood and money.</p>
+          <p>They see themselves as the necessary chaos of war: where the Consortium needs swift brutality, they are unleashed.</p>
+        </div>
+
+        <!-- Structure Tab -->
+        <div class="tab-panel" id="structure">
+          <h3>Structure & Hierarchy</h3>
+          <p>Unlike the rigid Titans, the Shadowblades thrive in flexible warbands, but maintain layers of leadership:</p>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <img src="../attached_assets/generated_images/Edgehands_mercenary_emblem_design_7eb64777.png" alt="Edgehands Emblem" class="tier-emblem">
+              <div class="tier-info">
+                <h4>Edgehands</h4>
+                <p><strong>Frontline mercenaries, assassins, enforcers.</strong></p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p>Blood-hungry, pragmatic killers who form the backbone of Shadowblade operations. These are the boots on the ground, the blades in the dark, and the guns for hire. Edgehands live for combat and coin, with survival instincts honed through countless battles.</p>
+            </div>
+          </div>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <img src="../attached_assets/generated_images/Blade_Captains_command_emblem_645d0e10.png" alt="Blade Captains Emblem" class="tier-emblem">
+              <div class="tier-info">
+                <h4>Blade Captains</h4>
+                <p><strong>Commanders of squads, negotiators of contracts.</strong></p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p>Charismatic, ruthless, profit-driven leaders who command respect through fear and results. They negotiate terms, plan operations, and ensure their squads deliver on promises. Blade Captains balance brutality with business acumen.</p>
+            </div>
+          </div>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <img src="../attached_assets/generated_images/Council_Iron_Shadows_emblem_6bba5130.png" alt="Council of Iron Shadows Emblem" class="tier-emblem">
+              <div class="tier-info">
+                <h4>Council of Iron Shadows</h4>
+                <p><strong>Mercenary lords governing contracts and strategy.</strong></p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p>Fractured, rivalrous, yet united by wealth. These mercenary lords control the Guild's strategic direction, major contracts, and territorial disputes. Their council meetings are tense affairs where alliances shift like shadows.</p>
+            </div>
+          </div>
+
+          <h3>Initiation</h3>
+          <p><strong>Blood-for-Coin Trial:</strong> Complete a mission without pay, spilling blood only for the Company. Falter, and be slain or cast aside. This trial ensures only the most dedicated killers join the ranks.</p>
+        </div>
+
+        <!-- Operations Tab -->
+        <div class="tab-panel" id="operations">
+          <h3>Methods & Tactics</h3>
+          <div class="tactics-grid">
+            <div class="tactic-card">
+              <div class="tactic-icon">⚡</div>
+              <div class="tactic-content">
+                <h4>Shock Mercenary Assaults</h4>
+                <p>Small, elite units strike fast and vanish, leaving devastation in their wake. Precision brutality over prolonged engagement.</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">🎯</div>
+              <div class="tactic-content">
+                <h4>Targeted Assassinations</h4>
+                <p>Removal of leaders, commanders, or witnesses through calculated violence. No target is too protected for the right price.</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">💀</div>
+              <div class="tactic-content">
+                <h4>Fear as Weapon</h4>
+                <p>Flamboyant brutality, leaving corpses and symbols as warnings. Terror becomes a tactical asset.</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">🔄</div>
+              <div class="tactic-content">
+                <h4>Mercenary Flexibility</h4>
+                <p>Can act as bodyguards, raiders, assassins, or troops if paid. Adaptability is survival in the mercenary trade.</p>
+              </div>
+            </div>
+            <div class="tactic-card">
+              <div class="tactic-icon">💰</div>
+              <div class="tactic-content">
+                <h4>Contract Warfare</h4>
+                <p>Every blade has a price, every life a negotiable value. Professional killers bound by coin and blood oath.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Resources & Arsenal</h3>
+          <p>The Shadowblades maintain an armory of stolen, bought, and customized weapons—each mercenary carries something unique that reflects their personal killing style. Their fleet consists of ragtag but fast and lethal warships capable of rapid deployment and quick escapes.</p>
+          <p><strong>Shadowholds</strong> serve as hidden bases scattered across Consortium territory and beyond, where contracts are struck, spoils divided, and the wounded tend their scars while planning their next kill.</p>
+        </div>
+
+        <!-- Relations Tab -->
+        <div class="tab-panel" id="relations">
+          <h3>Weaknesses & Internal Tensions</h3>
+          <p>The Shadowblades' greatest strength—their mercenary nature—is also their greatest weakness. Loyalty ends with coin; higher bidders can always sway them. Rivalries between mercenary lords regularly spark duels or internal conflicts that weaken the organization.</p>
+          <p>They struggle with prolonged wars without steady profit, and their brutality breeds hatred, rebellions, and united foes who would rather die than submit to Shadowblade rule.</p>
+
+          <h3>Inter-Faction Relations</h3>
+          <p><strong>Titan Order:</strong> Despised as undisciplined killers, yet sometimes necessary for dirty work the honorable Titans won't touch. An uneasy partnership born of tactical necessity.</p>
+          <p><strong>Ghost Legion:</strong> Rivals in the assassination trade—where Ghost Legion operates with surgical precision and invisibility, Shadowblades prefer flamboyant brutality and psychological warfare.</p>
+          <p><strong>Voidborn Syndicate:</strong> Natural allies in piracy, smuggling, and profit-seeking ventures. Both factions understand the language of coin and opportunity.</p>
+          <p><strong>Specter Network:</strong> Often manipulated through carefully crafted contracts, the Shadowblades bristle at being pawns but find the Network's intelligence invaluable for high-value targets.</p>
+
+          <h3>Notable Figures & Legends</h3>
+          <p><strong>Kael "The Crimson Fang" Dravak:</strong> Infamous mercenary lord leading assaults painted in enemy blood, known for never leaving survivors to tell tales of defeat.</p>
+          <p><strong>The Black Ledger:</strong> Mythical book containing all contracts ever signed, said to curse oathbreakers with violent deaths and haunt those who betray the Guild.</p>
+          <p><strong>The Scourge of Arkaris:</strong> Legendary Shadowblade company that annihilated an entire planetary garrison in a single day, their methods still studied and feared.</p>
+
+          <h3>Role in Consortium Goals</h3>
+          <p>The Shadowblade Mercenaries are the blade drawn when others hesitate. They handle assassinations, massacres, and terror campaigns that advance Consortium interests through fear and violence. Where Titans impose order and Specters manipulate truth, Shadowblades deliver fear and death—the Consortium's final argument in any negotiation.</p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-faction-link">Back to Overview</a>
+    </section>
+  </main>
+
+  <footer class="container">
+    <nav class="breadcrumb"></nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+  </footer>
+
+  <script src="../script.js"></script>
+
+</body>
+
+</html>

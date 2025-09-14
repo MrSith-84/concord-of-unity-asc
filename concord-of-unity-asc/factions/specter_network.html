@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Specter Network - Apex Consortium</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="fade-in">
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-content">
+      <div class="transition-title">APEX CONSORTIUM</div>
+      <div class="transition-message" id="transitionMessage">Establishing link to data stream...</div>
+      <div class="transition-progress">
+        <div class="transition-progress-bar"></div>
+      </div>
+      <div class="transition-status" id="transitionStatus">// SECURE CONNECTION ESTABLISHED</div>
+    </div>
+  </div>
+
+  
+  <nav class="main-navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="../factions/images/concord_unity.png" alt="Concord of Unity" class="nav-logo-img">
+        </div>
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-dropdown">
+          <span class="nav-link dropdown-toggle">Threat Intel</span>
+          <div class="dropdown-menu">
+            <a href="ghost_legion.html"><span class="online-dot"></span>Ghost Legion</a>
+            <a href="voidborn_syndicate.html"><span class="intel-dot"></span>Voidborn Syndicate</a>
+            <a href="titan_order.html"><span class="intel-dot"></span>Titan Order</a>
+            <a href="specter_network.html"><span class="intel-dot specter-pulse"></span>Specter Network</a>
+            <a href="shadowblade_mercenary.html"><span class="online-dot"></span>Shadowblade Mercenary</a>
+          </div>
+        </div>
+        <span class="nav-link nav-disabled" title="In Development">The Shadow Grid</span>
+        
+      </div>
+      
+      <div class="nav-right">
+        <div class="auth-section" id="authSection">
+          <div class="auth-loading" id="authLoading">
+            <span class="auth-spinner"></span>
+          </div>
+          <div class="auth-login" id="authLogin" style="display: none;">
+            <a href="/access.html" class="auth-button login-button hazard-button">RESTRICTED ACCESS</a>
+          </div>
+          <div class="auth-user" id="authUser" style="display: none;">
+            <div class="user-info">
+              <img class="user-avatar" id="userAvatar" src="" alt="User">
+              <span class="user-name" id="userName"></span>
+            </div>
+            <a href="/logout" class="auth-button logout-button">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+
+  <main class="container">
+    <section>
+      <h2>Specter Network</h2>
+      <p><em>"Information is dominion. To control perception is to control reality."</em></p>
+      
+      <figure style="text-align: center;">
+        <img src="images/specter_network.png" alt="Specter Network Emblem" style="max-width:300px;">
+        <figcaption>Seal of the Specter Network</figcaption>
+      </figure>
+      
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="tab-button active" data-tab="overview">Overview</button>
+        <button class="tab-button" data-tab="structure">Structure</button>
+        <button class="tab-button" data-tab="operations">Operations</button>
+        <button class="tab-button" data-tab="relations">Relations</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Overview Tab -->
+        <div class="tab-panel active" id="overview">
+          <h3>Origins & Motivation</h3>
+          <p>The Network was birthed from the ashes of fractured intelligence agencies, rogue AI constructs, and disenfranchised code-smiths. Where governments collapsed, their databases and surveillance tech fell into scavenger hands. The Specters inherited and unified these fragments.</p>
+          
+          <p><strong>Creed:</strong> Information is dominion. To control perception is to control reality.</p>
+          
+          <p>They seek to weave an invisible lattice over the galaxy, where no secret remains hidden, and every signal whispers to them first.</p>
+          
+          <h3>Role in the Consortium</h3>
+          <p>The Specter Network is the invisible lattice that binds the Consortium. They gather intelligence, sow disinformation, and blind the enemy. Their whisper is the script the galaxy unknowingly follows.</p>
+          
+          <p>Masters of espionage and digital warfare, they control information and secrets across the Consortium. The Network lurks within the datasphere, infiltrating enemy communications and rewriting reality itself.</p>
+        </div>
+
+        <!-- Structure Tab -->
+        <div class="tab-panel" id="structure">
+          <h3>Hierarchy</h3>
+          <p>A decentralized collective, designed to resist destruction:</p>
+          
+          <div class="tier-section">
+            <div class="tier-header">
+              <div class="tier-info">
+                <h4>Data Wraiths</h4>
+                <p>Tier I - Field Operatives</p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p><strong>Roles & Duties:</strong> Hackers, infiltrators of networks, digital thieves.</p>
+              <p><strong>Nature:</strong> Operate remotely, masks of shifting avatars.</p>
+            </div>
+          </div>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <div class="tier-info">
+                <h4>Signal Masters</h4>
+                <p>Tier II - Communications Control</p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p><strong>Roles & Duties:</strong> Controllers of comm relays, interceptors of transmissions, cryptographers.</p>
+              <p><strong>Nature:</strong> Cold, methodical, obsessed with patterns.</p>
+            </div>
+          </div>
+
+          <div class="tier-section">
+            <div class="tier-header">
+              <div class="tier-info">
+                <h4>The Umbra Node</h4>
+                <p>Tier III - High Command</p>
+              </div>
+            </div>
+            <div class="tier-content">
+              <p><strong>Roles & Duties:</strong> Secret council of AI-human hybrids guiding the greater agenda.</p>
+              <p><strong>Nature:</strong> Faceless, unseen; speak as one voice.</p>
+            </div>
+          </div>
+          
+          <h3>Initiation</h3>
+          <p>Recruits must infiltrate a rival system and deliver proof without being detected. Failure often means deletion—sometimes literal.</p>
+        </div>
+
+        <!-- Operations Tab -->
+        <div class="tab-panel" id="operations">
+          <h3>Methods & Tactics</h3>
+          <ul>
+            <li><strong>Cyber Infiltration:</strong> breach enemy databases, reroute funds, rewrite identities.</li>
+            <li><strong>Signal War:</strong> intercept, jam, or forge communications to sow chaos.</li>
+            <li><strong>Puppet Protocols:</strong> implant malware in ships, weapons, or neural links.</li>
+            <li><strong>Deep Surveillance:</strong> omnipresent drones, spyware, automated monitoring arrays.</li>
+            <li><strong>False Realities:</strong> disinformation campaigns to fabricate events and shape belief.</li>
+          </ul>
+          
+          <h3>Resources</h3>
+          <ul>
+            <li>Hidden server-fortresses known as <em>Shadow Nodes</em>, buried in asteroid fields or nebulae.</li>
+            <li>AI-driven agents evolving on their own.</li>
+            <li>Drone fleets for reconnaissance and infiltration.</li>
+            <li>Control of pirate comm relays and abandoned satellites.</li>
+          </ul>
+          
+          <h3>Weaknesses & Tensions</h3>
+          <ul>
+            <li>Overreliance on tech—cut networks and they are vulnerable.</li>
+            <li>Constant threat of rogue AIs or enemy viruses.</li>
+            <li>Risk of fragmentation into rival subnets.</li>
+            <li>Divide between post-human Specters and flesh-bound operatives.</li>
+          </ul>
+          
+          <h3>Notable Figures & Legends</h3>
+          <ul>
+            <li><strong>The Null Whisper:</strong> erased entire identities from all records.</li>
+            <li><strong>Mother Veil:</strong> rumored founder, hybrid of flesh and AI across multiple nodes.</li>
+            <li><strong>The Phantom Breach:</strong> seized control of a Titan dreadnought for three hours before vanishing.</li>
+          </ul>
+        </div>
+
+        <!-- Relations Tab -->
+        <div class="tab-panel" id="relations">
+          <h3>Relationships with Other Factions</h3>
+          
+          <div class="faction-relationship">
+            <h4>Ghost Legion</h4>
+            <p><strong>Status:</strong> <span class="status-neutral">Mutual Respect & Rivalry</span></p>
+            <p>Both seek secrets in different realms—physical infiltration versus digital dominion. Professional respect mixed with competitive tension over intelligence operations.</p>
+          </div>
+
+          <div class="faction-relationship">
+            <h4>Voidborn Syndicate</h4>
+            <p><strong>Status:</strong> <span class="status-allied">Tense but Profitable Alliance</span></p>
+            <p>Suppliers of stolen tech and black market hardware. The relationship is purely transactional—mutual benefit with underlying mistrust.</p>
+          </div>
+
+          <div class="faction-relationship">
+            <h4>Titan Order</h4>
+            <p><strong>Status:</strong> <span class="status-hostile">Mutual Disdain</span></p>
+            <p>Specters view Titans as brutish and unsubtle. Titans distrust Specter "cowardice" and preference for shadows over direct confrontation.</p>
+          </div>
+
+          <div class="faction-relationship">
+            <h4>Shadowblade Mercenaries</h4>
+            <p><strong>Status:</strong> <span class="status-manipulation">Manipulated Assets</span></p>
+            <p>Unknowing pawns steered by altered contracts and false intelligence. The mercenaries believe they're acting independently while serving Specter interests.</p>
+          </div>
+
+          <div class="faction-relationship">
+            <h4>Concord of Unity</h4>
+            <p><strong>Status:</strong> <span class="status-enemy">Primary Intelligence Target</span></p>
+            <p>The Concord's diplomatic networks are prime targets for surveillance and infiltration. Their communications are constantly monitored and their "unity" is systematically undermined through disinformation.</p>
+          </div>
+        </div>
+      </div>
+      
+      <a href="../index.html" class="back-faction-link">Back to Overview</a>
+    </section>
+  </main>
+  
+  <footer class="container">
+    <nav class="breadcrumb"></nav>
+
+  <!-- Floating Concord Unity Button -->
+  <div class="floating-concord-button">
+    <a href="/concord/" class="concord-float-link">⚠ CONCORD OF UNITY</a>
+  </div>
+  </footer>
+  
+  <script src="../script.js"></script>
+
+</body>
+
+</html>
