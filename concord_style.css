@@ -158,6 +158,22 @@ nav {
   background: linear-gradient(135deg, #ffd700, #daa520);
 }
 
+/* Theme toggle */
+.theme-toggle {
+  margin-left: auto;
+  margin-right: 0.75rem;
+  background: linear-gradient(135deg, #daa520, #b8860b);
+  color: #000;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+.theme-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(218,165,32,0.25); }
+.theme-toggle:active { transform: translateY(0); }
+
 /* Button Styling */
 .btn {
   background: linear-gradient(135deg, #daa520, #b8860b);
@@ -270,3 +286,31 @@ h1 {
     padding: 0 1rem;
   }
 }
+
+/* Light theme overrides */
+.theme-light body {
+  background-color: #faf7ea;
+  background-image: url('images/unity_bg_light.svg'), linear-gradient(135deg, #fff8dc 0%, #f5efda 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, 100% 100%;
+  color: #3a2a00;
+}
+.theme-light nav {
+  background: linear-gradient(135deg, rgba(255,255,245,0.95), rgba(250,248,235,0.9));
+  border-bottom-color: #c9a21a;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 0 10px rgba(218,165,32,0.08);
+}
+.theme-light .nav-link { color: #5a4500; }
+.theme-light .nav-link:hover { color: #3a2a00; background: rgba(218,165,32,0.15); }
+.theme-light .content-card {
+  background: linear-gradient(135deg, rgba(255,255,245,0.9), rgba(250,248,235,0.85));
+  border-color: rgba(218,165,32,0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+.theme-light .site-footer {
+  background: linear-gradient(135deg, rgba(255,255,245,0.95), rgba(250,248,235,0.9));
+  color: #5a4500;
+  border-top-color: rgba(218,165,32,0.35);
+}
+.theme-light .floating-crest { border-color: rgba(218,165,32,0.35); }

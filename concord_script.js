@@ -49,7 +49,71 @@ document.addEventListener('DOMContentLoaded', function() {
             a.classList.toggle('active', a.getAttribute('href') === target);
         });
     }
+
+    // Theme handling
+    initTheme();
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const current = getStoredTheme() || getPreferredTheme();
+            const next = current === 'light' ? 'dark' : 'light';
+            setStoredTheme(next);
+            applyTheme(next);
+            updateToggleIcon();
+        });
+        updateToggleIcon();
+    }
 });
+
+// Theme utilities
+const THEME_KEY = 'theme';
+
+function getStoredTheme() {
+    try { return localStorage.getItem(THEME_KEY); } catch { return null; }
+}
+
+function setStoredTheme(v) {
+    try { localStorage.setItem(THEME_KEY, v); } catch {}
+}
+
+function getPreferredTheme() {
+    if (getStoredTheme()) return getStoredTheme();
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+    const root = document.documentElement;
+    if (theme === 'light') {
+        root.classList.add('theme-light');
+    } else {
+        root.classList.remove('theme-light');
+    }
+}
+
+function initTheme() {
+    applyTheme(getPreferredTheme());
+    // React to OS theme changes when no explicit choice stored
+    if (!getStoredTheme() && window.matchMedia) {
+        try {
+            const mq = window.matchMedia('(prefers-color-scheme: dark)');
+            mq.addEventListener('change', () => applyTheme(getPreferredTheme()));
+        } catch {
+            // Safari <14 fallback
+            try { window.matchMedia('(prefers-color-scheme: dark)').addListener(() => applyTheme(getPreferredTheme())); } catch {}
+        }
+    }
+}
+
+function updateToggleIcon() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const isLight = document.documentElement.classList.contains('theme-light');
+    // Show next action: if currently light, show moon (switch to dark)
+    btn.textContent = isLight ? '🌙' : '☀️';
+    btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    btn.setAttribute('title', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+}
 
 // Floating crest hover effects
 const floatingCrest = document.querySelector('.floating-crest');
