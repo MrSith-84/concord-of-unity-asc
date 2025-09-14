@@ -27,8 +27,13 @@ button, .tab-button, .nav-link, .faction-card a, .back-faction-link {
 }
 
 body {
-  background: linear-gradient(135deg, #1a1a0a 0%, #2a2a0a 25%, #1a1a0a 50%, #2a2a0a 75%, #1a1a0a 100%);
-  background-size: 100% 100%;
+  /* Static background image with gradient fallback */
+  background-color: #0e0e07;
+  background-image: url('images/unity_bg.svg'), linear-gradient(135deg, #1a1a0a 0%, #2a2a0a 25%, #1a1a0a 50%, #2a2a0a 75%, #1a1a0a 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, 100% 100%;
+  background-attachment: fixed, scroll;
   animation: fadeInPage 1s ease-out forwards;
   color: #daa520;
   font-family: 'Rajdhani', 'Orbitron', 'Arial', sans-serif;
@@ -147,6 +152,12 @@ nav {
   transform: translateY(-2px);
 }
 
+/* Active nav link */
+.nav-link.active {
+  color: #000;
+  background: linear-gradient(135deg, #ffd700, #daa520);
+}
+
 /* Button Styling */
 .btn {
   background: linear-gradient(135deg, #daa520, #b8860b);
@@ -229,6 +240,10 @@ h1 {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  /* Improve performance on mobile by disabling fixed background */
+  body {
+    background-attachment: scroll, scroll;
+  }
   .nav-container {
     flex-direction: column;
     gap: 1rem;

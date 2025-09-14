@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Deep dusk gradient base -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e0e07"/>
+      <stop offset="50%" stop-color="#15150a"/>
+      <stop offset="100%" stop-color="#1b1b0c"/>
+    </linearGradient>
+
+    <!-- Subtle diagonal grid -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#daa520" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+
+    <!-- Sparse star specks -->
+    <pattern id="stars" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="24" r="1.2" fill="#ffd700" fill-opacity="0.15"/>
+      <circle cx="80" cy="60" r="0.9" fill="#ffd700" fill-opacity="0.12"/>
+      <circle cx="42" cy="98" r="1.0" fill="#ffd700" fill-opacity="0.10"/>
+      <circle cx="100" cy="16" r="0.8" fill="#ffd700" fill-opacity="0.12"/>
+    </pattern>
+
+    <!-- Vignette to focus center -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.35"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Layers -->
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#bg)"/>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#stars)"/>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Crest-like watermark -->
+  <g opacity="0.06" transform="translate(960 540)">
+    <circle r="240" fill="none" stroke="#ffd700" stroke-width="6"/>
+    <circle r="200" fill="none" stroke="#ffd700" stroke-width="2"/>
+    <polygon points="0,-130 28,-28 130,0 28,28 0,130 -28,28 -130,0 -28,-28" fill="#ffd700"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#vignette)"/>
+</svg>
+

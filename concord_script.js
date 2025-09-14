@@ -29,6 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Footer year
+    const yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Highlight active nav by page key
+    const pageKey = (document.body.dataset.page || '').trim();
+    const map = {
+        home: 'index.html',
+        mission: 'mission.html',
+        operations: 'operations.html',
+        divisions: 'divisions.html',
+        contact: 'contact.html'
+    };
+    const target = map[pageKey];
+    if (target) {
+        document.querySelectorAll('.nav-link').forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === target);
+        });
+    }
 });
 
 // Floating crest hover effects
