@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concord of Unity — Holo‑Net</title>
+  <meta name="description" content="Concord of Unity: Unity Council, Diplomatic Corps, and Peace Keepers — charters, crests, rosters." />
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Concord of Unity</a>
+      <nav class="nav">
+        <a href="#council">Council</a>
+        <a href="#diplomatic-corps">Diplomatic Corps</a>
+        <a href="#peace-keepers">Peace Keepers</a>
+        <a href="#charters">Charters</a>
+        <button id="themeToggle" aria-label="Toggle color theme">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="h-hero">
+      <div class="wrap hero-grid">
+        <div class="hero-mark">
+          <img src="assets/img/concord_crest_tricolor.svg" alt="Crest of the Bridge — Concord of Unity" />
+        </div>
+        <div class="hero-copy">
+          <h1 id="h-hero">The Bridge Holds</h1>
+          <p>A federated alliance bound by covenant rather than conquest. The Unity Council steers; the Diplomatic Corps builds bridges; the Peace Keepers hold the line.</p>
+          <div class="hero-cta">
+            <a href="#council" class="btn">Explore Council</a>
+            <a href="#charters" class="btn ghost">Read Charters</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="council" aria-labelledby="h-council" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="h-council">Unity Council</h2>
+          <p>Compass, not crown. Strategy across the three Pillars—Harmony, Synthesis, Reconciliation.</p>
+        </div>
+        <div class="media-grid">
+          <figure>
+            <img src="assets/img/unity_council_seat_map.svg" alt="Unity Council — Seat Map and Term Clocks" />
+            <figcaption>Seat map & term clocks. Edit stroke‑dasharray on progress rings to set remaining cycles.</figcaption>
+          </figure>
+          <article>
+            <h3>Instruments</h3>
+            <ul class="bullets">
+              <li>Edicts of Unity — standing rules for diplomats & Peace Keepers</li>
+              <li>Bridge Charters — trade & data corridors</li>
+              <li>Concord Writs — targeted ceasefires, escorts, evacuations</li>
+            </ul>
+            <p><a class="dl" href="data/Unity_Council_Charter.md" download>Download Charter (MD)</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diplomatic-corps" aria-labelledby="h-diplomatic" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="h-diplomatic">Diplomatic Corps</h2>
+          <p>Let bridges hold. Negotiation, corridors, verification, and cultural fluency.</p>
+        </div>
+        <div class="media-grid">
+          <figure>
+            <img src="assets/img/diplomatic_corps_org_map.svg" alt="Diplomatic Corps — Operational Ring" />
+            <figcaption>Operational ring around the Harmonic Net.</figcaption>
+          </figure>
+          <article>
+            <h3>Crest</h3>
+            <div class="crest-row">
+              <img src="assets/img/diplomatic_corps_crest_monochrome.svg" class="crest mono" alt="Diplomatic Corps crest (monochrome)"/>
+              <img src="assets/img/diplomatic_corps_crest_tricolor.svg" class="crest tri" alt="Diplomatic Corps crest (tri‑color)"/>
+            </div>
+            <p><a class="dl" href="data/Diplomatic_Corps_Charter.md" download>Download Corps Charter (MD)</a></p>
+          </article>
+        </div>
+        <div class="data-panel">
+          <h3>Active Roster</h3>
+          <div id="diplomaticRoster" class="table-lite" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="peace-keepers" aria-labelledby="h-peace" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="h-peace">Peace Keepers</h2>
+          <p>Shield before sword. Stability bubbles, escorts, evacuations, and lawful restraint.</p>
+        </div>
+        <div class="media-grid">
+          <figure>
+            <img src="assets/img/peace_keepers_command_lattice.svg" alt="Peace Keepers — Command Lattice" />
+            <figcaption>Marshal → Sectors → RRG / SCA / ERC / SIG.</figcaption>
+          </figure>
+          <article>
+            <h3>Crest</h3>
+            <div class="crest-row">
+              <img src="assets/img/peace_keepers_crest_monochrome.svg" class="crest mono" alt="Peace Keepers crest (monochrome)"/>
+              <img src="assets/img/peace_keepers_crest_tricolor.svg" class="crest tri" alt="Peace Keepers crest (tri‑color)"/>
+            </div>
+            <p>
+              <a class="dl" href="data/Peace_Keepers_Charter.md" download>Download Peace Keepers Charter (MD)</a> • 
+              <a class="dl" href="data/peace_keepers_ROE_quick.txt" download>ROE Quick Sheet (TXT)</a>
+            </p>
+          </article>
+        </div>
+        <div class="data-panel">
+          <h3>Active Roster</h3>
+          <div id="peaceRoster" class="table-lite" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="charters" aria-labelledby="h-charters" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="h-charters">Charters — Inline View</h2>
+          <p>For quick reading. Downloads above remain canonical.</p>
+        </div>
+        <details>
+          <summary>Unity Council Charter (preview)</summary>
+          <pre id="md-council" class="mdview">Loading…</pre>
+        </details>
+        <details>
+          <summary>Diplomatic Corps Charter (preview)</summary>
+          <pre id="md-corps" class="mdview">Loading…</pre>
+        </details>
+        <details>
+          <summary>Peace Keepers Charter (preview)</summary>
+          <pre id="md-peace" class="mdview">Loading…</pre>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb">
+      <nav>
+        <a href="#top">Concord of Unity</a>
+        <span class="sep">/</span>
+        <span id="crumbSection">Overview</span>
+      </nav>
+      <small>© Concord of Unity — Holo‑Net interface</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

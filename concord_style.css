@@ -796,8 +796,8 @@ h1 {
 }
 
 .dropdown-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-right: 0.75rem;
   flex-shrink: 0;
   filter: var(--icon-filter, brightness(0.7));
@@ -837,8 +837,8 @@ h1 {
   }
 
   .dropdown-icon {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     margin-right: 0.625rem;
   }
 }

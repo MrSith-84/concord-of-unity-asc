@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Galen Thorne",
+    "callsign": "RRG-7",
+    "rank": "Captain",
+    "unit": "Rapid Response Group 7",
+    "role": "Team Lead",
+    "sector": "Beta",
+    "clearance": "K2",
+    "medic": false,
+    "languages": "Trade",
+    "last_readiness": "C-24h",
+    "notes": ""
+  },
+  {
+    "name": "Iria Sol",
+    "callsign": "SCA-2",
+    "rank": "Lieutenant",
+    "unit": "Stability & Civil Affairs",
+    "role": "Community Liaison",
+    "sector": "Gamma",
+    "clearance": "K1",
+    "medic": true,
+    "languages": "Trade, Orun",
+    "last_readiness": "C-12h",
+    "notes": "Embedded with local councils"
+  }
+]

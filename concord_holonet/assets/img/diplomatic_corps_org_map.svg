@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 820" width="820" height="820" font-family="Inter, Segoe UI, Arial, sans-serif">
+<style>.t{fill:#ddd;font-size:12px;text-anchor:middle;dominant-baseline:middle}.s{fill:#a9c;font-size:10px}.h{fill:#fff;font-size:20px}</style>
+<rect x="0" y="0" width="100%" height="100%" fill="#0b0b0d"/>
+<text x="410.0" y="48" class="h">Diplomatic Corps — Operational Ring</text>
+<circle cx="410.0" cy="410.0" r="82" fill="#121212" stroke="#333" stroke-width="2"/>
+<text x="410.0" y="402.0" class="t">Operations</text>
+<text x="410.0" y="422.0" class="s">Harmonic Net</text>
+<g transform="translate(410.0,130.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">E-H</text>
+  <text class="t" y="0">High Envoy</text>
+  <text class="s" y="18">Council Liaison</text>
+</g>
+<g transform="translate(550.0,167.5)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">RE-A</text>
+  <text class="t" y="0">Regional Envoy</text>
+  <text class="s" y="18">Alpha Quadrant</text>
+</g>
+<g transform="translate(652.5,270.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">RE-B</text>
+  <text class="t" y="0">Regional Envoy</text>
+  <text class="s" y="18">Beta Quadrant</text>
+</g>
+<g transform="translate(690.0,410.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">RE-G</text>
+  <text class="t" y="0">Regional Envoy</text>
+  <text class="s" y="18">Gamma Quadrant</text>
+</g>
+<g transform="translate(652.5,550.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">RE-D</text>
+  <text class="t" y="0">Regional Envoy</text>
+  <text class="s" y="18">Delta Quadrant</text>
+</g>
+<g transform="translate(550.0,652.5)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">MED</text>
+  <text class="t" y="0">Mediators Guild</text>
+  <text class="s" y="18">Ceasefire Cells</text>
+</g>
+<g transform="translate(410.0,690.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">CLD</text>
+  <text class="t" y="0">Culture & Language</text>
+  <text class="s" y="18">Interpretation</text>
+</g>
+<g transform="translate(270.0,652.5)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">VCO</text>
+  <text class="t" y="0">Verification</text>
+  <text class="s" y="18">Inspections</text>
+</g>
+<g transform="translate(167.5,550.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">LOG</text>
+  <text class="t" y="0">Logistics Liaison</text>
+  <text class="s" y="18">Convoys/Evacs</text>
+</g>
+<g transform="translate(130.0,410.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">HUM</text>
+  <text class="t" y="0">Humanitarian</text>
+  <text class="s" y="18">NGO/Relief</text>
+</g>
+<g transform="translate(167.5,270.0)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">PRT</text>
+  <text class="t" y="0">Protocol</text>
+  <text class="s" y="18">Treaty Desk</text>
+</g>
+<g transform="translate(270.0,167.5)">
+  <circle r="20" fill="none" stroke="#7aa0ff" stroke-width="3"/>
+  <text class="t" y="-32">SIG</text>
+  <text class="t" y="0">Signals</text>
+  <text class="s" y="18">Joint Comms</text>
+</g>
+</svg>

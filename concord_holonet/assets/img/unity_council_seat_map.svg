@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 820" width="820" height="820" font-family="Inter, Segoe UI, Arial, sans-serif">
+<style> .seat text { font-size: 12px; text-anchor: middle; dominant-baseline: middle; fill: #ddd; }.legend text { fill: #bbb; font-size: 13px; } .title { fill:#fff; font-size: 20px; }.role { font-size: 10px; fill:#a9c; } .track { stroke:#2a2a2a; } .progress { stroke:#7aa0ff; } circle.core { fill:#121212; stroke:#333; stroke-width:2; } </style>
+<rect x="0" y="0" width="820" height="820" fill="#0b0b0d"/>
+<text x="410.0" y="48" class="title">Unity Council — Seat Map & Term Clocks</text>
+<circle class="core" cx="410.0" cy="410.0" r="90"/>
+<g class="seat" id="S01" transform="translate(410.0,130.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S01</text>
+  <text y="2">H-ARB</text>
+  <text class="role" y="22">Voting • 7-cycle</text>
+</g>
+<g class="seat" id="S02" transform="translate(550.0,167.5)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S02</text>
+  <text y="2">TRI-H</text>
+  <text class="role" y="22">Voting • 5-cycle</text>
+</g>
+<g class="seat" id="S03" transform="translate(652.5,270.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S03</text>
+  <text y="2">TRI-S</text>
+  <text class="role" y="22">Voting • 5-cycle</text>
+</g>
+<g class="seat" id="S04" transform="translate(690.0,410.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S04</text>
+  <text y="2">TRI-R</text>
+  <text class="role" y="22">Voting • 5-cycle</text>
+</g>
+<g class="seat" id="S05" transform="translate(652.5,550.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S05</text>
+  <text y="2">C1</text>
+  <text class="role" y="22">Voting • 3-cycle</text>
+</g>
+<g class="seat" id="S06" transform="translate(550.0,652.5)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S06</text>
+  <text y="2">C2</text>
+  <text class="role" y="22">Voting • 3-cycle</text>
+</g>
+<g class="seat" id="S07" transform="translate(410.0,690.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S07</text>
+  <text y="2">C3</text>
+  <text class="role" y="22">Voting • 3-cycle</text>
+</g>
+<g class="seat" id="S08" transform="translate(270.0,652.5)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S08</text>
+  <text y="2">C4</text>
+  <text class="role" y="22">Voting • 3-cycle</text>
+</g>
+<g class="seat" id="S09" transform="translate(167.5,550.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S09</text>
+  <text y="2">C5</text>
+  <text class="role" y="22">Voting • 3-cycle</text>
+</g>
+<g class="seat" id="S10" transform="translate(130.0,410.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S10</text>
+  <text y="2">C6</text>
+  <text class="role" y="22">Voting • 3-cycle</text>
+</g>
+<g class="seat" id="S11" transform="translate(167.5,270.0)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S11</text>
+  <text y="2">CUST-D</text>
+  <text class="role" y="22">Observer • 1-cycle</text>
+</g>
+<g class="seat" id="S12" transform="translate(270.0,167.5)">
+  <circle r="18" fill="none" stroke="#2a2a2a" stroke-width="10" />
+  <!-- To visualize remaining term, set stroke-dasharray="0.00 113.10" to e.g. "75 39" for ~66% remaining -->
+  <circle class="progress" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0.00 113.10" />
+  <text y="-34">S12</text>
+  <text y="2">CUST-M</text>
+  <text class="role" y="22">Observer • 1-cycle</text>
+</g>
+<g class="legend" transform="translate(40,660)">
+  <text x="0" y="0">Legend</text>
+  <circle cx="10" cy="26" r="18" fill="none" stroke="#2a2a2a" stroke-width="10"/>
+  <text x="50" y="26" dominant-baseline="middle">Track = full term length</text>
+  <circle cx="10" cy="56" r="18" fill="none" stroke="#7aa0ff" stroke-width="10" stroke-dasharray="50 27"/>
+  <text x="50" y="56" dominant-baseline="middle">Progress ring = remaining cycles (edit stroke-dasharray)</text>
+  <text x="0" y="86">Edit in code: find each &lt;circle class="progress"&gt; and set</text>
+  <text x="0" y="106">stroke-dasharray = &quot;57 57&quot; for ~50% remaining.</text>
+</g>
+</svg>

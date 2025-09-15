@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Seris Val",
+    "callsign": "BRIDGE-01",
+    "rank": "High Envoy",
+    "unit": "Corps HQ",
+    "pillar_focus": "Harmony",
+    "languages": "Trade, Orun, Vyr",
+    "clearance": "C3",
+    "active_missions": 2,
+    "home_compact": "Aeris Pact",
+    "notes": "Council liaison"
+  },
+  {
+    "name": "Mara Kesh",
+    "callsign": "E-DELTA",
+    "rank": "Regional Envoy",
+    "unit": "Delta Sector",
+    "pillar_focus": "Synthesis",
+    "languages": "Trade, Luma",
+    "clearance": "C2",
+    "active_missions": 1,
+    "home_compact": "River Compact",
+    "notes": ""
+  }
+]
