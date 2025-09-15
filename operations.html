@@ -56,20 +56,99 @@
     <h1>Current Operations</h1>
     <h2 style="text-align:center; color:#b8860b; margin-bottom:2rem;">Active Diplomatic Initiatives</h2>
 
-    <div class="content-card">
-      <h3>⚡ Initiatives</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-        <div style="background: rgba(218, 165, 32, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #daa520;">
+    <div class="initiatives-grid">
+      <!-- Operation Harmony -->
+      <div class="initiative-card">
+        <div class="initiative-header" onclick="toggleInitiative(this, event)">
           <h4>Operation Harmony</h4>
-          <p>Mediating territorial disputes in the Outer Rim sectors.</p>
+          <span class="initiative-toggle">▶</span>
         </div>
-        <div style="background: rgba(218, 165, 32, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #daa520;">
+        <div class="initiative-content">
+          <div class="initiative-meta">
+            <span class="status active">Active</span>
+            <span class="pillar">Harmony</span>
+            <span class="location">Outer Rim Sectors</span>
+          </div>
+          <p class="initiative-description">Mediating territorial disputes in the Outer Rim sectors through shuttle diplomacy and confidence-building measures.</p>
+          <div class="initiative-details">
+            <h5>Objectives:</h5>
+            <ul>
+              <li>Establish neutral mediation zones in disputed territories</li>
+              <li>Facilitate direct dialogue between conflicting parties</li>
+              <li>Monitor ceasefire compliance with Peace Keeper support</li>
+              <li>Develop long-term conflict resolution frameworks</li>
+            </ul>
+            <h5>Progress:</h5>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+            <p class="progress-text">75% complete - Ceasefire agreements signed in 3 of 4 target sectors</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Synthesis - Highly Sensitive -->
+      <div class="initiative-card sensitive">
+        <div class="initiative-header" onclick="toggleInitiative(this, event)">
           <h4>Project Synthesis</h4>
-          <p>Establishing new trade routes between former enemy systems.</p>
+          <span class="initiative-toggle">▶</span>
+          <span class="sensitive-badge">🔒 HIGHLY SENSITIVE</span>
         </div>
-        <div style="background: rgba(218, 165, 32, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #daa520;">
+        <div class="initiative-content">
+          <div class="initiative-meta">
+            <span class="status active">Active</span>
+            <span class="pillar">Synthesis</span>
+            <span class="location">Classified</span>
+            <span class="clearance">Level 4 Clearance Required</span>
+          </div>
+          <p class="initiative-description">Establishing new trade routes between former enemy systems through covert diplomatic channels and economic incentives.</p>
+          <div class="initiative-details">
+            <h5>Strategic Objectives:</h5>
+            <ul>
+              <li>Map and establish secure trade corridors</li>
+              <li>Facilitate technology and resource exchanges</li>
+              <li>Build economic interdependence as conflict deterrent</li>
+              <li>Create joint economic development zones</li>
+            </ul>
+            <h5>Current Status:</h5>
+            <div class="progress-bar sensitive">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+            <p class="progress-text">45% complete - Initial trade agreements negotiated, awaiting final approvals</p>
+            <div class="sensitive-notice">
+              <p><strong>⚠️ Classified Information:</strong> Detailed progress reports available only to authorized personnel with Level 4 clearance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Initiative Reconciliation -->
+      <div class="initiative-card">
+        <div class="initiative-header" onclick="toggleInitiative(this, event)">
           <h4>Initiative Reconciliation</h4>
-          <p>Cultural exchange programs to heal old wounds.</p>
+          <span class="initiative-toggle">▶</span>
+        </div>
+        <div class="initiative-content">
+          <div class="initiative-meta">
+            <span class="status active">Active</span>
+            <span class="pillar">Reconciliation</span>
+            <span class="location">Multiple Systems</span>
+          </div>
+          <p class="initiative-description">Cultural exchange programs designed to heal old wounds through shared experiences and mutual understanding.</p>
+          <div class="initiative-details">
+            <h5>Program Components:</h5>
+            <ul>
+              <li>Youth exchange programs between former rival worlds</li>
+              <li>Joint cultural festivals and artistic collaborations</li>
+              <li>Shared historical research and memorial projects</li>
+              <li>Language and cultural education initiatives</li>
+            </ul>
+            <h5>Impact Metrics:</h5>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 60%"></div>
+            </div>
+            <p class="progress-text">60% complete - 12 exchange programs active, positive feedback from 85% of participants</p>
+          </div>
         </div>
       </div>
     </div>

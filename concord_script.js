@@ -393,5 +393,48 @@ function smoothScrollTo(target) {
     }
 }
 
+// Initiative card toggle functionality
+function toggleInitiative(headerElement, event) {
+    try {
+        // Prevent any default behavior
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        // Find the parent card
+        const card = headerElement.closest('.initiative-card');
+        if (!card) {
+            console.error('Could not find initiative card');
+            return;
+        }
+
+        // Find the content and toggle elements
+        const content = card.querySelector('.initiative-content');
+        const toggle = headerElement.querySelector('.initiative-toggle');
+
+        if (!content || !toggle) {
+            console.error('Could not find required elements in card');
+            return;
+        }
+
+        // Toggle the expanded class
+        const isExpanded = card.classList.contains('expanded');
+
+        if (isExpanded) {
+            card.classList.remove('expanded');
+        } else {
+            card.classList.add('expanded');
+        }
+
+        // Force a reflow to ensure the transition works properly
+        card.offsetHeight;
+
+        console.log(`Toggled card: ${isExpanded ? 'collapsed' : 'expanded'}`);
+    } catch (error) {
+        console.error('Error toggling initiative card:', error);
+    }
+}
+
 // Console greeting
 console.log('%cWelcome to the Concord of Unity', 'color: #daa520; font-size: 16px; font-weight: bold;');
