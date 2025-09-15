@@ -9,6 +9,7 @@
   <meta name="description" content="Contact the Concord of Unity for diplomatic, council, or security inquiries.">
 </head>
 <body data-page="contact">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav>
   <div class="nav-container">
     <a href="index.html" class="nav-brand">Concord of Unity</a>
@@ -16,7 +17,14 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="mission.html" class="nav-link">Mission</a>
       <a href="operations.html" class="nav-link">Operations</a>
-      <a href="divisions.html" class="nav-link">Divisions</a>
+      <div class="dropdown">
+        <a href="divisions.html" class="nav-link dropdown-toggle">Divisions ▼</a>
+        <div class="dropdown-menu">
+          <a href="contact.html#diplomacy" class="dropdown-item">📨 Diplomatic Corps</a>
+          <a href="unity_council.html" class="dropdown-item">🏛️ Unity Council</a>
+          <a href="contact.html#security" class="dropdown-item">🛡️ Peace Keepers</a>
+        </div>
+      </div>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>
@@ -28,7 +36,7 @@
     <img src="images/concord_unity.png" alt="Concord of Unity Crest">
   </div>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <h1>Contact Us</h1>
     <h2 style="text-align:center; color:#b8860b; margin-bottom:2rem;">Get in Touch</h2>
 
@@ -41,7 +49,10 @@
     <div class="content-card" id="council">
       <h3>🏛️ Unity Council</h3>
       <p>For policy, treaties, and high‑level governance matters.</p>
-      <a href="mailto:contact@concordofunity.example?subject=Council%20Inquiry" class="btn">Email Council</a>
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; margin-top:0.5rem;">
+        <a href="unity_council.html" class="btn">Learn About Council</a>
+        <a href="mailto:contact@concordofunity.example?subject=Council%20Inquiry" class="btn">Email Council</a>
+      </div>
     </div>
 
     <div class="content-card" id="security">

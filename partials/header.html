@@ -1,11 +1,18 @@
 <nav>
   <div class="nav-container">
     <a href="src/index.html" class="nav-brand">Concord of Unity</a>
-    <div class="nav-links" aria-label="Main Navigation">
+    <div class="nav-links" aria-label="Main Navigation" role="navigation">
       <a href="src/index.html" class="nav-link">Home</a>
       <a href="src/mission.html" class="nav-link">Mission</a>
       <a href="src/operations.html" class="nav-link">Operations</a>
-      <a href="src/divisions.html" class="nav-link">Divisions</a>
+      <div class="dropdown">
+        <a href="src/divisions.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Divisions ▼</a>
+        <div class="dropdown-menu" role="menu" aria-label="Divisions submenu">
+          <a href="src/contact.html#diplomacy" class="dropdown-item" role="menuitem">📨 Diplomatic Corps</a>
+          <a href="src/unity_council.html" class="dropdown-item" role="menuitem">🏛️ Unity Council</a>
+          <a href="src/contact.html#security" class="dropdown-item" role="menuitem">🛡️ Peace Keepers</a>
+        </div>
+      </div>
       <a href="src/contact.html" class="nav-link">Contact</a>
     </div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>

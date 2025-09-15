@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Tripartite arcs encircling the central star -->
+  <path d="M 202.478,85.000 A 86,86 0 0 1 53.522,85.000" stroke="currentColor" stroke-width="10" />
+  <path d="M 53.522,85.000 A 86,86 0 0 1 128.000,214.000" stroke="currentColor" stroke-width="10" />
+  <path d="M 128.000,214.000 A 86,86 0 0 1 202.478,85.000" stroke="currentColor" stroke-width="10" />
+  <!-- Central star: sovereignty through consent -->
+  <polygon points="128.0,100.0 132.6,116.9 147.8,108.2 139.1,123.4 156.0,128.0 139.1,132.6 147.8,147.8 132.6,139.1 128.0,156.0 123.4,139.1 108.2,147.8 116.9,132.6 100.0,128.0 116.9,123.4 108.2,108.2 123.4,116.9" fill="none" stroke="currentColor" stroke-width="3"/>
+  <circle cx="128.0" cy="128.0" r="4" fill="currentColor"/>
+  <!-- Optional subtle ring -->
+  <circle cx="128.0" cy="128.0" r="106" stroke-opacity="0.2" stroke="currentColor" stroke-width="1"/>
+</svg>

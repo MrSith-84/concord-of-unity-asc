@@ -1,0 +1,13 @@
+seat_id,order,role,pillar,voting,term_length_cycles,reeligible,notes
+S01,Arbiter,High Arbiter of Unity,,Yes,7,No consecutive term,Chair; tie-breaker; Emergency Writs under Article IV.
+S02,Triumvir,Triumvir of Harmony,Harmony,Yes,5,Yes,Ethical Impact Review signatory.
+S03,Triumvir,Triumvir of Synthesis,Synthesis,Yes,5,Yes,Ethical Impact Review signatory.
+S04,Triumvir,Triumvir of Reconciliation,Reconciliation,Yes,5,Yes,Ethical Impact Review signatory.
+S05,Concordant,Concordant 1,,Yes,3,Yes,Regional representative; recallable by home compact.
+S06,Concordant,Concordant 2,,Yes,3,Yes,Regional representative; recallable by home compact.
+S07,Concordant,Concordant 3,,Yes,3,Yes,Regional representative; recallable by home compact.
+S08,Concordant,Concordant 4,,Yes,3,Yes,Regional representative; recallable by home compact.
+S09,Concordant,Concordant 5,,Yes,3,Yes,Regional representative; recallable by home compact.
+S10,Concordant,Concordant 6,,Yes,3,Yes,Regional representative; recallable by home compact.
+S11,Custodian,Custodian — Diplomatic Corps Liaison,,No,1,Annual reconfirmation,Non-voting.
+S12,Custodian,Custodian — Marshal of Peace Keepers,,No,1,Annual reconfirmation,Non-voting.

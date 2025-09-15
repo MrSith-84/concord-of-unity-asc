@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Test - Concord of Unity</title>
+    <link rel="stylesheet" href="concord_style.css">
+</head>
+<body data-page="test">
+    <!-- Skip links for accessibility testing -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#navigation" class="skip-link">Skip to navigation</a>
+
+    <header>
+        <nav id="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-brand">
+                    <img src="images/concord_unity.png" alt="Concord of Unity Logo" class="nav-logo">
+                    Concord of Unity
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="mission.html" class="nav-link">Mission</a></li>
+                    <li><a href="operations.html" class="nav-link">Operations</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Divisions <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="none"><a href="divisions.html#unity-guard" class="dropdown-item" role="menuitem">Unity Guard</a></li>
+                            <li role="none"><a href="divisions.html#peacekeepers" class="dropdown-item" role="menuitem">Peacekeepers</a></li>
+                            <li role="none"><a href="divisions.html#diplomats" class="dropdown-item" role="menuitem">Diplomats</a></li>
+                            <li role="none"><a href="divisions.html#scholars" class="dropdown-item" role="menuitem">Scholars</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><button id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Accessibility Test Page</h1>
+                <p>This page tests the accessibility features implemented for the Concord of Unity website.</p>
+
+                <div class="content-card">
+                    <h2>Testing Features</h2>
+                    <ul>
+                        <li>Skip links for keyboard navigation</li>
+                        <li>ARIA attributes for screen readers</li>
+                        <li>Keyboard navigation in dropdown menus</li>
+                        <li>Focus management and indicators</li>
+                        <li>Theme switching with announcements</li>
+                        <li>Mobile navigation accessibility</li>
+                        <li>Error handling and graceful degradation</li>
+                    </ul>
+                </div>
+
+                <div class="floating-crest">
+                    <img src="images/master_crest.png" alt="Master Crest of Unity" class="crest-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Concord of Unity. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="concord_script.js"></script>
+</body>
+</html>
