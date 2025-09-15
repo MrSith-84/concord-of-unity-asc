@@ -12,11 +12,35 @@
   <nav>
   <div class="nav-container">
     <a href="index.html" class="nav-brand">Concord of Unity</a>
-    <div class="nav-links">
+    <div class="nav-links" aria-label="Main Navigation" role="navigation">
       <a href="index.html" class="nav-link">Home</a>
       <a href="mission.html" class="nav-link">Mission</a>
       <a href="operations.html" class="nav-link">Operations</a>
-      <a href="divisions.html" class="nav-link">Divisions</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Divisions <span class="dropdown-arrow">▼</span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none">
+            <a href="diplomatic_corps.html" class="dropdown-item" role="menuitem">
+              <img src="diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Diplomatic Corps
+            </a>
+          </li>
+          <li role="none">
+            <a href="unity_council.html" class="dropdown-item" role="menuitem">
+              <img src="unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Unity Council
+            </a>
+          </li>
+          <li role="none">
+            <a href="peace_keepers.html" class="dropdown-item" role="menuitem">
+              <img src="peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Peace Keepers
+            </a>
+          </li>
+        </ul>
+      </div>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>
@@ -37,7 +61,7 @@
         <div style="text-align: center;">
           <h4 style="color: #daa520;">Diplomatic Corps</h4>
           <p>Elite negotiators and ambassadors representing Unity interests across the galaxy. Masters of persuasion and cultural understanding.</p>
-          <a href="contact.html#diplomacy" class="btn">Contact Diplomacy</a>
+          <a href="diplomatic_corps.html" class="btn">Learn About Diplomatic Corps</a>
         </div>
         <div style="text-align: center;">
           <h4 style="color: #daa520;">Unity Council</h4>
@@ -47,7 +71,7 @@
         <div style="text-align: center;">
           <h4 style="color: #daa520;">Peace Keepers</h4>
           <p>Security forces ensuring diplomatic missions proceed safely and conflicts remain contained.</p>
-          <a href="contact.html#security" class="btn">Security Liaison</a>
+          <a href="peace_keepers.html" class="btn">Learn About Peace Keepers</a>
         </div>
       </div>
     </div>

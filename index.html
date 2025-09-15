@@ -12,19 +12,36 @@
   <nav>
   <div class="nav-container">
     <a href="index.html" class="nav-brand">Concord of Unity</a>
-    <div class="nav-links">
-  <a href="/index.html" class="nav-link">Home</a>
-  <a href="/mission.html" class="nav-link">Mission</a>
-  <a href="/operations.html" class="nav-link">Operations</a>
-  <div class="dropdown">
-    <a href="/divisions.html" class="nav-link dropdown-toggle">Divisions ▼</a>
-    <div class="dropdown-menu">
-      <a href="/contact.html#diplomacy" class="dropdown-item">📨 Diplomatic Corps</a>
-      <a href="/unity_council.html" class="dropdown-item">🏛️ Unity Council</a>
-      <a href="/contact.html#security" class="dropdown-item">🛡️ Peace Keepers</a>
-    </div>
-  </div>
-  <a href="/contact.html" class="nav-link">Contact</a>
+    <div class="nav-links" aria-label="Main Navigation" role="navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="mission.html" class="nav-link">Mission</a>
+      <a href="operations.html" class="nav-link">Operations</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Divisions <span class="dropdown-arrow">▼</span>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-label="Divisions submenu">
+          <li role="none">
+            <a href="diplomatic_corps.html" class="dropdown-item" role="menuitem">
+              <img src="diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Diplomatic Corps
+            </a>
+          </li>
+          <li role="none">
+            <a href="unity_council.html" class="dropdown-item" role="menuitem">
+              <img src="unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Unity Council
+            </a>
+          </li>
+          <li role="none">
+            <a href="peace_keepers.html" class="dropdown-item" role="menuitem">
+              <img src="peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Peace Keepers
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>
   </div>
@@ -77,7 +94,7 @@
         <a class="btn" href="src/divisions.html">Divisions</a>
         <a class="btn" href="src/unity_council.html">Unity Council</a>
         <a class="btn" href="src/contact.html#diplomacy">Diplomatic Corps</a>
-        <a class="btn" href="src/contact.html#security">Peace Keepers</a>
+        <a class="btn" href="src/peace_keepers.html">Peace Keepers</a>
       </div>
     </div>
   </main>

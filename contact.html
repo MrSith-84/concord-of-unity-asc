@@ -13,17 +13,34 @@
   <nav>
   <div class="nav-container">
     <a href="index.html" class="nav-brand">Concord of Unity</a>
-    <div class="nav-links">
+    <div class="nav-links" aria-label="Main Navigation" role="navigation">
       <a href="index.html" class="nav-link">Home</a>
       <a href="mission.html" class="nav-link">Mission</a>
       <a href="operations.html" class="nav-link">Operations</a>
       <div class="dropdown">
-        <a href="divisions.html" class="nav-link dropdown-toggle">Divisions ▼</a>
-        <div class="dropdown-menu">
-          <a href="contact.html#diplomacy" class="dropdown-item">📨 Diplomatic Corps</a>
-          <a href="unity_council.html" class="dropdown-item">🏛️ Unity Council</a>
-          <a href="contact.html#security" class="dropdown-item">🛡️ Peace Keepers</a>
-        </div>
+        <a href="#" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Divisions <span class="dropdown-arrow">▼</span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none">
+            <a href="diplomatic_corps.html" class="dropdown-item" role="menuitem">
+              <img src="diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Diplomatic Corps
+            </a>
+          </li>
+          <li role="none">
+            <a href="unity_council.html" class="dropdown-item" role="menuitem">
+              <img src="unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Unity Council
+            </a>
+          </li>
+          <li role="none">
+            <a href="peace_keepers.html" class="dropdown-item" role="menuitem">
+              <img src="peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Peace Keepers
+            </a>
+          </li>
+        </ul>
       </div>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>

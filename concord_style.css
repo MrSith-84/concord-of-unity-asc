@@ -604,3 +604,492 @@ h1 {
     height: 60px;
   }
 }
+
+/* Diplomatic Corps Page Styles */
+.procedures-container {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.procedure-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.procedure-card h3 {
+  color: #daa520;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.procedure-card ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.procedure-card li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.org-map {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.org-diagram {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ethics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.ethics-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.ethics-card h3 {
+  color: #daa520;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.ethics-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.ethics-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.safeguards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.safeguard {
+  padding: 1.5rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  text-align: center;
+}
+
+.safeguard h3 {
+  color: #daa520;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.safeguard ul {
+  text-align: left;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.safeguard li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.pillars-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.pillars-list li {
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(218, 165, 32, 0.05));
+  border-radius: 6px;
+  border-left: 4px solid #daa520;
+  font-weight: 500;
+}
+
+.transparency-info {
+  margin-top: 1.5rem;
+}
+
+.transparency-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.03));
+  border-left: 4px solid #daa520;
+  border-radius: 4px;
+}
+
+.transparency-item h3 {
+  color: #daa520;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile optimizations for Diplomatic Corps page */
+@media (max-width: 768px) {
+  .procedures-container,
+  .ethics-container,
+  .safeguards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pillars-list {
+    grid-template-columns: 1fr;
+  }
+
+  .procedure-card,
+  .ethics-card,
+  .safeguard {
+    padding: 1rem;
+  }
+
+  .org-diagram {
+    max-width: 100%;
+  }
+}
+
+/* Enhanced Dropdown Menu Styles */
+.dropdown-menu {
+  background: var(--card-bg, rgba(255, 255, 255, 0.95));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.3));
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 0.5rem 0;
+  backdrop-filter: blur(10px);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--text-color, #333);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.dropdown-item:hover {
+  background: var(--hover-bg, rgba(218, 165, 32, 0.1));
+  color: var(--text-color, #333);
+  transform: translateX(2px);
+}
+
+.dropdown-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  filter: var(--icon-filter, brightness(0.7));
+  opacity: 0.8;
+}
+
+.dropdown-item:hover .dropdown-icon {
+  filter: var(--icon-filter-hover, brightness(1));
+  opacity: 1;
+}
+
+/* Dark theme adjustments for dropdown */
+.theme-light .dropdown-menu {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(218, 165, 32, 0.4);
+}
+
+.theme-light .dropdown-item {
+  color: #333;
+}
+
+.theme-light .dropdown-item:hover {
+  background: rgba(218, 165, 32, 0.15);
+}
+
+/* Mobile dropdown adjustments */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    min-width: 200px;
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown-item {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.625rem;
+  }
+}
+
+/* Peace Keepers Page Styles */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.mission-item {
+  padding: 1.5rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mission-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.15);
+}
+
+.mission-item h3 {
+  color: #daa520;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.command-structure {
+  margin-top: 1.5rem;
+}
+
+.command-tier {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.03));
+  border-left: 4px solid #daa520;
+  border-radius: 4px;
+}
+
+.command-tier h3 {
+  color: #daa520;
+  margin-bottom: 0.5rem;
+}
+
+.specialized-units ul {
+  list-style: none;
+  padding: 0;
+}
+
+.specialized-units li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.specialized-units li::before {
+  content: "▸";
+  color: #daa520;
+  position: absolute;
+  left: 0;
+}
+
+.lattice-diagram {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roe-container {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.roe-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.roe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.roe-item {
+  padding: 1rem;
+  background: var(--card-bg-secondary, rgba(255, 255, 255, 0.03));
+  border-radius: 6px;
+  border-left: 3px solid #daa520;
+}
+
+.roe-item h4 {
+  color: #daa520;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.red-lines {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.red-lines li {
+  padding: 0.5rem;
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 4px;
+  color: #dc3545;
+}
+
+.roe-quick-sheet {
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.roe-quick-sheet ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.roe-quick-sheet li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.capability {
+  padding: 1.5rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(218, 165, 32, 0.2));
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.capability:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.15);
+}
+
+.capability h3 {
+  color: #daa520;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.oversight-info {
+  margin-top: 1.5rem;
+}
+
+.oversight-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.03));
+  border-left: 4px solid #daa520;
+  border-radius: 4px;
+}
+
+.oversight-item h3 {
+  color: #daa520;
+  margin-bottom: 0.5rem;
+}
+
+.training-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.training-list li {
+  padding: 0.5rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.03));
+  border-radius: 4px;
+  border-left: 3px solid #daa520;
+}
+
+.recruitment-cta {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(218, 165, 32, 0.05));
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.recruitment-cta h3 {
+  color: #daa520;
+  margin-bottom: 0.75rem;
+}
+
+.footer-motto {
+  font-style: italic;
+  color: #daa520;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile optimizations for Peace Keepers page */
+@media (max-width: 768px) {
+  .mission-grid,
+  .roe-grid,
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .red-lines {
+    grid-template-columns: 1fr;
+  }
+
+  .training-list {
+    grid-template-columns: 1fr;
+  }
+
+  .roe-container {
+    gap: 1rem;
+  }
+
+  .roe-card,
+  .capability,
+  .mission-item {
+    padding: 1rem;
+  }
+
+  .roe-quick-sheet {
+    padding: 1rem;
+  }
+}
