@@ -1,3 +1,56 @@
+/* Utility classes for theme consistency and mobile optimization */
+.subtitle {
+  text-align: center;
+  color: #b8860b;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.lead {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 1.25rem auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .btn-group {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+  .lead {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
 /* Concord of Unity - Site Styling */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 

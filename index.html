@@ -12,11 +12,11 @@
   <div class="nav-container">
     <a href="index.html" class="nav-brand">Concord of Unity</a>
     <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="mission.html" class="nav-link">Mission</a>
-      <a href="operations.html" class="nav-link">Operations</a>
-      <a href="divisions.html" class="nav-link">Divisions</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+  <a href="src/index.html" class="nav-link">Home</a>
+  <a href="src/mission.html" class="nav-link">Mission</a>
+  <a href="src/operations.html" class="nav-link">Operations</a>
+  <a href="src/divisions.html" class="nav-link">Divisions</a>
+  <a href="src/contact.html" class="nav-link">Contact</a>
     </div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>
   </div>
@@ -28,25 +28,25 @@
   </div>
 
   <main class="container" id="home">
-    <h1>Concord of Unity</h1>
-    <h2 style="text-align: center; color: #b8860b; margin-bottom: 2rem;">Diplomacy. Stability. Prosperity.</h2>
+  <h1>Concord of Unity</h1>
+  <h2 class="subtitle">Diplomacy. Stability. Prosperity.</h2>
 
     <!-- Hero CTA -->
-    <div class="content-card" style="text-align:center;">
-      <p style="font-size:1.1rem; max-width:800px; margin:0 auto 1.25rem auto;">
+    <div class="content-card center">
+      <p class="lead">
         We build lasting peace through dialogue, uphold just governance, and safeguard every negotiation with integrity.
       </p>
-      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center;">
-        <a class="btn" href="mission.html">Explore Our Mission</a>
-        <a class="btn" href="operations.html">See Operations</a>
-        <a class="btn" href="contact.html">Contact Us</a>
+      <div class="btn-group">
+        <a class="btn" href="src/mission.html">Explore Our Mission</a>
+        <a class="btn" href="src/operations.html">See Operations</a>
+        <a class="btn" href="src/contact.html">Contact Us</a>
       </div>
     </div>
 
     <!-- Highlights -->
     <div class="content-card">
-      <h3 style="text-align:center;">Highlights</h3>
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-top:1rem;">
+      <h3 class="center">Highlights</h3>
+      <div class="highlights-grid">
         <div style="background: rgba(218,165,32,0.08); padding:1rem; border-radius:10px; border-left:4px solid #daa520;">
           <h4>Diplomacy First</h4>
           <p>Bridging divides with principled negotiation and cultural fluency.</p>
@@ -63,25 +63,38 @@
     </div>
 
     <!-- Quick Access -->
-    <div class="content-card" style="text-align:center;">
+    <div class="content-card center">
       <h3>Quick Access</h3>
-      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; margin-top:0.5rem;">
-        <a class="btn" href="divisions.html">Divisions</a>
-        <a class="btn" href="contact.html#diplomacy">Diplomatic Corps</a>
-        <a class="btn" href="contact.html#council">Unity Council</a>
-        <a class="btn" href="contact.html#security">Peace Keepers</a>
+      <div class="btn-group">
+        <a class="btn" href="src/divisions.html">Divisions</a>
+        <a class="btn" href="src/contact.html#diplomacy">Diplomatic Corps</a>
+        <a class="btn" href="src/contact.html#council">Unity Council</a>
+        <a class="btn" href="src/contact.html#security">Peace Keepers</a>
       </div>
     </div>
   </main>
 
   <footer class="site-footer">
   <div class="container">
-    <p>© <span id="year"></span> Concord of Unity. All rights reserved.</p>
+      <p>© <span id="year"></span> Concord of Unity. All rights reserved.</p>
   </div>
 </footer>
 
 
 
   <script src="concord_script.js"></script>
+  <script>
+    // Highlight active nav link
+    document.addEventListener('DOMContentLoaded', function() {
+      const page = document.body.getAttribute('data-page');
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href').includes(page)) {
+          link.classList.add('active');
+        }
+      });
+      // Set year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
