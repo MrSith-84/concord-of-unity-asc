@@ -11,37 +11,37 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav>
   <div class="nav-container">
-    <a href="index.html" class="nav-brand">Concord of Unity</a>
+    <a href="src/index.html" class="nav-brand">Concord of Unity</a>
     <div class="nav-links" aria-label="Main Navigation" role="navigation">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="mission.html" class="nav-link">Mission</a>
-      <a href="operations.html" class="nav-link">Operations</a>
+      <a href="src/index.html" class="nav-link">Home</a>
+      <a href="src/mission.html" class="nav-link">Mission</a>
+      <a href="src/operations.html" class="nav-link">Operations</a>
       <div class="dropdown">
         <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
           Divisions <span class="dropdown-arrow">▼</span>
         </a>
         <ul class="dropdown-menu" role="menu" aria-label="Divisions submenu">
           <li role="none">
-            <a href="diplomatic_corps.html" class="dropdown-item" role="menuitem">
-              <img src="diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
+            <a href="src/diplomatic_corps.html" class="dropdown-item" role="menuitem">
+              <img src="../diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
               Diplomatic Corps
             </a>
           </li>
           <li role="none">
-            <a href="unity_council.html" class="dropdown-item" role="menuitem">
-              <img src="unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
+            <a href="src/unity_council.html" class="dropdown-item" role="menuitem">
+              <img src="../unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
               Unity Council
             </a>
           </li>
           <li role="none">
-            <a href="peace_keepers.html" class="dropdown-item" role="menuitem">
-              <img src="peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
+            <a href="src/peace_keepers.html" class="dropdown-item" role="menuitem">
+              <img src="../peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
               Peace Keepers
             </a>
           </li>
         </ul>
       </div>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="src/contact.html" class="nav-link">Contact</a>
     </div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>
   </div>
@@ -72,15 +72,15 @@
     <div class="content-card">
       <h3 class="center">Highlights</h3>
       <div class="highlights-grid">
-        <div style="background: rgba(218,165,32,0.08); padding:1rem; border-radius:10px; border-left:4px solid #daa520;">
+        <div class="content-card">
           <h4>Diplomacy First</h4>
           <p>Bridging divides with principled negotiation and cultural fluency.</p>
         </div>
-        <div style="background: rgba(218,165,32,0.08); padding:1rem; border-radius:10px; border-left:4px solid #daa520;">
+        <div class="content-card">
           <h4>Stable Governance</h4>
           <p>Treaties and institutions that endure beyond any single conflict.</p>
         </div>
-        <div style="background: rgba(218,165,32,0.08); padding:1rem; border-radius:10px; border-left:4px solid #daa520;">
+        <div class="content-card">
           <h4>Security With Integrity</h4>
           <p>Protecting missions while preserving the dignity of all parties.</p>
         </div>
@@ -93,7 +93,7 @@
       <div class="btn-group">
         <a class="btn" href="src/divisions.html">Divisions</a>
         <a class="btn" href="src/unity_council.html">Unity Council</a>
-        <a class="btn" href="src/contact.html#diplomacy">Diplomatic Corps</a>
+        <a class="btn" href="diplomatic_corps.html">Diplomatic Corps</a>
         <a class="btn" href="src/peace_keepers.html">Peace Keepers</a>
       </div>
     </div>
@@ -101,25 +101,20 @@
 
   <footer class="site-footer">
   <div class="container">
-      <p>© <span id="year"></span> Concord of Unity. All rights reserved.</p>
+    <p>© <span id="year"></span> Concord of Unity. All rights reserved.</p>
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="src/index.html">Home</a> |
+      <a href="src/mission.html">Mission</a> |
+      <a href="src/operations.html">Operations</a> |
+      <a href="src/divisions.html">Divisions</a> |
+      <a href="src/unity_council.html">Unity Council</a> |
+      <a href="src/contact.html">Contact</a>
+    </nav>
   </div>
 </footer>
 
 
 
   <script src="concord_script.js"></script>
-  <script>
-    // Highlight active nav link
-    document.addEventListener('DOMContentLoaded', function() {
-      const page = document.body.getAttribute('data-page');
-      document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href').includes(page)) {
-          link.classList.add('active');
-        }
-      });
-      // Set year in footer
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
-  </script>
 </body>
 </html>

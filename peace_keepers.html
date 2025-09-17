@@ -9,65 +9,50 @@
   <meta name="description" content="Peace Keepers division of the Concord of Unity - Security forces ensuring diplomatic missions proceed safely and conflicts remain contained.">
 </head>
 <body data-page="peace-keepers">
-  <!-- Skip links for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <a href="#navigation" class="skip-link">Skip to navigation</a>
-
-  <header>
-    <nav id="navigation" aria-label="Main navigation">
-      <div class="nav-container">
-        <a href="index.html" class="nav-brand">
-          <img src="images/concord_unity.png" alt="Concord of Unity Logo" class="nav-logo">
-          Concord of Unity
+  <nav>
+  <div class="nav-container">
+    <a href="src/index.html" class="nav-brand">Concord of Unity</a>
+    <div class="nav-links" aria-label="Main Navigation" role="navigation">
+      <a href="src/index.html" class="nav-link">Home</a>
+      <a href="src/mission.html" class="nav-link">Mission</a>
+      <a href="src/operations.html" class="nav-link">Operations</a>
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Divisions <span class="dropdown-arrow">▼</span>
         </a>
-
-        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="mission.html" class="nav-link">Mission</a></li>
-          <li><a href="operations.html" class="nav-link">Operations</a></li>
-          <li class="dropdown">
-            <a href="#" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-              Divisions <span class="dropdown-arrow">▼</span>
+        <ul class="dropdown-menu" role="menu" aria-label="Divisions submenu">
+          <li role="none">
+            <a href="src/diplomatic_corps.html" class="dropdown-item" role="menuitem">
+              <img src="../diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Diplomatic Corps
             </a>
-            <ul class="dropdown-menu" role="menu">
-              <li role="none">
-                <a href="diplomatic_corps.html" class="dropdown-item" role="menuitem">
-                  <img src="diplomatic_corps/diplomatic_corps_crest_monochrome.svg" alt="" class="dropdown-icon">
-                  Diplomatic Corps
-                </a>
-              </li>
-              <li role="none">
-                <a href="unity_council.html" class="dropdown-item" role="menuitem">
-                  <img src="unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
-                  Unity Council
-                </a>
-              </li>
-              <li role="none">
-                <a href="peace_keepers.html" class="dropdown-item" role="menuitem">
-                  <img src="peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
-                  Peace Keepers
-                </a>
-              </li>
-            </ul>
           </li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li><button id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+          <li role="none">
+            <a href="src/unity_council.html" class="dropdown-item" role="menuitem">
+              <img src="../unity_council/concord_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Unity Council
+            </a>
+          </li>
+          <li role="none">
+            <a href="src/peace_keepers.html" class="dropdown-item" role="menuitem">
+              <img src="../peace_keepers/peace_keepers_crest_monochrome.svg" alt="" class="dropdown-icon">
+              Peace Keepers
+            </a>
+          </li>
         </ul>
       </div>
-    </nav>
-  </header>
+      <a href="src/contact.html" class="nav-link">Contact</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</button>
+  </div>
+</nav>
+
 
   <div class="floating-crest">
     <img src="peace_keepers/peace_keepers_crest_tricolor.svg" alt="Peace Keepers Crest" class="crest-image">
   </div>
 
-  <main id="main-content">
+  <main class="container" id="main-content">
     <section class="hero-section">
       <div class="hero-content">
         <h1>Peace Keepers</h1>
@@ -182,74 +167,28 @@
       </div>
 
       <div class="content-card">
-        <h2>Capabilities & Readiness</h2>
-        <div class="capabilities-grid">
-          <div class="capability">
-            <h3>🚁 Rapid Deployment</h3>
-            <p>Maintain readiness for immediate deployment with mobile field hospitals and communications relays.</p>
-          </div>
-          <div class="capability">
-            <h3>🏥 Medical Support</h3>
-            <p>Integrated medical evacuation and field hospital capabilities for comprehensive humanitarian response.</p>
-          </div>
-          <div class="capability">
-            <h3>📡 Intelligence & Surveillance</h3>
-            <p>Unarmed surveillance systems for treaty verification and situational awareness.</p>
-          </div>
-          <div class="capability">
-            <h3>🤝 Civil Affairs</h3>
-            <p>Community liaison cells embedded with local leaders to reduce friction and misinformation.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="content-card">
-        <h2>Operations & Oversight</h2>
-        <div class="oversight-info">
-          <div class="oversight-item">
-            <h3>📊 Daily Reporting</h3>
-            <p>Stability Readiness Report filed daily to the Council; After-Action Concord within 72 hours post-mission.</p>
-          </div>
-          <div class="oversight-item">
-            <h3>⚖️ Ethical Review</h3>
-            <p>Ethical Impact Review sign-off required for high-risk operations (tri-sign by the Triumvirs).</p>
-          </div>
-          <div class="oversight-item">
-            <h3>🌐 Authority Limits</h3>
-            <p>Authority expires with the Writ unless extended by the Council under Golden Quorum.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="content-card">
-        <h2>Personnel & Recruitment</h2>
-        <div class="personnel-info">
-          <p>The Peace Keepers maintain a comprehensive roster system tracking personnel qualifications, clearances, and readiness status. Our personnel undergo rigorous training in:</p>
-          <ul class="training-list">
-            <li>Conflict de-escalation and crowd management</li>
-            <li>Humanitarian law and civilian protection protocols</li>
-            <li>Medical evacuation and field hospital operations</li>
-            <li>Cultural sensitivity and community liaison</li>
-            <li>Advanced weapons systems and non-lethal options</li>
-            <li>Intelligence gathering and treaty verification</li>
-          </ul>
-
-          <div class="recruitment-cta">
-            <h3>Join the Peace Keepers</h3>
-            <p>Seeking dedicated professionals committed to protecting peace and upholding justice across the galaxy.</p>
-            <a href="contact.html#peace-keepers-recruitment" class="btn">Learn More About Joining</a>
-          </div>
-        </div>
+        <h2>Contact Information</h2>
+        <p>For security coordination, deployment requests, or to connect with Peace Keeper operations, please use the contact form below or reach out through official channels.</p>
+        <a href="contact.html#security" class="btn">Contact Peace Keepers</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <p>&copy; <span id="year"></span> Concord of Unity. All rights reserved.</p>
-      <p class="footer-motto">"Mend the breach." — Peace Keeper oath upon commission.</p>
-    </div>
-  </footer>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Concord of Unity. All rights reserved.</p>
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="src/index.html">Home</a> |
+      <a href="src/mission.html">Mission</a> |
+      <a href="src/operations.html">Operations</a> |
+      <a href="src/divisions.html">Divisions</a> |
+      <a href="src/unity_council.html">Unity Council</a> |
+      <a href="src/contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+
 
   <script src="concord_script.js"></script>
 </body>
