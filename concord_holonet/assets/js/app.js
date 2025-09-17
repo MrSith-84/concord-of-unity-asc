@@ -45,23 +45,68 @@
 
   // Minimal table renderer
   function renderTable(el, rows) {
-    if (!rows || !rows.length) { el.innerHTML = "<div class='empty'>No data.</div>"; return; }
+    if (!rows || !rows.length) { 
+      el.textContent = "";
+      const emptyDiv = document.createElement("div");
+      emptyDiv.className = "empty";
+      emptyDiv.textContent = "No data.";
+      el.appendChild(emptyDiv);
+      return; 
+    }
+    
+    // Clear existing content safely
+    el.textContent = "";
+    
     const keys = Object.keys(rows[0]);
-    const thead = "<thead><tr>" + keys.map(k => `<th>${k}</th>`).join("") + "</tr></thead>";
-    const tbody = "<tbody>" + rows.map(r => "<tr>" + keys.map(k => `<td>${r[k] ?? ""}</td>`).join("") + "</tr>").join("") + "</tbody>";
-    el.innerHTML = `<table>${thead}${tbody}</table>`;
+    const table = document.createElement("table");
+    
+    // Create thead safely
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+    keys.forEach(key => {
+      const th = document.createElement("th");
+      th.textContent = key; // Safe text content, no HTML injection
+      headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // Create tbody safely  
+    const tbody = document.createElement("tbody");
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      keys.forEach(key => {
+        const td = document.createElement("td");
+        td.textContent = row[key] ?? ""; // Safe text content, no HTML injection
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    
+    el.appendChild(table);
   }
 
   // Fetch and render rosters
   fetch("data/diplomatic_roster.json").then(r => r.json()).then(d => {
     renderTable(document.getElementById("diplomaticRoster"), d);
   }).catch(() => {
-    document.getElementById("diplomaticRoster").innerHTML = "<div class='empty'>Unable to load diplomatic roster data.</div>";
+    const el = document.getElementById("diplomaticRoster");
+    el.textContent = "";
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "empty";
+    errorDiv.textContent = "Unable to load diplomatic roster data.";
+    el.appendChild(errorDiv);
   });
   fetch("data/peacekeepers_roster.json").then(r => r.json()).then(d => {
     renderTable(document.getElementById("peaceRoster"), d);
   }).catch(() => {
-    document.getElementById("peaceRoster").innerHTML = "<div class='empty'>Unable to load peacekeepers roster data.</div>";
+    const el = document.getElementById("peaceRoster");
+    el.textContent = "";
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "empty";
+    errorDiv.textContent = "Unable to load peacekeepers roster data.";
+    el.appendChild(errorDiv);
   });
 
   // Inline MD previews (simple, no markdown parsing—preformatted quick view)
