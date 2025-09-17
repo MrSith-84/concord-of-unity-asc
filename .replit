@@ -11,10 +11,6 @@ expertMode = true
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 39583
-externalPort = 3000
-
 [workflows]
 runButton = "Project"
 
@@ -31,10 +27,14 @@ args = "Flask Server"
 name = "Flask Server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python main.py"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "gunicorn --workers=2 --bind=0.0.0.0:5000 --reuse-port main:app"
+waitForPort = 5000
+
+[deployment]
+deploymentTarget = "vm"
+run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "main:app"]
